@@ -1,20 +1,21 @@
 # Open Privacy — Curated Decision-First Privacy Tools
 
-> Curated privacy-tool library by **Poorvith M P**.  
+> Curated digital privacy library by **Poorvith M P**.  
 > Version: **v0.2** · Last updated: **August 2026** · License: **MIT**
 
 [![Version](https://img.shields.io/badge/version-v0.2-059669.svg)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-059669.svg)](LICENSE)
-[![Categories](https://img.shields.io/badge/categories-25%20covered-0f172a.svg)](#categories)
+[![Security Policy](https://img.shields.io/badge/security-policy-0f172a.svg)](SECURITY.md)
+[![Categories](https://img.shields.io/badge/categories-25%20covered-059669.svg)](#categories)
 [![Machine Readable](https://img.shields.io/badge/llms.txt-standard-10b981.svg)](llms.txt)
 
 ---
 
 ## What is Open Privacy?
 
-Open Privacy is a decision-first digital privacy library. Instead of dumping hundreds of tools into an endless list, it gives you exactly one proven primary tool per category, one specific alternative for every concrete catch of that tool, and a self-hosted open-source path when one exists.
+Open Privacy is a decision-first digital privacy guide. Instead of dumping hundreds of tools into an unorganized catalog, I picked exactly one proven primary tool for each category, one specific alternative for every concrete catch, and a self-hosted open-source path when one exists.
 
-Every recommendation is verified against upstream documentation and tested for real-world usability without requiring commercial subscriptions or complex threat modeling.
+Every recommendation is verified against upstream official documentation and tested for practical usability. No corporate sponsorships, no affiliate links, and no fake hype.
 
 ---
 
@@ -86,8 +87,8 @@ Privacy Payments & Cards     →  Cash & Monero (Alt: Privacy.com)
 
 1. **Pick the category** you want to fix today.
 2. **Install the primary tool** following its step-by-step OS guide.
-3. If a specific limitation blocks you (e.g. unsupported hardware, payment constraints, offline requirement), **use the single catch alternative** listed in that category's table.
-4. If you have homelab hardware and prefer zero cloud dependencies, **use the local open-source path**.
+3. If a specific limitation blocks you (unsupported hardware, payment constraints, or offline needs), **use the single catch alternative** listed in that category's table.
+4. If you run a homelab and want zero cloud dependencies, **use the local open-source path**.
 
 ---
 
@@ -102,22 +103,26 @@ If you are an autonomous agent, LLM-based researcher, or automated script:
 ## Frequently Asked Questions
 
 ### Why only one primary recommendation per category?
-Most privacy directories list dozens of tools without explaining which one a regular person should actually install. That causes decision fatigue. Open Privacy gives you one clear default that balances strong privacy defaults, active maintenance, and multi-platform convenience.
+Most privacy directories dump dozens of tools without telling you which one to actually use. That leads to decision paralysis. I picked one clear default that balances strong privacy defaults, active maintenance, and multi-platform convenience.
 
 ### What if the primary tool doesn't work for my setup?
-Every category README contains a **Catches Table**. For every real drawback (such as lack of iOS support, closed-source dependencies, or subscription pricing), we document exactly one vetted alternative that resolves that specific catch.
+Every category README includes a **Catches Table**. For every real drawback (such as lack of iOS support, closed-source dependencies, or subscription pricing), I documented exactly one vetted alternative that resolves that specific catch.
 
 ### Are these tools completely free?
-Whenever possible, we pick free, open-source software (FOSS). For categories where reliable infrastructure requires ongoing server costs (like commercial VPNs or hosted encrypted email), we recommend audited, no-logs paid services alongside free tiers and self-hosted options.
+Whenever possible, I chose free and open-source software (FOSS). For categories where reliable infrastructure requires ongoing server costs (like commercial VPNs or hosted encrypted email), I recommend audited, no-logs paid services alongside free tiers and self-hosted options.
 
 ### How are install steps verified?
-Install commands are taken directly from upstream package repositories (e.g. Debian/Ubuntu keyrings, Fedora DNF5 repos, Homebrew casks, and official Git releases). We do not invent custom install scripts.
+Install commands are taken directly from upstream package repositories (Debian/Ubuntu keyrings, Fedora DNF5 repos, Homebrew casks, and official Git releases). No invented install scripts.
 
 ---
 
-## Contributing
+## Governance & Security
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution rules, upstream verification steps, and screenshot submission guidelines.
+- **Contributing**: Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
+- **Code of Conduct**: See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for community standards.
+- **Security Policy**: Read [SECURITY.md](SECURITY.md) to report vulnerabilities or compromised tools.
+- **Methodology**: Read [METHODOLOGY.md](METHODOLOGY.md) to understand curation criteria.
+- **References**: Maintainer upstream verification index is in [sources/REFERENCES.md](sources/REFERENCES.md).
 
 ---
 

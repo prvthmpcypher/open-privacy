@@ -1,29 +1,26 @@
 # Code of Conduct
 
-## Our pledge
+> **Open Privacy** · v0.2 · August 2026 · Poorvith M P
 
-We pledge to make participation in **Open Privacy** a harassment-free experience for everyone.
+## Ground rules
 
-## Our standards
+I want Open Privacy to be a productive, practical resource for anyone trying to take back their digital privacy. Whether you are an experienced Linux sysadmin or someone trying to switch away from Google Chrome for the first time, you are welcome here.
 
-Examples of behavior that contributes to a positive environment:
+### What I expect from contributors
 
-- Using welcoming and inclusive language
-- Being respectful of differing viewpoints
-- Accepting constructive criticism gracefully
-- Focusing on what is best for users’ privacy
+- **Keep it factual and technical**: Back up claims with official docs, source code, network audit logs, or public security disclosures.
+- **Respect different threat models**: Not everyone needs an air-gapped Qubes machine. Respect people where they are in their privacy journey.
+- **Constructive feedback**: Critique tools, architectures, and install steps, not individuals.
+- **No toxicity or gatekeeping**: Harassment, derogatory comments, trolling, and personal attacks will get your PR or issue closed immediately.
 
-Examples of unacceptable behavior:
+### What is strictly unacceptable
 
-- Trolling, insulting or derogatory comments, and personal attacks
-- Public or private harassment
-- Publishing others’ private information without permission
-- Other conduct which could reasonably be considered inappropriate
+- Harassing, insulting, or trolling contributors or maintainers.
+- Doxxing or publishing anyone's private details without explicit consent.
+- Promoting closed-source adware, commercial affiliate schemes, or unvetted forks without disclosure.
 
-## Enforcement
+### Enforcement
 
-Project maintainers may remove contributions that violate this Code of Conduct.
+As the maintainer, I reserve the right to edit, close, or remove any comments, issues, or pull requests that violate these standards.
 
-## Attribution
-
-Adapted for Open Privacy · Poorvith M P · v0.1 · July 2026
+If you experience or witness unacceptable behavior, reach out to me directly at `prvthmp@gmail.com`.

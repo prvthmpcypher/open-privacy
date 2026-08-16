@@ -1,49 +1,57 @@
 # Contributing to Open Privacy
 
-Maintainer: **Poorvith M P** · **v0.2** · August 2026
+> **Open Privacy** · v0.2 · August 2026 · Maintainer: **Poorvith M P**
 
-## What this repo is
+Thanks for wanting to improve Open Privacy. I built this library to be opinionated and decision-first: exactly **one primary tool** per category, **one alternative per concrete catch**, and a **local open-source path** when one exists.
 
-Each category under `categories/` recommends **one primary tool**, **one alternative per catch** of that primary, and a **local open-source path** when applicable.
+Here is how to contribute without wasting your time.
 
-## Category page rules
+---
 
-- Keep the fixed section order (see any existing category `README.md`).
-- Do **not** add contributor callouts on category pages.
-- Do **not** add per-OS citation lines under install steps.
-- Install steps must match the tool’s **official** install documentation.
-- Keep catch tables to **one alternative per catch row**.
-- All tool logos must be verified official SVG/PNG files from upstream repositories or simple-icons.
+## Category Page Rules
 
-## Updating install steps
+When editing or adding to any file under `categories/`:
 
-1. Open the vendor’s official download/install page.
-2. Replace steps only when upstream changed.
-3. Prefer copy-pasteable commands and numbered UI steps.
-4. If a platform is unsupported, write `Not supported` and one short reason.
+1. **Keep the fixed section order**:
+   - Header with metadata & official colored logo
+   - Primary Recommendation Table
+   - Why this is the one pick (5 points)
+   - What it does not do (3 points)
+   - Install Guide (numbered OS steps & copy-paste commands)
+   - Catches Table (exactly one alternative per row)
+   - Alternative Installs
+   - Local Open-Source Path
+   - Quick Decision Box
+2. **Official Install Steps Only**: Copy commands directly from upstream documentation (e.g. official package repos, keyrings, or vendor guides). Do not invent custom install scripts.
+3. **No Affiliate Links or Sponsorships**: Any PR adding referral links or paid placement will be closed immediately.
+4. **Logos**: Use official colored SVG/PNG logos from upstream projects or simple-icons. Store them in `assets/logos/`. Never submit AI-generated logo artwork.
+5. **No Threat-Model Essays**: Keep descriptions concise and practical. Explain what the tool does and where it falls short.
 
-## Images and Screenshots
+---
 
-When adding screenshots or assets:
+## How to Propose a Tool Change
 
-1. Store under `categories/<id>/assets/` (create the folder if needed).
-2. Use descriptive names: `windows-installer.png`, `android-play-listing.png`.
-3. Prefer PNG or WebP; keep each file under ~500 KB when possible.
-4. Reference in Markdown using code snippet format: ``![Short description](assets/filename.png)``.
-5. Do not include personal data, email addresses, or account IDs in screenshots.
-6. Do not add decorative screenshots that do not help installation.
-7. Alt text must describe the UI action (e.g. “Windows UAC prompt for Brave setup”).
+If you believe a primary tool should be replaced (e.g. an upstream project was abandoned, bought out, or breached):
 
-## Proposing a primary change
+1. Open a GitHub Issue first and provide evidence (CVE, commit history, corporate announcement, or upstream license change).
+2. If we agree on the replacement, open a PR that:
+   - Updates the primary table and why/limits sections.
+   - Updates install steps for Linux, Windows, macOS, Android, and iOS where applicable.
+   - Rewrites the catch table to map to real catches of the *new* primary tool.
+   - Updates [`INDEX.md`](INDEX.md), [`llms.txt`](llms.txt), and [`CHANGELOG.md`](CHANGELOG.md).
 
-Open a PR that:
+---
 
-1. Updates the primary table and why/limits sections.
-2. Rewrites install steps for all five OSes (Linux, Windows, macOS, Android, iOS) as applicable.
-3. Rebuilds the catch table so alternatives still map to real catches of the **new** primary.
-4. Updates local FOSS path if needed.
-5. Adds a CHANGELOG entry under the next version.
+## Submitting Screenshots or Assets
 
-## License
+When adding UI screenshots or assets:
+- Store them under `categories/<id>/assets/`.
+- Use descriptive filenames (e.g. `brave-shields-panel.png`).
+- Keep file sizes under 500 KB (prefer WebP or compressed PNG).
+- Never include personal emails, account numbers, or private credentials in screenshots.
 
-By contributing, you agree your contributions are licensed under the MIT License (Copyright Poorvith M P).
+---
+
+## Code of Conduct & License
+
+By contributing, you agree that your work will be licensed under the project's [MIT License](LICENSE) and that you will follow the [Code of Conduct](CODE_OF_CONDUCT.md).
