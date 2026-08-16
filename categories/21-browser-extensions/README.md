@@ -18,20 +18,20 @@
 | **Open source?** | **Yes** (GPL 3.0) |
 | **Local / self-host?** | **Yes** — runs 100% locally in your browser engine |
 | **Target audience** | Everyone browsing the web on desktop and mobile browsers |
-| **Platforms** | Firefox (Full Manifest V2 support) · Brave · Chromium (uBO Lite for MV3) |
+| **Platforms** | <img src="../../assets/logos/firefox.svg" width="14" height="14" alt="Firefox"> Firefox (Full MV2) · <img src="../../assets/logos/brave.svg" width="14" height="14" alt="Brave"> Brave · <img src="../../assets/logos/windows.svg" width="14" height="14" alt="Windows"> Windows · <img src="../../assets/logos/macos.svg" width="14" height="14" alt="macOS"> macOS · <img src="../../assets/logos/linux.svg" width="14" height="14" alt="Linux"> Linux |
 | **Pricing** | 100% Free (Accepts zero donations) |
 | **Payment notes** | N/A |
 
 ### Why this is the one pick
 1. Wide-spectrum, open-source content blocker developed by Raymond Hill (gorhill).
-2. Extremely efficient CPU and memory footprint compared to commercial adblockers.
+2. Extremely light CPU and memory footprint compared to commercial adblockers.
 3. Provides comprehensive protection against tracking scripts, third-party CNAME uncloaking, and cosmetic ad clutter.
 4. Allows dynamic filtering rules and custom element zapping.
 5. Operates with strict ethical principles: no "acceptable ads" whitelist programs or monetization.
 
 ### What it does not do
 - Does not encrypt your network traffic (not a VPN).
-- In Google Chrome, Google has phased out Manifest V2 extensions, limiting full uBlock Origin capabilities (use **uBlock Origin Lite** or switch to **Firefox** / **Brave** for full capability).
+- Google has disabled Manifest V2 extensions in Chrome/Chromium, restricting full uBlock Origin capabilities on Chrome (use **uBlock Origin Lite** or switch to **Firefox** / **Brave** for full capability).
 
 ---
 
@@ -55,7 +55,7 @@
 |---|---|---|---|---|---|
 | Browser forces Manifest V3 (Google Chrome / Edge) | Full uBlock Origin requires the declarative webRequest API | <img src="../../assets/logos/ublockorigin.svg" width="16" height="16" alt="uBO Lite"> **uBlock Origin Lite** | Yes | Chromium (MV3) | Don’t switch away from full uBlock Origin if you are on Firefox or Brave |
 | Already using Brave Browser with native Rust ad blocker | Brave Shields provides built-in blocking without extensions | <img src="../../assets/logos/brave.svg" width="16" height="16" alt="Brave Shields"> **Brave Shields (Built-in)** | Yes | All major | Don’t add extra extension bloat if built-in Shields satisfy your blocking needs |
-| iOS Safari user seeking native WebKit content blocking | iOS Safari requires native Content Blocker APIs | **AdGuard for Safari** or **Brave iOS** | Open Source | iOS · macOS | Don’t switch on desktop where full uBlock Origin provides superior filtering |
+| iOS Safari user seeking native WebKit content blocking | iOS Safari requires native Content Blocker APIs | <img src="../../assets/logos/safari.svg" width="16" height="16" alt="Safari"> **AdGuard for Safari** or Brave iOS | Open Source | iOS · macOS | Don’t switch on desktop where full uBlock Origin provides superior filtering |
 
 ### Alternative installs
 
@@ -64,6 +64,18 @@
 
 #### AdGuard for Safari
 - Mac App Store / iOS App Store.
+
+---
+
+## Real-world gotcha: The Manifest V3 trap
+
+Google's transition to **Manifest V3** in Chromium limits how extensions can inspect and modify network requests in real time.
+
+- **On Firefox**: Mozilla maintains full support for the `webRequest` API. uBlock Origin operates at 100% capability, including advanced scriptlet injection and CNAME uncloaking.
+- **On Brave**: Built-in Brave Shields operate at the browser engine level (Rust-based), completely bypassing Manifest V3 limits.
+- **On Google Chrome / Edge**: Full uBlock Origin is phased out. You must use **uBlock Origin Lite**, which relies on static declarative rules and cannot execute complex dynamic filtering.
+
+If content blocking matters to you, stop using Google Chrome as your daily browser.
 
 ---
 

@@ -31,8 +31,8 @@
 
 ### What it does not do
 - A VPN protects network transit; it does not make you anonymous against browser fingerprinting (Tor Browser is needed for anonymity).
-- Paid only (flat €5/mo); does not have a perpetual free tier.
-- Port forwarding is disabled.
+- Paid only (flat €5/mo); does not offer a free tier (use Proton VPN Free if you have zero budget).
+- **Port forwarding is permanently disabled**: Mullvad removed inbound port forwarding to stop abuse.
 
 ---
 
@@ -50,11 +50,11 @@ echo "deb [signed-by=/usr/share/keyrings/mullvad-keyring.asc arch=$(dpkg --print
 sudo apt update && sudo apt install mullvad-vpn
 ```
 
-### <img src="../../assets/logos/windows.svg" width="18" height="18" alt="Windows"> Windows & macOS
+### <img src="../../assets/logos/windows.svg" width="18" height="18" alt="Windows"> Windows & <img src="../../assets/logos/macos.svg" width="18" height="18" alt="macOS"> macOS
 - **Windows:** Download `.exe` from https://mullvad.net/download (or `winget install MullvadVPN.MullvadVPN`).
 - **macOS:** Download `.pkg` from https://mullvad.net/download (or `brew install --cask mullvadvpn`).
 
-### <img src="../../assets/logos/android.svg" width="18" height="18" alt="Android"> Android & iOS
+### <img src="../../assets/logos/android.svg" width="18" height="18" alt="Android"> Android & <img src="../../assets/logos/ios.svg" width="18" height="18" alt="iOS"> iOS
 - **Android:** https://play.google.com/store/apps/details?id=net.mullvad.mullvadvpn (or F-Droid / GitHub APK)
 - **iOS:** https://apps.apple.com/app/mullvad-vpn/id1488466513
 
@@ -70,7 +70,7 @@ sudo apt update && sudo apt install mullvad-vpn
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
 | Need a free tier to protect basic Wi-Fi browsing | Mullvad is paid-only (€5/mo) | <img src="../../assets/logos/protonvpn.svg" width="16" height="16" alt="Proton VPN"> **Proton VPN Free** | Yes | All major | Don’t stay on free tier if you need custom server locations or P2P/streaming |
-| Prefer a commercial provider with dynamic multi-hop and port options | Feature or jurisdiction preference | <img src="../../assets/logos/wireguard.svg" width="16" height="16" alt="IVPN"> **IVPN** | Yes | All major | Don’t switch without a concrete need |
+| Need inbound port forwarding for torrent seeding or server hosting | Mullvad removed port forwarding to mitigate abusive hosting | <img src="../../assets/logos/wireguard.svg" width="16" height="16" alt="IVPN"> **IVPN** | Yes | All major | Don’t switch without an explicit need for inbound port mapping |
 | Need a dedicated static IP on your own VPS | Commercial VPN shares egress IPs with other users | <img src="../../assets/logos/wireguard.svg" width="16" height="16" alt="WireGuard"> **WireGuard (Self-Hosted)** | Yes | Linux VPS | Don’t self-host if you need multi-country geo-unblocking |
 
 ### Alternative installs
@@ -78,11 +78,19 @@ sudo apt update && sudo apt install mullvad-vpn
 #### Proton VPN Free
 - Website: https://protonvpn.com/download — create free Proton account → install app.
 
-#### IVPN
+#### IVPN (With Port Forwarding Support)
 - Website: https://www.ivpn.net/apps/
 
 #### WireGuard (Self-Host)
 - Official guide: https://www.wireguard.com/install/
+
+---
+
+## Real-world gotcha: The port forwarding trade-off
+
+If you run a home media server, seed Linux ISO torrents, or host game servers behind your VPN, note that **Mullvad does not support port forwarding**. They discontinued the feature across all servers in 2023.
+
+If you need open inbound ports, switch to **IVPN** or deploy your own **WireGuard** endpoint on a cheap VPS where you control the firewall rules directly.
 
 ---
 
@@ -104,6 +112,6 @@ sudo apt update && sudo apt install mullvad-vpn
 ```text
 Default privacy VPN                 →  Mullvad VPN
 Reliable zero-cost tier              →  Proton VPN Free
-Alternative audited VPN              →  IVPN
+Port forwarding / alternative VPN    →  IVPN
 Self-hosted single VPS tunnel        →  WireGuard
 ```

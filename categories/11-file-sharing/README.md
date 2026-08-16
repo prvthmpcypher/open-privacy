@@ -31,14 +31,14 @@
 
 ### What it does not do
 - Both computers must be online at the same time for the transfer to complete.
-- Transfer speed is limited by Tor network relay speeds.
+- Transfer speed is limited by Tor relay bandwidth (not suitable for multi-gigabyte video libraries).
 - Recipient must be able to open `.onion` links.
 
 ---
 
 ## Install guide (primary)
 
-### <img src="../../assets/logos/windows.svg" width="18" height="18" alt="Windows"> Windows & macOS
+### <img src="../../assets/logos/windows.svg" width="18" height="18" alt="Windows"> Windows & <img src="../../assets/logos/macos.svg" width="18" height="18" alt="macOS"> macOS
 - **Windows:** Download `.msi` from https://onionshare.org/download/ (or `winget install MicahLee.OnionShare`).
 - **macOS:** Download `.dmg` from https://onionshare.org/download/ (or `brew install --cask onionshare`).
 
@@ -59,20 +59,28 @@ Or via distro packages: `sudo apt install onionshare` / `sudo dnf install onions
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Recipient cannot install Tor Browser; need simple clearnet HTTPS link | OnionShare `.onion` URLs require Tor | <img src="../../assets/logos/onionshare.svg" width="16" height="16" alt="Send"> **Send (timvisee fork)** | Yes | Web · Docker | Don’t switch if sender/recipient anonymity is mandatory |
-| Transferring files terminal-to-terminal between technical users | Tor routing has overhead for large local transfers | <img src="../../assets/logos/onionshare.svg" width="16" height="16" alt="Magic Wormhole"> **Magic Wormhole** | Yes | CLI (Linux/Win/Mac) | Don’t switch if recipient needs a simple graphical web interface |
-| Need continuous folder sync rather than one-off transfers | OnionShare is an ephemeral transfer tool | **Syncthing** (see cloud category) | Yes | All major | Don’t use Syncthing for one-off sends to external contacts |
+| Recipient is on iOS or cannot install Tor Browser | OnionShare `.onion` URLs require a Tor-capable client | <img src="../../assets/logos/onionshare.svg" width="16" height="16" alt="Send"> **Send (timvisee fork)** | Yes | Web · Docker | Don’t switch if sender/recipient network anonymity is mandatory |
+| Transferring large files (>1 GB) quickly terminal-to-terminal | Tor routing creates bandwidth bottlenecks for huge files | <img src="../../assets/logos/onionshare.svg" width="16" height="16" alt="Magic Wormhole"> **Magic Wormhole** | Yes | CLI (Linux/Win/Mac) | Don’t switch if recipient needs a simple graphical web interface |
+| Need continuous folder sync rather than one-off transfers | OnionShare is an ephemeral transfer tool | <img src="../../assets/logos/syncthing.svg" width="16" height="16" alt="Syncthing"> **Syncthing** | Yes | All major | Don’t use Syncthing for one-off sends to external contacts |
 
 ### Alternative installs
 
 #### Send (timvisee / Firefox Send Fork)
 - Official repo: https://github.com/timvisee/send
-- Web instances or self-hosted Docker container.
+- Public web instances or self-hosted Docker container.
 
 #### Magic Wormhole (Terminal P2P Transfer)
 - Install: `pip install magic-wormhole` or `sudo apt install magic-wormhole`
 - Send: `wormhole send filename.zip`
 - Receive: `wormhole receive <code>`
+
+---
+
+## Real-world gotcha: The Tor speed & iOS bottleneck
+
+OnionShare is unbeatable when you need zero third-party traces. But understand the limits:
+1. **Large Files**: Because data hops through multiple Tor relays, sending a 5 GB video can be painfully slow and connection drops require restarting. Use **Magic Wormhole** for big direct transfers.
+2. **iOS Recipients**: Apple's App Store restrictions make running OnionShare on iOS practically impossible. If sending to an iPhone user who cannot use Tor, send an encrypted link via **Send (timvisee)** or put the file in a password-protected **Proton Drive** folder.
 
 ---
 

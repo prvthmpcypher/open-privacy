@@ -83,6 +83,19 @@ Privacy Payments & Cards     →  Cash & Monero (Alt: Privacy.com)
 
 ---
 
+## Real-World Edge Cases & Gotchas
+
+Before switching your entire stack, read these practical reality checks:
+
+1. **The Chrome Manifest V3 Trap**: Google is phasing out Manifest V2 in Chrome and Edge. Full uBlock Origin will stop working on Chrome. If you want wide-spectrum ad/tracker blocking, switch to **Firefox** or **Brave**. On Chrome, you are restricted to **uBlock Origin Lite**.
+2. **Banking Apps & Play Integrity**: GrapheneOS runs Sandboxed Google Play Services, passing basic device integrity checks. But a small number of strict banking apps require hardware key attestation (`MEETS_STRONG_INTEGRITY`) and will fail. Check app compatibility or keep a secondary device before wiping your phone.
+3. **Self-Hosted Email Deliverability**: Setting up a mail server on a VPS is easy; getting Gmail and Outlook to accept your outbound emails is hard. Cloud VPS IP ranges are heavily blacklisted. For personal email, use hosted zero-access providers like **Proton Mail** or **Tuta Mail**.
+4. **Desktop Proton Mail on Free Plans**: Proton encrypts data client-side, meaning standard IMAP in Thunderbird requires a paid Proton Bridge subscription. On free plans, use Proton's official desktop apps for Linux, Windows, and macOS instead.
+5. **Mullvad Port Forwarding**: Mullvad removed port forwarding in 2023. If you need open inbound ports for torrent seeding or home server hosting, use **IVPN** or deploy your own **WireGuard** VPS.
+6. **OnionShare Speeds**: Routing large multi-gigabyte files through Tor relays is slow and iOS lacks native OnionShare support. For big files or iPhone recipients, use **Send (timvisee)** or **Magic Wormhole**.
+
+---
+
 ## How to Use This Repository
 
 1. **Pick the category** you want to fix today.

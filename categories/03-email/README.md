@@ -2,7 +2,7 @@
 
 > Open Privacy · v0.2 · August 2026 · Poorvith M P  
 > Category ID: `03-email`  
-> Replaces: Gmail (default ad profile), Outlook / Yahoo
+> Replaces: Gmail (ad profiling), Outlook / Yahoo
 
 ---
 
@@ -23,16 +23,16 @@
 | **Payment notes** | Card, PayPal, Bitcoin, Cash |
 
 ### Why this is the one pick
-1. Zero-access encryption protects inbox data at rest; Proton cannot read your stored emails.
+1. Zero-access encryption protects your inbox at rest; Proton cannot read your stored emails.
 2. End-to-end encryption between Proton users and PGP interoperability with external contacts.
 3. Official standalone desktop apps for Windows, macOS, and Linux alongside full mobile apps.
 4. Based in Switzerland under Swiss privacy laws outside US/EU 14-Eyes surveillance agreements.
 5. Ecosystem integration with Proton Calendar, Drive, and SimpleLogin aliasing.
 
 ### What it does not do
-- Standard IMAP/SMTP requires Proton Bridge (paid plan) because webmail cryptography handles decryption client-side.
-- Free tier has storage limits and single custom domain restriction.
-- Email metadata (subject lines, recipient addresses, timestamps) is not end-to-end encrypted under standard SMTP protocols.
+- Standard IMAP/SMTP requires Proton Bridge (paid plan) because client-side cryptography handles decryption. **Gotcha**: If you are on the free tier, use the official Proton desktop app instead of trying to configure Thunderbird.
+- Free tier has storage limits (1 GB) and a single email address.
+- Email headers (subject lines, recipient addresses, timestamps) are not end-to-end encrypted under standard SMTP protocols.
 
 ---
 
@@ -64,8 +64,8 @@
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
 | Want post-quantum encryption and non-Swiss jurisdiction | Prefer German jurisdiction and Tuta's post-quantum protocol (TutaCrypt) | <img src="../../assets/logos/tuta.svg" width="16" height="16" alt="Tuta"> **Tuta Mail** | Yes | All major | Don’t switch if you depend on PGP or standard desktop IMAP clients |
-| Need full self-hosted email on your own domain | Hosted providers still hold encrypted blobs | **Stalwart or Mailcow** | Yes | Linux VPS | Don’t self-host mail unless you can maintain DNS, PTR, DKIM, and deliverability |
-| Need standard IMAP on a free account | Proton Bridge requires a paid Proton tier | **Tuta Mail or self-hosted** | Yes | All major | Don’t leave Proton if web/desktop client workflow is sufficient |
+| Need full self-hosted email on your own domain | Hosted providers still hold encrypted blobs | <img src="../../assets/logos/protonmail.svg" width="16" height="16" alt="Stalwart"> **Stalwart** or Mailcow | Yes | Linux VPS | Don’t self-host mail unless you can maintain DNS, PTR, DKIM, and deliverability |
+| Need standard IMAP on a free account | Proton Bridge requires a paid Proton tier | <img src="../../assets/logos/tuta.svg" width="16" height="16" alt="Tuta"> **Tuta Mail** or self-hosted | Yes | All major | Don’t leave Proton if web/desktop client workflow is sufficient |
 
 ### Alternative installs
 
@@ -77,6 +77,14 @@
 
 #### Mailcow
 - https://mailcow.github.io/mailcow-dockerized-docs/ — Dockerized email suite for Linux servers.
+
+---
+
+## Real-world gotcha: The self-hosted deliverability trap
+
+If you decide to self-host with Stalwart or Mailcow, understand the catch: **outbound email deliverability is heavily gatekept**. 
+
+Major providers (Gmail, Microsoft Outlook, Yahoo) frequently discard or spam-folder emails coming from cloud VPS IP ranges (DigitalOcean, Hetzner, Linode) even when your SPF, DKIM, DMARC, and reverse DNS (PTR) records are completely valid. Unless you are willing to warm up an IP address, monitor blacklists, and handle postmaster rejections, stick to hosted zero-access providers like Proton or Tuta for personal correspondence.
 
 ---
 
