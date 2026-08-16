@@ -53,8 +53,8 @@
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Browser forces Manifest V3 (Google Chrome / Edge) | Full uBlock Origin requires the declarative webRequest API | **uBlock Origin Lite** | Yes | Chromium (MV3) | Don’t switch away from full uBlock Origin if you are on Firefox or Brave |
-| Already using Brave Browser with native Rust ad blocker | Brave Shields provides built-in blocking without extensions | **Brave Shields (Built-in)** | Yes | All major | Don’t add extra extension bloat if built-in Shields satisfy your blocking needs |
+| Browser forces Manifest V3 (Google Chrome / Edge) | Full uBlock Origin requires the declarative webRequest API | <img src="../../assets/logos/ublockorigin.svg" width="16" height="16" alt="uBO Lite"> **uBlock Origin Lite** | Yes | Chromium (MV3) | Don’t switch away from full uBlock Origin if you are on Firefox or Brave |
+| Already using Brave Browser with native Rust ad blocker | Brave Shields provides built-in blocking without extensions | <img src="../../assets/logos/brave.svg" width="16" height="16" alt="Brave Shields"> **Brave Shields (Built-in)** | Yes | All major | Don’t add extra extension bloat if built-in Shields satisfy your blocking needs |
 | iOS Safari user seeking native WebKit content blocking | iOS Safari requires native Content Blocker APIs | **AdGuard for Safari** or **Brave iOS** | Open Source | iOS · macOS | Don’t switch on desktop where full uBlock Origin provides superior filtering |
 
 ### Alternative installs

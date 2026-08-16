@@ -18,7 +18,7 @@
 | **Open source?** | **Yes** (AGPL 3.0) |
 | **Local / self-host?** | **Yes** — clients operate locally; server can be self-hosted |
 | **Target audience** | Everyday users who want automatic, end-to-end encrypted photo and video backup |
-| **Platforms** | Android · iOS · Linux · Windows · macOS · Web |
+| **Platforms** | <img src="../../assets/logos/android.svg" width="14" height="14" alt="Android"> Android · <img src="../../assets/logos/ios.svg" width="14" height="14" alt="iOS"> iOS · <img src="../../assets/logos/linux.svg" width="14" height="14" alt="Linux"> Linux · <img src="../../assets/logos/windows.svg" width="14" height="14" alt="Windows"> Windows · <img src="../../assets/logos/macos.svg" width="14" height="14" alt="macOS"> macOS · Web |
 | **Pricing** | Free trial (1 GB / 5 GB); paid plans from $3/month for 50 GB+ |
 | **Payment notes** | Card, PayPal, Crypto |
 
@@ -53,8 +53,8 @@
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Want a 100% self-hosted Google Photos replacement on your home server | Ente Photos is primarily a paid hosted service | **Immich** | Yes (AGPL 3.0) | Linux / Docker · Mobile | Don’t self-host without a multi-disk backup and RAID/NAS strategy |
-| Want to encrypt photo folders on existing standard cloud storage | Prefer encrypting raw files rather than a photo-specific app | **Cryptomator** | Yes | All major | Don’t switch if you want a dedicated photo gallery UI with timeline and search |
+| Want a 100% self-hosted Google Photos replacement on your home server | Ente Photos is primarily a paid hosted service | <img src="../../assets/logos/immich.svg" width="16" height="16" alt="Immich"> **Immich** | Yes (AGPL 3.0) | Linux / Docker · Mobile | Don’t self-host without a multi-disk backup and RAID/NAS strategy |
+| Want to encrypt photo folders on existing standard cloud storage | Prefer encrypting raw files rather than a photo-specific app | <img src="../../assets/logos/cryptomator.svg" width="16" height="16" alt="Cryptomator"> **Cryptomator** | Yes | All major | Don’t switch if you want a dedicated photo gallery UI with timeline and search |
 | Already using Proton Unlimited for storage | Do not want a separate subscription | **Proton Drive** (Photos tab) | Yes | All major | Don’t expect advanced face clustering or smart photo search |
 
 ### Alternative installs

@@ -18,7 +18,7 @@
 | **Open source?** | **No** — web service index is proprietary; client apps are open source |
 | **Local / self-host?** | **No** as a web index; SearXNG is the local self-host path |
 | **Target audience** | Everyday users who want an independent search index without profiling or user tracking |
-| **Platforms** | Web (any browser) · Android · iOS |
+| **Platforms** | Web (any browser) · <img src="../../assets/logos/android.svg" width="14" height="14" alt="Android"> Android · <img src="../../assets/logos/ios.svg" width="14" height="14" alt="iOS"> iOS |
 | **Pricing** | Free (ad-supported or optional ad-free subscription) |
 | **Payment notes** | N/A for free tier |
 
@@ -45,7 +45,7 @@
    - **In Firefox**: Settings → Search → Default Search Engine → Select **Brave**.
    - **In Chrome / Safari**: Visit https://search.brave.com/default and follow the one-click prompt.
 
-### Android / iOS
+### <img src="../../assets/logos/android.svg" width="18" height="18" alt="Android"> Android / iOS
 1. Use directly within your default mobile browser at https://search.brave.com.
 2. Or set as default search engine in your mobile browser settings.
 
@@ -55,9 +55,9 @@
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Want 100% self-hosted metasearch without telemetry | Brave Search is a hosted web service | **SearXNG** | Yes | Docker · Linux | Don’t self-host if you cannot maintain a server and proxy setup |
-| Prefer Google result quality without Google tracking | Brave index differs on niche technical queries | **Startpage** | No | Web | Don’t switch if you prefer an independent web index over Google syndication |
-| Want established brand with built-in email/app protection | Preference for DuckDuckGo ecosystem | **DuckDuckGo** | Partial | Web · Mobile | Don’t switch if independent web indexing is your top priority |
+| Want 100% self-hosted metasearch without telemetry | Brave Search is a hosted web service | <img src="../../assets/logos/brave-search.svg" width="16" height="16" alt="SearXNG"> **SearXNG** | Yes | Docker · Linux | Don’t self-host if you cannot maintain a server and proxy setup |
+| Prefer Google result quality without Google tracking | Brave index differs on niche technical queries | <img src="../../assets/logos/startpage.svg" width="16" height="16" alt="Startpage"> **Startpage** | No | Web | Don’t switch if you prefer an independent web index over Google syndication |
+| Want established brand with built-in email/app protection | Preference for DuckDuckGo ecosystem | <img src="../../assets/logos/duckduckgo.svg" width="16" height="16" alt="DuckDuckGo"> **DuckDuckGo** | Partial | Web · Mobile | Don’t switch if independent web indexing is your top priority |
 
 ### Alternative installs
 

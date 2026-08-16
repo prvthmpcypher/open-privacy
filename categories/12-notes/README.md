@@ -18,7 +18,7 @@
 | **Open source?** | **Yes** (AGPL 3.0) |
 | **Local / self-host?** | **Yes** — local SQLite database + your choice of encrypted sync target |
 | **Target audience** | Everyday users who want full control over their notes, checklists, and attachments |
-| **Platforms** | Linux · Windows · macOS · Android · iOS · CLI |
+| **Platforms** | <img src="../../assets/logos/linux.svg" width="14" height="14" alt="Linux"> Linux · <img src="../../assets/logos/windows.svg" width="14" height="14" alt="Windows"> Windows · <img src="../../assets/logos/macos.svg" width="14" height="14" alt="macOS"> macOS · <img src="../../assets/logos/android.svg" width="14" height="14" alt="Android"> Android · <img src="../../assets/logos/ios.svg" width="14" height="14" alt="iOS"> iOS · CLI |
 | **Pricing** | 100% Free (optional paid Joplin Cloud) |
 | **Payment notes** | N/A for self-hosted/local use |
 
@@ -60,9 +60,9 @@ wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Want zero sync setup with hosted 100% FOSS E2EE notes and modern UI | Joplin requires picking a sync target | **Notesnook** | Yes | All major | Don’t switch if you prefer keeping notes strictly in a local SQLite file |
+| Want zero sync setup with hosted 100% FOSS E2EE notes and modern UI | Joplin requires picking a sync target | <img src="../../assets/logos/notesnook.png" width="16" height="16" alt="Notesnook"> **Notesnook** | Yes | All major | Don’t switch if you prefer keeping notes strictly in a local SQLite file |
 | Want local plaintext `.md` files in folders without a database | Joplin stores notes in a local database | **Obsidian** (proprietary client) or **Logseq** (FOSS) | Partial / Yes | All major | Don’t switch if you want turnkey end-to-end encrypted mobile sync for free |
-| Already deep in the Proton ecosystem | Prefer keeping email, drive, and notes under one vendor (Note: Standard Notes acquired by Proton in 2024) | **Standard Notes** | Yes | All major | Don’t switch if you want Joplin’s open plugin ecosystem |
+| Already deep in the Proton ecosystem | Prefer keeping email, drive, and notes under one vendor (Note: Standard Notes acquired by Proton in 2024) | <img src="../../assets/logos/joplin.svg" width="16" height="16" alt="Standard Notes"> **Standard Notes** | Yes | All major | Don’t switch if you want Joplin’s open plugin ecosystem |
 
 ### Alternative installs
 

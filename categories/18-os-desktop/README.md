@@ -62,16 +62,16 @@ sudo dnf upgrade --refresh
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Need extreme security through virtual machine compartmentalization | Standard Linux shares one unified kernel across apps | **Qubes OS** | Yes | x86_64 Desktop | Don’t use Qubes on low-spec laptops or without virtualization expertise |
+| Need extreme security through virtual machine compartmentalization | Standard Linux shares one unified kernel across apps | <img src="../../assets/logos/fedora.svg" width="16" height="16" alt="Qubes OS"> **Qubes OS** | Yes | x86_64 Desktop | Don’t use Qubes on low-spec laptops or without virtualization expertise |
 | Must remain on Windows 11 for corporate software or gaming | Work constraints prevent bare-metal Linux | **Windows 11 (Hardened Privacy Script + Browser Isolation)** | No | x86_64 / ARM | Don’t expect true OS privacy from a proprietary closed-source kernel |
-| Prefer a traditional desktop UX with simple Debian-style packages | GNOME workflow feels unfamiliar | **Linux Mint** | Yes | x86_64 | Don’t switch if you want modern Wayland defaults and SELinux enforcement |
+| Prefer a traditional desktop UX with simple Debian-style packages | GNOME workflow feels unfamiliar | <img src="../../assets/logos/linuxmint.svg" width="16" height="16" alt="Linux Mint"> **Linux Mint** | Yes | x86_64 | Don’t switch if you want modern Wayland defaults and SELinux enforcement |
 
 ### Alternative installs
 
 #### Qubes OS (Compartmentalized Security)
 - Website: https://www.qubes-os.org/intro/
 
-#### Linux Mint (Cinnamon Edition)
+#### <img src="../../assets/logos/linux.svg" width="18" height="18" alt="Linux"> Linux Mint (Cinnamon Edition)
 - Website: https://linuxmint.com/download.php
 
 ---

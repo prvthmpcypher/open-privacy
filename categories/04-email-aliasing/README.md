@@ -18,7 +18,7 @@
 | **Open source?** | **Yes** (AGPL 3.0) |
 | **Local / self-host?** | **Yes** — self-hostable via Docker Compose |
 | **Target audience** | Users who want to protect their real email address from spam, data breaches, and cross-site tracking |
-| **Platforms** | Web · Browser Extensions · Android · iOS |
+| **Platforms** | Web · Browser Extensions · <img src="../../assets/logos/android.svg" width="14" height="14" alt="Android"> Android · <img src="../../assets/logos/ios.svg" width="14" height="14" alt="iOS"> iOS |
 | **Pricing** | Free tier (10 aliases); Premium included with Proton Unlimited |
 | **Payment notes** | Card, PayPal, Crypto |
 

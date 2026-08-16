@@ -18,7 +18,7 @@
 | **Open source?** | **Yes** (AGPL 3.0) |
 | **Local / self-host?** | **Yes** — clients operate locally; server can be self-hosted |
 | **Target audience** | Users who want end-to-end encrypted, multi-device 2FA code synchronization |
-| **Platforms** | Android · iOS · Linux · Windows · macOS · Web |
+| **Platforms** | <img src="../../assets/logos/android.svg" width="14" height="14" alt="Android"> Android · <img src="../../assets/logos/ios.svg" width="14" height="14" alt="iOS"> iOS · <img src="../../assets/logos/linux.svg" width="14" height="14" alt="Linux"> Linux · <img src="../../assets/logos/windows.svg" width="14" height="14" alt="Windows"> Windows · <img src="../../assets/logos/macos.svg" width="14" height="14" alt="macOS"> macOS · Web |
 | **Pricing** | 100% Free |
 | **Payment notes** | N/A |
 
@@ -61,9 +61,9 @@
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Want cross-platform FOSS TOTP without registering an Ente account | Prefer cloud backup via personal Google Drive / iCloud without a 3rd party account | **2FAS** | Yes | Android · iOS · Extension | Don’t switch if you need a native desktop client |
-| Android-only user wanting 100% offline local encrypted vault | Do not want any cloud sync code in the app | **Aegis Authenticator** | Yes | Android | Don’t switch if you need cross-device sync with an iPhone or PC |
-| Need maximum phishing resistance for high-value accounts | Software TOTP codes can still be phished on fake login pages | **YubiKey (FIDO2/WebAuthn)** | Hardware | All major | Don’t rely exclusively on hardware keys without registering a backup key |
+| Want cross-platform FOSS TOTP without registering an Ente account | Prefer cloud backup via personal Google Drive / iCloud without a 3rd party account | <img src="../../assets/logos/ente.svg" width="16" height="16" alt="2FAS"> **2FAS** | Yes | Android · iOS · Extension | Don’t switch if you need a native desktop client |
+| Android-only user wanting 100% offline local encrypted vault | Do not want any cloud sync code in the app | <img src="../../assets/logos/ente.svg" width="16" height="16" alt="Aegis"> **Aegis Authenticator** | Yes | Android | Don’t switch if you need cross-device sync with an iPhone or PC |
+| Need maximum phishing resistance for high-value accounts | Software TOTP codes can still be phished on fake login pages | <img src="../../assets/logos/yubikey.svg" width="16" height="16" alt="YubiKey"> **YubiKey (FIDO2/WebAuthn)** | Hardware | All major | Don’t rely exclusively on hardware keys without registering a backup key |
 
 ### Alternative installs
 

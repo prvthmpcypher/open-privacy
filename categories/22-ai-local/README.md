@@ -18,7 +18,7 @@
 | **Open source?** | **Yes** (MIT) |
 | **Local / self-host?** | **Yes** — runs 100% on your local CPU / GPU hardware |
 | **Target audience** | Users who want to run large language models privately on their own computer |
-| **Platforms** | Linux · macOS · Windows |
+| **Platforms** | <img src="../../assets/logos/linux.svg" width="14" height="14" alt="Linux"> Linux · <img src="../../assets/logos/macos.svg" width="14" height="14" alt="macOS"> macOS · <img src="../../assets/logos/windows.svg" width="14" height="14" alt="Windows"> Windows |
 | **Pricing** | 100% Free |
 | **Payment notes** | N/A |
 
@@ -37,12 +37,12 @@
 
 ## Install guide (primary)
 
-### Linux (One-Line Script)
+### <img src="../../assets/logos/linux.svg" width="18" height="18" alt="Linux"> Linux (One-Line Script)
 ```bash
 curl -fsSL https://ollama.com/install.sh | sh
 ```
 
-### Windows & macOS
+### <img src="../../assets/logos/windows.svg" width="18" height="18" alt="Windows"> Windows & macOS
 - **Windows:** Download `.exe` installer from https://ollama.com/download.
 - **macOS:** Download `.zip` application from https://ollama.com/download.
 
@@ -65,7 +65,7 @@ ollama run deepseek-coder-v2
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Want a ChatGPT-like web interface with document uploads (RAG) | Ollama is primarily a CLI / background daemon | **Open WebUI** | Yes (MIT) | Docker · Web | Don’t switch if you just want quick terminal generation |
+| Want a ChatGPT-like web interface with document uploads (RAG) | Ollama is primarily a CLI / background daemon | <img src="../../assets/logos/ollama.svg" width="16" height="16" alt="Open WebUI"> **Open WebUI** | Yes (MIT) | Docker · Web | Don’t switch if you just want quick terminal generation |
 | Prefer a standalone desktop GUI without Docker or terminal commands | Setting up Open WebUI requires Docker | **LM Studio** or **Jan** | Partial / Yes | Desktop (Win/Mac/Linux) | Don’t switch if you need a standard headless API server for other apps |
 | Running on very low-spec hardware without GPU acceleration | Heavy frameworks have memory overhead | **llama.cpp (Direct CLI)** | Yes | Any hardware | Don’t drop Ollama’s simple model management unless resource-constrained |
 

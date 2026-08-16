@@ -18,7 +18,7 @@
 | **Open source?** | **Yes** (GPL 3.0 Clients / AGPL 3.0 Server) |
 | **Local / self-host?** | **Yes** — official server or lightweight Vaultwarden |
 | **Target audience** | Everyone who needs secure, synced passwords across devices |
-| **Platforms** | Windows · macOS · Linux · Android · iOS · Browser Extensions · CLI |
+| **Platforms** | <img src="../../assets/logos/windows.svg" width="14" height="14" alt="Windows"> Windows · <img src="../../assets/logos/macos.svg" width="14" height="14" alt="macOS"> macOS · <img src="../../assets/logos/linux.svg" width="14" height="14" alt="Linux"> Linux · <img src="../../assets/logos/android.svg" width="14" height="14" alt="Android"> Android · <img src="../../assets/logos/ios.svg" width="14" height="14" alt="iOS"> iOS · Browser Extensions · CLI |
 | **Pricing** | Free tier (unlimited passwords & devices); Premium $10/year for TOTP/passkeys |
 | **Payment notes** | Card, PayPal, Bitcoin |
 
@@ -59,9 +59,9 @@
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Want 100% offline encrypted file storage without any cloud | Prefer keeping your vault exclusively in a `.kdbx` file | **KeePassXC** | Yes | Desktop · Mobile (via KeePassDX) | Don’t switch if you need effortless automatic sync across devices |
-| Want self-hosted backend compatible with Bitwarden apps | Official Bitwarden server is heavy (MSSQL) | **Vaultwarden** | Yes | Linux / Docker | Don’t self-host unless you manage your own automated encrypted backups |
-| Already deep in the Proton ecosystem | Prefer keeping email, drive, and passwords in one account | **Proton Pass** | Yes | All major | Don’t switch if you need enterprise organization sharing |
+| Want 100% offline encrypted file storage without any cloud | Prefer keeping your vault exclusively in a `.kdbx` file | <img src="../../assets/logos/keepassxc.svg" width="16" height="16" alt="KeePassXC"> **KeePassXC** | Yes | Desktop · Mobile (via KeePassDX) | Don’t switch if you need effortless automatic sync across devices |
+| Want self-hosted backend compatible with Bitwarden apps | Official Bitwarden server is heavy (MSSQL) | <img src="../../assets/logos/bitwarden.svg" width="16" height="16" alt="Vaultwarden"> **Vaultwarden** | Yes | Linux / Docker | Don’t self-host unless you manage your own automated encrypted backups |
+| Already deep in the Proton ecosystem | Prefer keeping email, drive, and passwords in one account | <img src="../../assets/logos/protonmail.svg" width="16" height="16" alt="Proton Pass"> **Proton Pass** | Yes | All major | Don’t switch if you need enterprise organization sharing |
 
 ### Alternative installs
 

@@ -18,7 +18,7 @@
 | **Open source?** | **Yes** (Client apps and cryptographic libraries) |
 | **Local / self-host?** | **No** as a hosted cloud; Nextcloud / Syncthing for self-host |
 | **Target audience** | Everyday users who want automatic end-to-end encrypted file sync and sharing |
-| **Platforms** | Windows · macOS · Android · iOS · Web |
+| **Platforms** | <img src="../../assets/logos/windows.svg" width="14" height="14" alt="Windows"> Windows · <img src="../../assets/logos/macos.svg" width="14" height="14" alt="macOS"> macOS · <img src="../../assets/logos/android.svg" width="14" height="14" alt="Android"> Android · <img src="../../assets/logos/ios.svg" width="14" height="14" alt="iOS"> iOS · Web |
 | **Pricing** | Free tier (up to 5 GB with tasks); paid tiers for 200 GB+ |
 | **Payment notes** | Card, PayPal, Bitcoin |
 
@@ -54,9 +54,9 @@
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Need a complete self-hosted private cloud on your server | Proton Drive is a managed commercial service | **Nextcloud** | Yes | Linux / Docker | Don’t self-host unless you can manage disk storage, backups, and updates |
-| Want continuous folder sync between your devices with zero cloud | Do not want third-party servers storing any data | **Syncthing** | Yes | All major | Don’t switch if you need public web link sharing for friends |
-| Want to encrypt files on your existing Google Drive or OneDrive | Already paying for cheap cloud storage | **Cryptomator** | Yes | All major | Don’t switch if you want a clean unified web interface |
+| Need a complete self-hosted private cloud on your server | Proton Drive is a managed commercial service | <img src="../../assets/logos/nextcloud.svg" width="16" height="16" alt="Nextcloud"> **Nextcloud** | Yes | Linux / Docker | Don’t self-host unless you can manage disk storage, backups, and updates |
+| Want continuous folder sync between your devices with zero cloud | Do not want third-party servers storing any data | <img src="../../assets/logos/syncthing.svg" width="16" height="16" alt="Syncthing"> **Syncthing** | Yes | All major | Don’t switch if you need public web link sharing for friends |
+| Want to encrypt files on your existing Google Drive or OneDrive | Already paying for cheap cloud storage | <img src="../../assets/logos/cryptomator.svg" width="16" height="16" alt="Cryptomator"> **Cryptomator** | Yes | All major | Don’t switch if you want a clean unified web interface |
 
 ### Alternative installs
 

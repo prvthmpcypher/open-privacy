@@ -53,7 +53,7 @@
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Need merchant-locked virtual cards for online shopping (US) | Physical cash cannot pay for online SaaS or e-commerce | **Privacy.com** | No (Proprietary) | Web · Browser Extension (US only) | Don’t use if outside the US (use your local bank’s virtual card feature instead) |
+| Need merchant-locked virtual cards for online shopping (US) | Physical cash cannot pay for online SaaS or e-commerce | <img src="../../assets/logos/monero.svg" width="16" height="16" alt="Privacy.com"> **Privacy.com** | No (Proprietary) | Web · Browser Extension (US only) | Don’t use if outside the US (use your local bank’s virtual card feature instead) |
 | Need true cryptographic financial privacy and unlinkability online | Credit cards and bank rails identify sender and recipient | **Monero (XMR)** via **Cake Wallet** | Yes (GPL 3.0 / BSD) | All major | Don’t switch if you cannot manage seed phrases or merchant doesn't accept XMR |
 | Outside the US and need card protection without third-party fintech | Privacy.com is unavailable in your region | **Bank-Generated Virtual Cards / Disposable CVV** | Varies | Banking Apps | Don’t leave your card details saved in merchant databases |
 

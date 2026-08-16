@@ -18,7 +18,7 @@
 | **Open source?** | **Yes** (Client apps and cryptographic libraries) |
 | **Local / self-host?** | **No** as a hosted service; Nextcloud CalDAV for self-host |
 | **Target audience** | Everyday users who want zero-access encrypted schedules and contacts |
-| **Platforms** | Web · Android · iOS |
+| **Platforms** | Web · <img src="../../assets/logos/android.svg" width="14" height="14" alt="Android"> Android · <img src="../../assets/logos/ios.svg" width="14" height="14" alt="iOS"> iOS |
 | **Pricing** | Free tier included with Proton account |
 | **Payment notes** | N/A for free tier |
 
@@ -50,9 +50,9 @@
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Need standard CalDAV/CardDAV server on your private hardware | Proton uses custom zero-access crypto rather than standard CalDAV | **Nextcloud Calendar/Contacts** | Yes | Linux / Docker | Don’t self-host unless you manage your own server backups |
-| Prefer the German Tuta encrypted ecosystem | Standardizing on Tuta Mail rather than Proton | **Tuta Calendar** | Yes | All major | Don’t switch if you already use Proton Mail |
-| Need a 100% offline desktop calendar and address book | Do not want your calendar synced to any cloud | **Thunderbird (Local Calendar)** | Yes | Linux · Windows · macOS | Don’t switch if you need real-time sync with a mobile phone |
+| Need standard CalDAV/CardDAV server on your private hardware | Proton uses custom zero-access crypto rather than standard CalDAV | <img src="../../assets/logos/nextcloud.svg" width="16" height="16" alt="Nextcloud"> **Nextcloud Calendar/Contacts** | Yes | Linux / Docker | Don’t self-host unless you manage your own server backups |
+| Prefer the German Tuta encrypted ecosystem | Standardizing on Tuta Mail rather than Proton | <img src="../../assets/logos/tuta.svg" width="16" height="16" alt="Tuta"> **Tuta Calendar** | Yes | All major | Don’t switch if you already use Proton Mail |
+| Need a 100% offline desktop calendar and address book | Do not want your calendar synced to any cloud | <img src="../../assets/logos/thunderbird.svg" width="16" height="16" alt="Thunderbird"> **Thunderbird (Local Calendar)** | Yes | Linux · Windows · macOS | Don’t switch if you need real-time sync with a mobile phone |
 
 ### Alternative installs
 

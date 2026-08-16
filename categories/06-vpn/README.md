@@ -18,7 +18,7 @@
 | **Open source?** | **Yes** (GPL 3.0 Apps) |
 | **Local / self-host?** | **No** as a multi-country VPN service; WireGuard on a VPS for self-host |
 | **Target audience** | Users who want a strict no-logs VPN with zero personal identifying information required |
-| **Platforms** | Windows · macOS · Linux · Android · iOS · Routers |
+| **Platforms** | <img src="../../assets/logos/windows.svg" width="14" height="14" alt="Windows"> Windows · <img src="../../assets/logos/macos.svg" width="14" height="14" alt="macOS"> macOS · <img src="../../assets/logos/linux.svg" width="14" height="14" alt="Linux"> Linux · <img src="../../assets/logos/android.svg" width="14" height="14" alt="Android"> Android · <img src="../../assets/logos/ios.svg" width="14" height="14" alt="iOS"> iOS · Routers |
 | **Pricing** | Flat €5 / month |
 | **Payment notes** | Cash (by mail), Monero, Bitcoin, Credit Card, PayPal |
 
@@ -43,18 +43,18 @@
 2. Save your 16-digit account number in your password manager.
 3. Add time via cash, crypto, or card.
 
-### Linux (Debian, Ubuntu)
+### <img src="../../assets/logos/linux.svg" width="18" height="18" alt="Linux"> Linux (Debian, Ubuntu)
 ```bash
 sudo curl -fsSLo /usr/share/keyrings/mullvad-keyring.asc https://repository.mullvad.net/deb/mullvad-keyring.asc
 echo "deb [signed-by=/usr/share/keyrings/mullvad-keyring.asc arch=$(dpkg --print-architecture)] https://repository.mullvad.net/deb/stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/mullvad.list
 sudo apt update && sudo apt install mullvad-vpn
 ```
 
-### Windows & macOS
+### <img src="../../assets/logos/windows.svg" width="18" height="18" alt="Windows"> Windows & macOS
 - **Windows:** Download `.exe` from https://mullvad.net/download (or `winget install MullvadVPN.MullvadVPN`).
 - **macOS:** Download `.pkg` from https://mullvad.net/download (or `brew install --cask mullvadvpn`).
 
-### Android & iOS
+### <img src="../../assets/logos/android.svg" width="18" height="18" alt="Android"> Android & iOS
 - **Android:** https://play.google.com/store/apps/details?id=net.mullvad.mullvadvpn (or F-Droid / GitHub APK)
 - **iOS:** https://apps.apple.com/app/mullvad-vpn/id1488466513
 
@@ -69,9 +69,9 @@ sudo apt update && sudo apt install mullvad-vpn
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Need a free tier to protect basic Wi-Fi browsing | Mullvad is paid-only (€5/mo) | **Proton VPN Free** | Yes | All major | Don’t stay on free tier if you need custom server locations or P2P/streaming |
-| Prefer a commercial provider with dynamic multi-hop and port options | Feature or jurisdiction preference | **IVPN** | Yes | All major | Don’t switch without a concrete need |
-| Need a dedicated static IP on your own VPS | Commercial VPN shares egress IPs with other users | **WireGuard (Self-Hosted)** | Yes | Linux VPS | Don’t self-host if you need multi-country geo-unblocking |
+| Need a free tier to protect basic Wi-Fi browsing | Mullvad is paid-only (€5/mo) | <img src="../../assets/logos/protonvpn.svg" width="16" height="16" alt="Proton VPN"> **Proton VPN Free** | Yes | All major | Don’t stay on free tier if you need custom server locations or P2P/streaming |
+| Prefer a commercial provider with dynamic multi-hop and port options | Feature or jurisdiction preference | <img src="../../assets/logos/wireguard.svg" width="16" height="16" alt="IVPN"> **IVPN** | Yes | All major | Don’t switch without a concrete need |
+| Need a dedicated static IP on your own VPS | Commercial VPN shares egress IPs with other users | <img src="../../assets/logos/wireguard.svg" width="16" height="16" alt="WireGuard"> **WireGuard (Self-Hosted)** | Yes | Linux VPS | Don’t self-host if you need multi-country geo-unblocking |
 
 ### Alternative installs
 

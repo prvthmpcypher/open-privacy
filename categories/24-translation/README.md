@@ -18,7 +18,7 @@
 | **Open source?** | **Yes** (MPL 2.0 / Bergamot project) |
 | **Local / self-host?** | **Yes** — neural machine translation models run 100% locally in your browser engine |
 | **Target audience** | Everyday web users who want full-page and text translations without sending text to Google servers |
-| **Platforms** | Firefox Desktop · Firefox Android (Native Feature) |
+| **Platforms** | Firefox Desktop · Firefox <img src="../../assets/logos/android.svg" width="14" height="14" alt="Android"> Android (Native Feature) |
 | **Pricing** | 100% Free |
 | **Payment notes** | N/A |
 
@@ -54,8 +54,8 @@
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Need a self-hosted translation API for external apps and servers | Firefox Translations is built into the browser UI | **LibreTranslate** | Yes (AGPL 3.0) | Docker · Python API | Don’t deploy a local API server if you only need browser page translation |
-| Require highest linguistic translation quality for professional documents | On-device models have smaller parameter counts | **DeepL (Web/Desktop)** | No | All major | Don’t send sensitive unencrypted personal text to proprietary cloud translation |
+| Need a self-hosted translation API for external apps and servers | Firefox Translations is built into the browser UI | <img src="../../assets/logos/firefox.svg" width="16" height="16" alt="LibreTranslate"> **LibreTranslate** | Yes (AGPL 3.0) | Docker · Python API | Don’t deploy a local API server if you only need browser page translation |
+| Require highest linguistic translation quality for professional documents | On-device models have smaller parameter counts | <img src="../../assets/logos/deepl.svg" width="16" height="16" alt="DeepL"> **DeepL (Web/Desktop)** | No | All major | Don’t send sensitive unencrypted personal text to proprietary cloud translation |
 | Browsing outside Firefox (Brave, Chrome, Safari) | Native translation is built into the Gecko engine | **LibreTranslate Web UI / SimplyTranslate** | Yes | Web | Don’t switch if you can use Firefox for reading foreign language websites |
 
 ### Alternative installs

@@ -18,7 +18,7 @@
 | **Open source?** | **Service** — Swiss non-profit foundation operating recursive DNS |
 | **Local / self-host?** | **No** as a global anycast service; Unbound / Pi-hole for local path |
 | **Target audience** | Everyday users who want secure, malware-blocking DNS resolution without an account |
-| **Platforms** | Any OS via network settings · Routers · Android Private DNS |
+| **Platforms** | Any OS via network settings · Routers · <img src="../../assets/logos/android.svg" width="14" height="14" alt="Android"> Android Private DNS |
 | **Pricing** | 100% Free |
 | **Payment notes** | N/A |
 
@@ -47,24 +47,24 @@
 - **DoT Endpoint:** `dns.quad9.net` (Port 853)
 - **Android Private DNS Hostname:** `dns.quad9.net`
 
-### Android (Private DNS)
+### <img src="../../assets/logos/android.svg" width="18" height="18" alt="Android"> Android (Private DNS)
 1. Open **Settings** → **Network & Internet** (or **Connections**).
 2. Tap **Private DNS** → Select **Private DNS provider hostname**.
 3. Enter `dns.quad9.net` and tap **Save**.
 
-### Windows 11 / 10
+### <img src="../../assets/logos/windows.svg" width="18" height="18" alt="Windows"> Windows 11 / 10
 1. Settings → Network & Internet → Advanced network settings → Network adapters → Click your connection → Edit DNS.
 2. Set IPv4 to **Manual**:
    - Preferred DNS: `9.9.9.9` (Set DNS over HTTPS to **On (automatic template)**).
    - Alternate DNS: `149.112.112.112`.
 3. Save and flush cache in terminal: `ipconfig /flushdns`.
 
-### macOS
+### <img src="../../assets/logos/macos.svg" width="18" height="18" alt="macOS"> macOS
 1. System Settings → Network → Select active connection (Wi-Fi or Ethernet) → Details → **DNS**.
 2. Click `+` and add `9.9.9.9` and `149.112.112.112`.
 3. Click **OK** → **Apply**.
 
-### Linux
+### <img src="../../assets/logos/linux.svg" width="18" height="18" alt="Linux"> Linux
 Set in NetworkManager or `/etc/systemd/resolved.conf`:
 ```ini
 [Resolve]
@@ -78,9 +78,9 @@ DNSOverTLS=yes
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Want custom blocklists, parental controls, and query analytics | Quad9 is a fixed public resolver | **NextDNS** | Partial | All major | Don’t switch if you want a zero-account setup |
-| Want fully local recursive resolution without upstream trust | Public DNS requires trusting an external resolver | **Unbound** | Yes | Linux · Self-Host | Don’t run Unbound if you cannot maintain recursive cache updates |
-| Want whole-home ad and tracker blocking on your LAN | DNS resolution alone does not block in-app telemetry | **Pi-hole** | Yes | Linux / Raspberry Pi | Don’t deploy Pi-hole on a machine that doesn't stay online 24/7 |
+| Want custom blocklists, parental controls, and query analytics | Quad9 is a fixed public resolver | <img src="../../assets/logos/quad9.svg" width="16" height="16" alt="NextDNS"> **NextDNS** | Partial | All major | Don’t switch if you want a zero-account setup |
+| Want fully local recursive resolution without upstream trust | Public DNS requires trusting an external resolver | <img src="../../assets/logos/pihole.svg" width="16" height="16" alt="Unbound"> **Unbound** | Yes | Linux · Self-Host | Don’t run Unbound if you cannot maintain recursive cache updates |
+| Want whole-home ad and tracker blocking on your LAN | DNS resolution alone does not block in-app telemetry | <img src="../../assets/logos/pihole.svg" width="16" height="16" alt="Pi-hole"> **Pi-hole** | Yes | Linux / Raspberry Pi | Don’t deploy Pi-hole on a machine that doesn't stay online 24/7 |
 
 ### Alternative installs
 

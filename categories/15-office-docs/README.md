@@ -18,7 +18,7 @@
 | **Open source?** | **Yes** (MPL 2.0) |
 | **Local / self-host?** | **Yes** — runs 100% offline on your computer |
 | **Target audience** | Everyday users who want full-featured word processing, spreadsheets, and presentations without cloud telemetry |
-| **Platforms** | Linux · Windows · macOS |
+| **Platforms** | <img src="../../assets/logos/linux.svg" width="14" height="14" alt="Linux"> Linux · <img src="../../assets/logos/windows.svg" width="14" height="14" alt="Windows"> Windows · <img src="../../assets/logos/macos.svg" width="14" height="14" alt="macOS"> macOS |
 | **Pricing** | 100% Free |
 | **Payment notes** | N/A |
 
@@ -38,11 +38,11 @@
 
 ## Install guide (primary)
 
-### Windows & macOS
+### <img src="../../assets/logos/windows.svg" width="18" height="18" alt="Windows"> Windows & macOS
 - **Windows:** `winget install TheDocumentFoundation.LibreOffice` (or download MSI from https://www.libreoffice.org/download/download-libreoffice/).
 - **macOS:** `brew install --cask libreoffice` (or download DMG from https://www.libreoffice.org/download/download-libreoffice/).
 
-### Linux
+### <img src="../../assets/logos/linux.svg" width="18" height="18" alt="Linux"> Linux
 - **Debian / Ubuntu / Mint:** `sudo apt install libreoffice`
 - **Fedora / RHEL:** `sudo dnf install libreoffice`
 - **Arch Linux:** `sudo pacman -S libreoffice-fresh`
@@ -58,8 +58,8 @@
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Need real-time browser collaboration with zero-knowledge encryption | LibreOffice is an offline desktop program | **CryptPad** | Yes | Web · Docker | Don’t switch if you need complex desktop desktop publishing tools |
-| Require pixel-perfect Microsoft Office layout compatibility | Extreme DOCX/XLSX formatting quirks | **OnlyOffice** | Yes (Community) | Desktop · Web · Self-Host | Don’t switch if standard ODF workflows work for your team |
+| Need real-time browser collaboration with zero-knowledge encryption | LibreOffice is an offline desktop program | <img src="../../assets/logos/libreoffice.svg" width="16" height="16" alt="CryptPad"> **CryptPad** | Yes | Web · Docker | Don’t switch if you need complex desktop desktop publishing tools |
+| Require pixel-perfect Microsoft Office layout compatibility | Extreme DOCX/XLSX formatting quirks | <img src="../../assets/logos/onlyoffice.svg" width="16" height="16" alt="OnlyOffice"> **OnlyOffice** | Yes (Community) | Desktop · Web · Self-Host | Don’t switch if standard ODF workflows work for your team |
 | Just need quick notes and checklists rather than formal office files | Full office suite is heavy for quick thoughts | **Joplin** (see `12-notes`) | Yes | All major | Don’t replace office suites when formal documents are required |
 
 ### Alternative installs

@@ -18,7 +18,7 @@
 | **Open source?** | **Yes** (Apache 2.0) |
 | **Local / self-host?** | **Yes** — official Docker Compose stack |
 | **Target audience** | Groups and teams who need instant, browser-based video meetings without requiring an account |
-| **Platforms** | Web · Android · iOS · Self-Host |
+| **Platforms** | Web · <img src="../../assets/logos/android.svg" width="14" height="14" alt="Android"> Android · <img src="../../assets/logos/ios.svg" width="14" height="14" alt="iOS"> iOS · Self-Host |
 | **Pricing** | 100% Free public instance; self-host costs are your VPS |
 | **Payment notes** | N/A |
 
@@ -53,8 +53,8 @@
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Need mobile-first 1:1 and small group encrypted voice/video calls with family | Jitsi is room-based rather than contact-based | **Signal Group Calls** | Yes | All major | Don’t switch if participants don’t have Signal accounts |
-| Need a complete decentralized team workspace with persistent rooms and calls | Jitsi is focused on standalone meetings | **Element Call (Matrix)** | Yes | All major | Don’t deploy Matrix if you just need quick one-off video links |
+| Need mobile-first 1:1 and small group encrypted voice/video calls with family | Jitsi is room-based rather than contact-based | <img src="../../assets/logos/signal.svg" width="16" height="16" alt="Signal"> **Signal Group Calls** | Yes | All major | Don’t switch if participants don’t have Signal accounts |
+| Need a complete decentralized team workspace with persistent rooms and calls | Jitsi is focused on standalone meetings | <img src="../../assets/logos/element.svg" width="16" height="16" alt="Element Call"> **Element Call (Matrix)** | Yes | All major | Don’t deploy Matrix if you just need quick one-off video links |
 | Corporate requirement mandates Zoom | Workplace policy restricts open-source web conferencing | **Zoom (Least Privilege Mode)** | No | All major | Don’t use Zoom for private personal communication |
 
 ### Alternative installs

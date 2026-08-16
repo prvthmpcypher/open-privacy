@@ -18,7 +18,7 @@
 | **Open source?** | **Yes** (GPL 3.0) |
 | **Local / self-host?** | **Yes** — runs directly on your computer over the Tor network |
 | **Target audience** | Anyone needing anonymous, unblockable, peer-to-peer file sending and receiving |
-| **Platforms** | Windows · macOS · Linux · CLI |
+| **Platforms** | <img src="../../assets/logos/windows.svg" width="14" height="14" alt="Windows"> Windows · <img src="../../assets/logos/macos.svg" width="14" height="14" alt="macOS"> macOS · <img src="../../assets/logos/linux.svg" width="14" height="14" alt="Linux"> Linux · CLI |
 | **Pricing** | 100% Free |
 | **Payment notes** | N/A |
 
@@ -38,11 +38,11 @@
 
 ## Install guide (primary)
 
-### Windows & macOS
+### <img src="../../assets/logos/windows.svg" width="18" height="18" alt="Windows"> Windows & macOS
 - **Windows:** Download `.msi` from https://onionshare.org/download/ (or `winget install MicahLee.OnionShare`).
 - **macOS:** Download `.dmg` from https://onionshare.org/download/ (or `brew install --cask onionshare`).
 
-### Linux
+### <img src="../../assets/logos/linux.svg" width="18" height="18" alt="Linux"> Linux
 ```bash
 flatpak install flathub org.onionshare.OnionShare
 ```
@@ -59,8 +59,8 @@ Or via distro packages: `sudo apt install onionshare` / `sudo dnf install onions
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Recipient cannot install Tor Browser; need simple clearnet HTTPS link | OnionShare `.onion` URLs require Tor | **Send (timvisee fork)** | Yes | Web · Docker | Don’t switch if sender/recipient anonymity is mandatory |
-| Transferring files terminal-to-terminal between technical users | Tor routing has overhead for large local transfers | **Magic Wormhole** | Yes | CLI (Linux/Win/Mac) | Don’t switch if recipient needs a simple graphical web interface |
+| Recipient cannot install Tor Browser; need simple clearnet HTTPS link | OnionShare `.onion` URLs require Tor | <img src="../../assets/logos/onionshare.svg" width="16" height="16" alt="Send"> **Send (timvisee fork)** | Yes | Web · Docker | Don’t switch if sender/recipient anonymity is mandatory |
+| Transferring files terminal-to-terminal between technical users | Tor routing has overhead for large local transfers | <img src="../../assets/logos/onionshare.svg" width="16" height="16" alt="Magic Wormhole"> **Magic Wormhole** | Yes | CLI (Linux/Win/Mac) | Don’t switch if recipient needs a simple graphical web interface |
 | Need continuous folder sync rather than one-off transfers | OnionShare is an ephemeral transfer tool | **Syncthing** (see cloud category) | Yes | All major | Don’t use Syncthing for one-off sends to external contacts |
 
 ### Alternative installs

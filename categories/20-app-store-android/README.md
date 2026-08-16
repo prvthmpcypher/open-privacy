@@ -18,7 +18,7 @@
 | **Open source?** | **Yes** (GPL 3.0) |
 | **Local / self-host?** | **Yes** — client and repository can be self-hosted |
 | **Target audience** | Android users seeking free, open-source applications built directly from source |
-| **Platforms** | Android |
+| **Platforms** | <img src="../../assets/logos/android.svg" width="14" height="14" alt="Android"> Android |
 | **Pricing** | 100% Free |
 | **Payment notes** | N/A |
 
@@ -53,8 +53,8 @@
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
 | Need proprietary apps only published on Google Play (banking, transit) | F-Droid only carries open-source software | **Aurora Store** (Google Play Front-end) | Yes | Android | Don’t use Aurora Store with your personal Google account (use anonymous session) |
-| Want instant APK updates directly from developer GitHub / GitLab releases | F-Droid build servers can take days to compile new releases | **Obtainium** | Yes | Android | Don’t switch if you prefer centralized curation over managing individual release feeds |
-| Want modern signed APK updates with cryptographic developer signatures | F-Droid signs packages with its own server build key | **Accrescent** | Yes | Android | Don’t switch if your required apps are only indexed on standard F-Droid |
+| Want instant APK updates directly from developer GitHub / GitLab releases | F-Droid build servers can take days to compile new releases | <img src="../../assets/logos/fdroid.svg" width="16" height="16" alt="Obtainium"> **Obtainium** | Yes | Android | Don’t switch if you prefer centralized curation over managing individual release feeds |
+| Want modern signed APK updates with cryptographic developer signatures | F-Droid signs packages with its own server build key | <img src="../../assets/logos/fdroid.svg" width="16" height="16" alt="Accrescent"> **Accrescent** | Yes | Android | Don’t switch if your required apps are only indexed on standard F-Droid |
 
 ### Alternative installs
 

@@ -18,7 +18,7 @@
 | **Open source?** | **Yes** (Client apps and cryptography libraries are open source) |
 | **Local / self-host?** | **No** as a hosted service; Stalwart / Mailcow for local self-host |
 | **Target audience** | Everyday users who want zero-access encrypted email without running a mail server |
-| **Platforms** | Web · Windows · macOS · Linux · Android · iOS |
+| **Platforms** | Web · <img src="../../assets/logos/windows.svg" width="14" height="14" alt="Windows"> Windows · <img src="../../assets/logos/macos.svg" width="14" height="14" alt="macOS"> macOS · <img src="../../assets/logos/linux.svg" width="14" height="14" alt="Linux"> Linux · <img src="../../assets/logos/android.svg" width="14" height="14" alt="Android"> Android · <img src="../../assets/logos/ios.svg" width="14" height="14" alt="iOS"> iOS |
 | **Pricing** | Free tier (1 GB storage); paid tiers for custom domains and expanded storage |
 | **Payment notes** | Card, PayPal, Bitcoin, Cash |
 
@@ -45,11 +45,11 @@
    - **macOS:** Download `.dmg` installer.
    - **Linux:** Download `.deb` or `.rpm` packages from Proton.
 
-### Android
+### <img src="../../assets/logos/android.svg" width="18" height="18" alt="Android"> Android
 1. Install from Google Play: https://play.google.com/store/apps/details?id=ch.protonmail.android
 2. Or download official APK directly from Proton's website or F-Droid APK repos.
 
-### iOS
+### <img src="../../assets/logos/ios.svg" width="18" height="18" alt="iOS"> iOS
 1. Install from the App Store: https://apps.apple.com/app/proton-mail-encrypted-email/id979659489
 
 ### First-run checklist
@@ -63,7 +63,7 @@
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Want post-quantum encryption and non-Swiss jurisdiction | Prefer German jurisdiction and Tuta's post-quantum protocol (TutaCrypt) | **Tuta Mail** | Yes | All major | Don’t switch if you depend on PGP or standard desktop IMAP clients |
+| Want post-quantum encryption and non-Swiss jurisdiction | Prefer German jurisdiction and Tuta's post-quantum protocol (TutaCrypt) | <img src="../../assets/logos/tuta.svg" width="16" height="16" alt="Tuta"> **Tuta Mail** | Yes | All major | Don’t switch if you depend on PGP or standard desktop IMAP clients |
 | Need full self-hosted email on your own domain | Hosted providers still hold encrypted blobs | **Stalwart or Mailcow** | Yes | Linux VPS | Don’t self-host mail unless you can maintain DNS, PTR, DKIM, and deliverability |
 | Need standard IMAP on a free account | Proton Bridge requires a paid Proton tier | **Tuta Mail or self-hosted** | Yes | All major | Don’t leave Proton if web/desktop client workflow is sufficient |
 

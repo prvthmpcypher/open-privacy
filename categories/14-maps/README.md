@@ -18,7 +18,7 @@
 | **Open source?** | **Yes** (Apache 2.0) |
 | **Local / self-host?** | **Yes** — runs 100% offline from local map packages on your device |
 | **Target audience** | Drivers, hikers, cyclists, and pedestrians who want turn-by-turn navigation with zero telemetry |
-| **Platforms** | Android · iOS · Linux (experimental) |
+| **Platforms** | <img src="../../assets/logos/android.svg" width="14" height="14" alt="Android"> Android · <img src="../../assets/logos/ios.svg" width="14" height="14" alt="iOS"> iOS · <img src="../../assets/logos/linux.svg" width="14" height="14" alt="Linux"> Linux (experimental) |
 | **Pricing** | 100% Free (crowdfunded) |
 | **Payment notes** | N/A |
 
@@ -38,12 +38,12 @@
 
 ## Install guide (primary)
 
-### Android
+### <img src="../../assets/logos/android.svg" width="18" height="18" alt="Android"> Android
 - **F-Droid:** https://f-droid.org/packages/app.organicmaps/
 - **Google Play:** https://play.google.com/store/apps/details?id=app.organicmaps
 - **Direct APK:** https://github.com/organicmaps/organicmaps/releases
 
-### iOS
+### <img src="../../assets/logos/ios.svg" width="18" height="18" alt="iOS"> iOS
 - **App Store:** https://apps.apple.com/app/organic-maps-offline-hiking/id1567437057
 
 ### First-run checklist
@@ -57,9 +57,9 @@
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Need rich topographic contours, nautical charts, GPX recording, and advanced GIS layers | Organic Maps is designed for simplicity | **OsmAnd** | Yes (GPL 3.0) | Android · iOS | Don’t switch if you just want simple, fast driving or walking directions |
-| Need turn-by-turn navigation in an existing Apple ecosystem with live traffic | Prefer Apple’s built-in platform privacy over OpenStreetMap | **Apple Maps** | No | iOS · macOS | Don’t switch if you need cross-platform Android or Linux support |
-| Need a quick web browser map without installing an app | Organic Maps is a mobile app | **OpenStreetMap.org** | Yes | Web | Don’t use web maps for turn-by-turn driving navigation |
+| Need rich topographic contours, nautical charts, GPX recording, and advanced GIS layers | Organic Maps is designed for simplicity | <img src="../../assets/logos/organicmaps.svg" width="16" height="16" alt="OsmAnd"> **OsmAnd** | Yes (GPL 3.0) | Android · iOS | Don’t switch if you just want simple, fast driving or walking directions |
+| Need turn-by-turn navigation in an existing Apple ecosystem with live traffic | Prefer Apple’s built-in platform privacy over OpenStreetMap | <img src="../../assets/logos/apple.svg" width="16" height="16" alt="Apple Maps"> **Apple Maps** | No | iOS · macOS | Don’t switch if you need cross-platform Android or Linux support |
+| Need a quick web browser map without installing an app | Organic Maps is a mobile app | <img src="../../assets/logos/openstreetmap.svg" width="16" height="16" alt="OpenStreetMap"> **OpenStreetMap.org** | Yes | Web | Don’t use web maps for turn-by-turn driving navigation |
 
 ### Alternative installs
 

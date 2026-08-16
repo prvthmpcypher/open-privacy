@@ -62,9 +62,9 @@
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Do not own a supported Pixel device (using Fairphone, Motorola, or SHIFTphone) | GrapheneOS hardware support is Pixel-exclusive | **CalyxOS** | Yes | Fairphone · select Motorola · SHIFTphone 8 · Pixels | Don’t choose CalyxOS on a Pixel where GrapheneOS provides strictly superior security |
+| Do not own a supported Pixel device (using Fairphone, Motorola, or SHIFTphone) | GrapheneOS hardware support is Pixel-exclusive | <img src="../../assets/logos/grapheneos.svg" width="16" height="16" alt="CalyxOS"> **CalyxOS** | Yes | Fairphone · select Motorola · SHIFTphone 8 · Pixels | Don’t choose CalyxOS on a Pixel where GrapheneOS provides strictly superior security |
 | Must remain on an iPhone for personal/work ecosystem | Hardware constraints prevent moving to Android | **iOS + Lockdown Mode + Privacy Hardening** | No | iPhone (iOS) | Don’t expect true de-Googling/de-Apple on a closed iOS operating system |
-| Older legacy Android device unsupported by GrapheneOS or CalyxOS | Older hardware lacks modern hardware security chips | **LineageOS for microG** | Yes | Broad device catalog | Don’t use legacy LineageOS on devices without security patch maintenance unless unavoidable |
+| Older legacy Android device unsupported by GrapheneOS or CalyxOS | Older hardware lacks modern hardware security chips | <img src="../../assets/logos/android.svg" width="16" height="16" alt="LineageOS"> **LineageOS for microG** | Yes | Broad device catalog | Don’t use legacy LineageOS on devices without security patch maintenance unless unavoidable |
 
 ### Alternative installs
 

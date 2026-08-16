@@ -18,7 +18,7 @@
 | **Open source?** | **Yes** (MIT) |
 | **Local / self-host?** | **Yes** — lightweight Docker container with PostgreSQL |
 | **Target audience** | Website owners and developers who need clean, GDPR-compliant analytics without cookies |
-| **Platforms** | Linux · Docker · Node.js · Cloud hosted available |
+| **Platforms** | <img src="../../assets/logos/linux.svg" width="14" height="14" alt="Linux"> Linux · Docker · Node.js · Cloud hosted available |
 | **Pricing** | 100% Free self-hosted; optional paid cloud tier |
 | **Payment notes** | N/A for self-hosted |
 
@@ -85,9 +85,9 @@ Log in at `http://localhost:3000` (Default credentials: `admin` / `umami` — ch
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Want zero server maintenance with hosted EU cloud | Prefer not running your own Docker infrastructure | **Plausible Cloud** | Partial | Cloud | Don’t switch if you want 100% free self-hosting on your own VPS |
-| Need ultra-light single-binary Go analytics with SQLite | Umami requires PostgreSQL and Node/Docker | **GoatCounter** | Yes (EUPL) | Single Binary · Web | Don’t switch if you want a rich graphical dashboard with custom event tracking |
-| Need enterprise feature depth and heatmaps | Umami focuses on essential traffic metrics | **Matomo** | Yes | PHP / MySQL | Don’t deploy Matomo if you want a modern, lightweight, non-resource-heavy dashboard |
+| Want zero server maintenance with hosted EU cloud | Prefer not running your own Docker infrastructure | <img src="../../assets/logos/plausible.svg" width="16" height="16" alt="Plausible"> **Plausible Cloud** | Partial | Cloud | Don’t switch if you want 100% free self-hosting on your own VPS |
+| Need ultra-light single-binary Go analytics with SQLite | Umami requires PostgreSQL and Node/Docker | <img src="../../assets/logos/umami.svg" width="16" height="16" alt="GoatCounter"> **GoatCounter** | Yes (EUPL) | Single Binary · Web | Don’t switch if you want a rich graphical dashboard with custom event tracking |
+| Need enterprise feature depth and heatmaps | Umami focuses on essential traffic metrics | <img src="../../assets/logos/matomo.svg" width="16" height="16" alt="Matomo"> **Matomo** | Yes | PHP / MySQL | Don’t deploy Matomo if you want a modern, lightweight, non-resource-heavy dashboard |
 
 ### Alternative installs
 
