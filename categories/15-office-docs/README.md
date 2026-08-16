@@ -1,73 +1,56 @@
 # Office / Docs
 
-> Open Privacy · v0.1 · July 2026 · Poorvith M P  
+> Open Privacy · v0.2 · August 2026 · Poorvith M P  
 > Category ID: `15-office-docs`  
-> Replaces: Google Docs / Microsoft 365 cloud defaults
+> Replaces: Google Docs & Microsoft 365 cloud telemetry
 
 ---
 
 ## Primary recommendation
+
+<img src="../../assets/logos/libreoffice.svg" width="36" height="36" alt="LibreOffice Logo">
 
 | Field | Value |
 |---|---|
 | **Name** | LibreOffice |
 | **Website** | https://www.libreoffice.org |
 | **Source / repo** | https://www.libreoffice.org/about-us/source-code/ |
-| **Open source?** | **Yes** (MPL) |
-| **Local / self-host?** | **Yes** — fully local desktop suite |
-| **Target audience** | Users who want offline office docs without cloud lock-in |
-| **Platforms** | Windows · macOS · Linux |
-| **Pricing** | Free |
+| **Open source?** | **Yes** (MPL 2.0) |
+| **Local / self-host?** | **Yes** — runs 100% offline on your computer |
+| **Target audience** | Everyday users who want full-featured word processing, spreadsheets, and presentations without cloud telemetry |
+| **Platforms** | Linux · Windows · macOS |
+| **Pricing** | 100% Free |
 | **Payment notes** | N/A |
 
 ### Why this is the one pick
-1. Mature full office suite, fully open source.
-2. Works offline by default.
-3. Broad file compatibility for daily documents.
-4. No account required.
-5. Standard privacy-preserving replacement for cloud suites.
+1. Full-featured, mature desktop office suite (Writer, Calc, Impress, Draw, Math).
+2. Works 100% offline with zero cloud phone-home or AI data harvesting.
+3. Native OpenDocument Format (ODF: `.odt`, `.ods`, `.odp`) standards along with Microsoft Office (`.docx`, `.xlsx`, `.pptx`) compatibility.
+4. No account creation, subscription fees, or license keys required.
+5. Backed by The Document Foundation non-profit.
 
 ### What it does not do
-- Real-time multiplayer collab is weaker than Google Docs.
-- Mobile editing is not the main strength.
-- Complex corporate macros may differ from Microsoft Office.
+- Does not offer native real-time multi-user browser collaboration (use CryptPad for that).
+- Mobile editing experience is minimal compared to desktop.
+- Complex enterprise VBA macros may require adjustments.
 
 ---
 
 ## Install guide (primary)
 
-### Download hubs
-- https://www.libreoffice.org/download/download-libreoffice/
-
-### Windows
-1. Download Windows installer from the LibreOffice download page.
-2. Run installer → next through defaults (or customize components).
-3. Open Writer/Calc/Impress and set as default for ODF if desired.
-
-### macOS
-1. Download macOS DMG from LibreOffice download page.
-2. Drag LibreOffice to Applications.
-3. First launch may require Gatekeeper approval.
+### Windows & macOS
+- **Windows:** `winget install TheDocumentFoundation.LibreOffice` (or download MSI from https://www.libreoffice.org/download/download-libreoffice/).
+- **macOS:** `brew install --cask libreoffice` (or download DMG from https://www.libreoffice.org/download/download-libreoffice/).
 
 ### Linux
-1. Prefer distro packages: e.g. `sudo apt install libreoffice` or use official packages from libreoffice.org.
-2. Launch from app menu.
-3. Install language packs if needed.
-
-### Android
-1. LibreOffice is desktop-first; for mobile viewing use Collabora Office / compatible apps if needed.
-2. Prefer editing on desktop for complex docs.
-3. Avoid random “LibreOffice” mobile clones.
-
-### iOS
-1. No full official LibreOffice iOS suite as primary workflow.
-2. Use desktop LibreOffice + private cloud sync for files.
-3. For mobile collab catch path, use CryptPad in browser.
+- **Debian / Ubuntu / Mint:** `sudo apt install libreoffice`
+- **Fedora / RHEL:** `sudo dnf install libreoffice`
+- **Arch Linux:** `sudo pacman -S libreoffice-fresh`
+- **Flatpak:** `flatpak install flathub org.libreoffice.LibreOffice`
 
 ### First-run checklist
-1. Default to ODF formats for archival.
-2. Export PDF when sharing outward.
-3. Disable auto-fetch of untrusted remote resources in documents when possible.
+1. Open Writer → Tools → Options → LibreOffice → Security → Check **Remove personal info on saving**.
+2. Set default document format to ODF or standard DOCX/XLSX depending on your collaborators.
 
 ---
 
@@ -75,22 +58,18 @@
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Need browser-based collaborative editing | LibreOffice is desktop-local | **CryptPad** | Yes | Web · self-host | Don’t use if offline desktop suite is enough |
-| Need Microsoft-format fidelity in enterprises | Complex DOCX/XLSX edge cases | **OnlyOffice** | Yes (community) | Desktop · self-host · web | Don’t switch if ODF workflow works |
-| Need mobile-first notes/docs lightly | Suite is heavy | **Joplin** (see notes category) | Yes | All major | Don’t replace full office suite with notes app for formal documents |
+| Need real-time browser collaboration with zero-knowledge encryption | LibreOffice is an offline desktop program | **CryptPad** | Yes | Web · Docker | Don’t switch if you need complex desktop desktop publishing tools |
+| Require pixel-perfect Microsoft Office layout compatibility | Extreme DOCX/XLSX formatting quirks | **OnlyOffice** | Yes (Community) | Desktop · Web · Self-Host | Don’t switch if standard ODF workflows work for your team |
+| Just need quick notes and checklists rather than formal office files | Full office suite is heavy for quick thoughts | **Joplin** (see `12-notes`) | Yes | All major | Don’t replace office suites when formal documents are required |
 
 ### Alternative installs
 
-#### CryptPad
-- Hosted or self-host: https://cryptpad.org
-- Self-host docs on CryptPad project site/GitHub
+#### CryptPad (E2EE Collaborative Suite)
+- Website: https://cryptpad.org
+- Self-host via Docker: https://github.com/cryptpad/cryptpad
 
-#### OnlyOffice
-- https://www.onlyoffice.com/download-desktop.aspx
-- Docs server self-host options on onlyoffice.com
-
-#### Joplin
-- https://joplinapp.org/download/
+#### OnlyOffice Desktop Editors
+- Website: https://www.onlyoffice.com/download-desktop.aspx
 
 ---
 
@@ -98,15 +77,12 @@
 
 | Field | Value |
 |---|---|
-| **Name** | LibreOffice (already local) |
-| **Repo** | https://www.libreoffice.org/about-us/source-code/ |
-| **What local means** | Documents stay on your machine unless you sync them |
-| **Who it’s for** | Everyone who can run a desktop OS |
+| **Name** | LibreOffice (Native Desktop Suite) |
+| **Repo** | https://github.com/LibreOffice/core |
+| **What local means** | Files remain strictly on your local disk unless you explicitly share them |
+| **Who it’s for** | Everyone writing documents, managing spreadsheets, or creating slide decks |
 | **Ops burden** | Low |
-| **When primary still wins** | Primary is already local FOSS |
-
-### Local install
-- Use libreoffice.org download page for Windows/macOS/Linux
+| **When primary still wins** | Primary is already the open-source local standard |
 
 ---
 
@@ -114,6 +90,7 @@
 
 ```text
 Default offline office suite         →  LibreOffice
-Private browser collab               →  CryptPad
-MS-format + self-host collab         →  OnlyOffice
+E2EE real-time browser collaboration →  CryptPad
+High Microsoft Office compatibility  →  OnlyOffice
+Lightweight notes and markdown       →  Joplin
 ```

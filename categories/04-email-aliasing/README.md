@@ -1,73 +1,52 @@
 # Email Aliasing
 
-> Open Privacy · v0.1 · July 2026 · Poorvith M P  
+> Open Privacy · v0.2 · August 2026 · Poorvith M P  
 > Category ID: `04-email-aliasing`  
-> Replaces: Using one real inbox address on every website
+> Replaces: Giving your real primary email to every newsletter, website, and app
 
 ---
 
 ## Primary recommendation
+
+<img src="../../assets/logos/simplelogin.svg" width="36" height="36" alt="SimpleLogin Logo">
 
 | Field | Value |
 |---|---|
 | **Name** | SimpleLogin |
 | **Website** | https://simplelogin.io |
 | **Source / repo** | https://github.com/simple-login/app |
-| **Open source?** | **Yes** (AGPL) — self-hostable; hosted service available |
-| **Local / self-host?** | **Yes** |
-| **Target audience** | Anyone reducing spam, breaches, and cross-site email correlation |
-| **Platforms** | Web · browser extensions · mobile apps · self-host |
-| **Pricing** | Free tier + paid |
-| **Payment notes** | Card on hosted service |
+| **Open source?** | **Yes** (AGPL 3.0) |
+| **Local / self-host?** | **Yes** — self-hostable via Docker Compose |
+| **Target audience** | Users who want to protect their real email address from spam, data breaches, and cross-site tracking |
+| **Platforms** | Web · Browser Extensions · Android · iOS |
+| **Pricing** | Free tier (10 aliases); Premium included with Proton Unlimited |
+| **Payment notes** | Card, PayPal, Crypto |
 
 ### Why this is the one pick
-1. Purpose-built aliasing with open-source server.
-2. Unique addresses per site are easy.
-3. Browser extensions speed signups.
-4. Can self-host later without changing the model.
-5. Strong identity-hygiene tool alongside a private mailbox.
+1. Open-source backend and client extensions.
+2. Supports PGP encryption of forwarded emails so relay servers cannot read forwarded payloads.
+3. Deep integration into Proton ecosystem (Proton Pass alias generator).
+4. Enables reverse-aliasing: you can reply to forwarded emails without exposing your real address.
+5. Self-hostable with standard Docker Compose recipes.
 
 ### What it does not do
-- Still forwards to a real mailbox you must secure.
-- Hosted free tiers have limits.
-- Aliases do not encrypt the destination provider.
+- Does not replace your primary inbox; it acts as a forwarding proxy shield in front of it.
+- Free tier is limited to 10 active aliases without custom domain support.
 
 ---
 
 ## Install guide (primary)
 
-### Download hubs
-- https://simplelogin.io
-- Docs: https://simplelogin.io/docs/
+### Setup & Extensions
+1. Register at https://simplelogin.io (or connect via your Proton account).
+2. Install the browser extension:
+   - **Firefox Add-on:** https://addons.mozilla.org/en-US/firefox/addon/simplelogin/
+   - **Chrome / Brave Extension:** https://chromewebstore.google.com/detail/simplelogin/dphilobhebphkdjbpfohgikllaljmgbn
+3. Click the extension icon on any signup form to generate a unique forwarding alias.
 
-### Windows
-1. Create a SimpleLogin account at https://simplelogin.io
-2. Connect forwarding to your real mailbox (Proton Mail recommended).
-3. Install the browser extension from SimpleLogin’s extension links.
-4. Create an alias and test receive/reply.
-
-### macOS
-1. Same account setup as Windows.
-2. Install browser extension for your browser.
-3. Optional: install mobile apps for on-the-go aliases.
-
-### Linux
-1. Use web app + Firefox/Chromium extension.
-2. For self-host, follow https://github.com/simple-login/app on a Linux VPS.
-
-### Android
-1. Install SimpleLogin Android app via links on https://simplelogin.io
-2. Sign in → create alias → use share sheet on signups.
-
-### iOS
-1. Install SimpleLogin iOS app from App Store (link from simplelogin.io).
-2. Enable share/autofill permissions if prompted.
-3. Generate a new alias before each signup.
-
-### First-run checklist
-1. Stop using your root address on new sites.
-2. Enable 2FA on SimpleLogin and the destination mailbox.
-3. Name aliases by site for easy disable-later.
+### Mobile Apps
+- **Android:** https://play.google.com/store/apps/details?id=io.simplelogin.android (or F-Droid / GitHub APK)
+- **iOS:** https://apps.apple.com/app/simplelogin-protect-email/id1494051017
 
 ---
 
@@ -75,22 +54,17 @@
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Already deep in Proton ecosystem | Prefer fewer vendors | **Proton Pass hide-my-email** | Partial | Proton apps | Don’t fragment if SimpleLogin already works |
-| Want alternative hosted FOSS aliasing vendor | Preference/pricing | **addy.io** | Yes | Web · self-host | Don’t migrate without exporting alias map |
-| Cannot rely on third-party SaaS | Hosted alias provider is another party | **Self-hosted SimpleLogin** | Yes | Linux server | Don’t self-host without backups |
+| Want an independent non-Proton FOSS aliasing service | Prefer independent hosting outside the Proton umbrella | **addy.io** (formerly AnonAddy) | Yes | Web · Extension · Self-Host | Don’t switch if you already use Proton Unlimited |
+| Already using Proton Pass and want integrated aliases | No need for a separate SimpleLogin web login | **Proton Pass built-in aliases** | Yes | All major | Don’t switch if you need complex regex routing or advanced alias sharing rules |
+| Cannot trust third-party relay servers | Forwarding metadata passes through external infrastructure | **Self-hosted SimpleLogin** | Yes | Linux VPS | Don’t self-host unless you manage your own mail domain and SPF/DKIM records |
 
 ### Alternative installs
 
-#### Proton Pass hide-my-email
-- https://proton.me/pass — create hide-my-email aliases in Proton Pass apps/web
-
 #### addy.io
-- Hosted: https://addy.io
-- Self-host via project docs/GitHub
+- Website: https://addy.io — create account → install browser extension.
 
-#### Self-hosted SimpleLogin
-- https://github.com/simple-login/app — Docker/self-host README
-- Configure DNS as required
+#### Self-Hosted SimpleLogin
+- Follow official Docker guide: https://github.com/simple-login/app#self-hosting
 
 ---
 
@@ -98,24 +72,20 @@
 
 | Field | Value |
 |---|---|
-| **Name** | Self-hosted SimpleLogin |
+| **Name** | SimpleLogin (Self-Hosted) |
 | **Repo** | https://github.com/simple-login/app |
-| **What local means** | You run the aliasing service |
-| **Who it’s for** | Users with a domain and VPS |
-| **Ops burden** | Medium–High |
-| **When primary still wins** | Hosted SimpleLogin is fine |
-
-### Local install
-- **Linux:** SimpleLogin self-hosting README/Docker
-- **Clients:** same web/extensions against your domain
+| **What local means** | Aliasing and forwarding service hosted on your own server |
+| **Who it’s for** | Users with their own domain and VPS infrastructure |
+| **Ops burden** | Medium |
+| **When primary still wins** | You want zero maintenance and instant alias creation |
 
 ---
 
 ## Quick decision box
 
 ```text
-Default aliasing                     →  SimpleLogin
-Proton-only stack                    →  Proton hide-my-email
-Alt hosted FOSS                      →  addy.io
-Full control                         →  Self-hosted SimpleLogin
+Default email aliasing               →  SimpleLogin
+Independent FOSS alternative         →  addy.io
+Built into password manager          →  Proton Pass
+Self-hosted aliasing                 →  SimpleLogin Docker
 ```

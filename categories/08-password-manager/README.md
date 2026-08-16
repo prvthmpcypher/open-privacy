@@ -1,70 +1,57 @@
 # Password Manager
 
-> Open Privacy · v0.1 · July 2026 · Poorvith M P  
+> Open Privacy · v0.2 · August 2026 · Poorvith M P  
 > Category ID: `08-password-manager`  
-> Replaces: Browser-only password saving; reused passwords
+> Replaces: Reusing passwords across sites, browser password stores, plaintext notes
 
 ---
 
 ## Primary recommendation
+
+<img src="../../assets/logos/bitwarden.svg" width="36" height="36" alt="Bitwarden Logo">
 
 | Field | Value |
 |---|---|
 | **Name** | Bitwarden |
 | **Website** | https://bitwarden.com |
 | **Source / repo** | https://github.com/bitwarden |
-| **Open source?** | **Yes** — clients open source; hosted cloud optional |
-| **Local / self-host?** | **Yes** via Vaultwarden/official server |
-| **Target audience** | Everyone who needs cross-device passwords and passkeys |
-| **Platforms** | Windows · macOS · Linux · Android · iOS · Web · extensions |
-| **Pricing** | Free tier + paid |
-| **Payment notes** | Card on hosted |
+| **Open source?** | **Yes** (GPL 3.0 Clients / AGPL 3.0 Server) |
+| **Local / self-host?** | **Yes** — official server or lightweight Vaultwarden |
+| **Target audience** | Everyone who needs secure, synced passwords across devices |
+| **Platforms** | Windows · macOS · Linux · Android · iOS · Browser Extensions · CLI |
+| **Pricing** | Free tier (unlimited passwords & devices); Premium $10/year for TOTP/passkeys |
+| **Payment notes** | Card, PayPal, Bitcoin |
 
 ### Why this is the one pick
-1. Open-source clients with polished multi-platform apps.
-2. Easy sync for everyday users.
-3. Browser extensions and modern passkey support.
-4. Self-host path available later.
-5. Strong default across privacy communities.
+1. 100% open-source client applications and audited zero-knowledge encryption (AES-256 / XChaCha20-Poly1305).
+2. Unlimited passwords synced across unlimited devices on the free tier.
+3. Cross-platform support covering desktop, mobile, all major browser extensions, and a powerful CLI.
+4. Passkey storage and hardware security key support (FIDO2/WebAuthn).
+5. Easy migration path to self-hosted Vaultwarden with zero client changes.
 
 ### What it does not do
-- Hosted vault means trusting the provider (mitigate with strong master password + 2FA).
-- Losing the master password can mean losing the vault.
+- Free tier does not include integrated TOTP authenticator generation (upgrade to Premium or use `09-2fa-authenticator`).
+- Cloud sync relies on Bitwarden infrastructure unless you self-host Vaultwarden.
 
 ---
 
 ## Install guide (primary)
 
-### Download hubs
-- https://bitwarden.com/download/
+### Account Setup & Desktop
+1. Create a free account at https://bitwarden.com.
+2. Choose a strong, memorable Master Password (never lose this).
+3. Download apps from https://bitwarden.com/download/:
+   - **Windows:** `winget install Bitwarden.Bitwarden` or direct installer.
+   - **macOS:** `brew install --cask bitwarden` or Mac App Store.
+   - **Linux:** `flatpak install com.bitwarden.desktop` or `.deb` / `.rpm` / AppImage.
 
-### Windows
-1. Create an account at https://bitwarden.com
-2. Download Windows app from https://bitwarden.com/download/
-3. Install browser extension from the same page.
-4. Use a strong master password; enable 2FA.
+### Browser Extensions
+- Install official extension from Firefox Add-ons, Chrome Web Store, or Safari.
+- Enable auto-fill on page load in extension settings.
 
-### macOS
-1. Download macOS app + browser extension from https://bitwarden.com/download/
-2. Sign in; allow autofill permissions if prompted.
-
-### Linux
-1. Download package options from https://bitwarden.com/download/
-2. Install app + browser extension.
-3. Sign in and test autofill.
-
-### Android
-1. Install Bitwarden from the store link on the download page.
-2. Enable Autofill service → Bitwarden in Android settings.
-
-### iOS
-1. Install Bitwarden from the App Store.
-2. Settings → Passwords → AutoFill Passwords → enable Bitwarden.
-
-### First-run checklist
-1. Create a long unique master password; keep an offline backup of it.
-2. Enable 2FA on Bitwarden.
-3. Change reused passwords starting with email and banking.
+### Mobile
+- **Android:** https://play.google.com/store/apps/details?id=com.x8bit.bitwarden (or F-Droid / GitHub APK)
+- **iOS:** https://apps.apple.com/app/bitwarden-password-manager/id1137397744
 
 ---
 
@@ -72,21 +59,34 @@
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Want offline-only encrypted DB file | Bitwarden default is account sync | **KeePassXC** | Yes | Desktop (+ mobile companions) | Don’t pick offline-only if you need seamless phone sync without DIY |
-| Want self-host API compatible with Bitwarden clients | Prefer not to use bitwarden.com cloud | **Vaultwarden** | Yes | Linux server + official clients | Don’t self-host without backups |
-| Prefer Proton ecosystem passwords | Single-vendor preference | **Proton Pass** | Partial | All major | Don’t migrate without an export plan |
+| Want 100% offline encrypted file storage without any cloud | Prefer keeping your vault exclusively in a `.kdbx` file | **KeePassXC** | Yes | Desktop · Mobile (via KeePassDX) | Don’t switch if you need effortless automatic sync across devices |
+| Want self-hosted backend compatible with Bitwarden apps | Official Bitwarden server is heavy (MSSQL) | **Vaultwarden** | Yes | Linux / Docker | Don’t self-host unless you manage your own automated encrypted backups |
+| Already deep in the Proton ecosystem | Prefer keeping email, drive, and passwords in one account | **Proton Pass** | Yes | All major | Don’t switch if you need enterprise organization sharing |
 
 ### Alternative installs
 
 #### KeePassXC
-- https://keepassxc.org/download/ for Linux/Windows/macOS
-- Mobile: KeePassDX (Android) / KeePassium or Strongbox (iOS) — evaluate each
+- Website: https://keepassxc.org/download/
 
-#### Vaultwarden
-- https://github.com/dani-garcia/vaultwarden — Docker on Linux; point Bitwarden clients to your URL
+#### Vaultwarden (Lightweight Rust Backend)
+- Docker Compose:
+```yaml
+version: '3'
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    restart: always
+    environment:
+      - WEBSOCKET_ENABLED=true
+    volumes:
+      - ./vw-data:/data
+    ports:
+      - 8080:80
+```
 
 #### Proton Pass
-- https://proton.me/pass/download — install official apps per OS
+- Website: https://proton.me/pass/download
 
 ---
 
@@ -94,24 +94,20 @@
 
 | Field | Value |
 |---|---|
-| **Name** | KeePassXC or Vaultwarden |
-| **Repo** | https://github.com/keepassxreboot/keepassxc · https://github.com/dani-garcia/vaultwarden |
-| **What local means** | Local DB file or self-hosted Bitwarden-compatible server |
-| **Who it’s for** | Users who refuse third-party vault hosting |
+| **Name** | KeePassXC / Vaultwarden |
+| **Repo** | https://github.com/keepassxreboot/keepassxc |
+| **What local means** | Vault file resides on your local disk or self-hosted Docker server |
+| **Who it’s for** | Offline purists and self-hosters |
 | **Ops burden** | Low (KeePassXC) / Medium (Vaultwarden) |
-| **When primary still wins** | You want easiest multi-device sync |
-
-### Local install
-- **KeePassXC:** keepassxc.org/download
-- **Vaultwarden:** Docker compose per project wiki
+| **When primary still wins** | You want seamless, zero-maintenance cross-device auto-fill |
 
 ---
 
 ## Quick decision box
 
 ```text
-Default password manager             →  Bitwarden
-Offline DB file                      →  KeePassXC
-Self-host Bitwarden clients          →  Vaultwarden
-Proton ecosystem                     →  Proton Pass
+Default cloud password manager       →  Bitwarden
+Offline encrypted .kdbx file         →  KeePassXC
+Self-hosted lightweight backend      →  Vaultwarden
+Proton-integrated vault              →  Proton Pass
 ```

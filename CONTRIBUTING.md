@@ -1,6 +1,6 @@
 # Contributing to Open Privacy
 
-Maintainer: **Poorvith M P** · **v0.1** · July 2026
+Maintainer: **Poorvith M P** · **v0.2** · August 2026
 
 ## What this repo is
 
@@ -10,10 +10,10 @@ Each category under `categories/` recommends **one primary tool**, **one alterna
 
 - Keep the fixed section order (see any existing category `README.md`).
 - Do **not** add contributor callouts on category pages.
-- Do **not** add threat-model sections in v0.1.
-- Do **not** add per-OS “Source:” citation lines under install steps.
+- Do **not** add per-OS citation lines under install steps.
 - Install steps must match the tool’s **official** install documentation.
 - Keep catch tables to **one alternative per catch row**.
+- All tool logos must be verified official SVG/PNG files from upstream repositories or simple-icons.
 
 ## Updating install steps
 
@@ -22,14 +22,14 @@ Each category under `categories/` recommends **one primary tool**, **one alterna
 3. Prefer copy-pasteable commands and numbered UI steps.
 4. If a platform is unsupported, write `Not supported` and one short reason.
 
-## Images (screenshots)
+## Images and Screenshots
 
-When adding images later:
+When adding screenshots or assets:
 
 1. Store under `categories/<id>/assets/` (create the folder if needed).
 2. Use descriptive names: `windows-installer.png`, `android-play-listing.png`.
 3. Prefer PNG or WebP; keep each file under ~500 KB when possible.
-4. Add Markdown as: `![Short description](assets/filename.png)`.
+4. Reference in Markdown using code snippet format: ``![Short description](assets/filename.png)``.
 5. Do not include personal data, email addresses, or account IDs in screenshots.
 6. Do not add decorative screenshots that do not help installation.
 7. Alt text must describe the UI action (e.g. “Windows UAC prompt for Brave setup”).
@@ -42,7 +42,7 @@ Open a PR that:
 2. Rewrites install steps for all five OSes (Linux, Windows, macOS, Android, iOS) as applicable.
 3. Rebuilds the catch table so alternatives still map to real catches of the **new** primary.
 4. Updates local FOSS path if needed.
-5. Adds a CHANGELOG entry under Unreleased or the next version.
+5. Adds a CHANGELOG entry under the next version.
 
 ## License
 

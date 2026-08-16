@@ -1,75 +1,63 @@
 # Local AI Chat
 
-> Open Privacy · v0.1 · July 2026 · Poorvith M P  
+> Open Privacy · v0.2 · August 2026 · Poorvith M P  
 > Category ID: `22-ai-local`  
-> Replaces: Cloud ChatGPT as default for private prompts
+> Replaces: Cloud ChatGPT / Gemini / Claude logging all personal prompts and training on private data
 
 ---
 
 ## Primary recommendation
+
+<img src="../../assets/logos/ollama.svg" width="36" height="36" alt="Ollama Logo">
 
 | Field | Value |
 |---|---|
 | **Name** | Ollama |
 | **Website** | https://ollama.com |
 | **Source / repo** | https://github.com/ollama/ollama |
-| **Open source?** | **Yes** |
-| **Local / self-host?** | **Yes** |
-| **Target audience** | Users who want on-device/local LLM inference |
-| **Platforms** | Windows · macOS · Linux |
-| **Pricing** | Free software; hardware is yours |
+| **Open source?** | **Yes** (MIT) |
+| **Local / self-host?** | **Yes** — runs 100% on your local CPU / GPU hardware |
+| **Target audience** | Users who want to run large language models privately on their own computer |
+| **Platforms** | Linux · macOS · Windows |
+| **Pricing** | 100% Free |
 | **Payment notes** | N/A |
 
 ### Why this is the one pick
-1. Simple local model runner.
-2. Open source with broad model ecosystem.
-3. Easy CLI + app installs on major desktops.
-4. Keeps prompts off cloud providers by default when used offline.
-5. Pairs cleanly with open UIs (Open WebUI).
+1. Zero data leaves your computer: prompts, documents, code, and chat history execute 100% on local hardware.
+2. Extremely simple CLI and background service that manages model downloads, quantizations, and GPU acceleration (NVIDIA CUDA, Apple Metal, AMD ROCm).
+3. Access to leading open-weight models (Llama 3.x, Mistral, Gemma 2, DeepSeek, Qwen).
+4. Provides an OpenAI-compatible local REST API endpoint (`http://localhost:11434/v1`).
+5. Seamlessly pairs with graphical frontends like Open WebUI.
 
 ### What it does not do
-- Quality depends on your hardware/model size.
-- Not a full cloud SaaS replacement for every task.
-- Mobile support is not the primary path.
+- Inference speed and context length depend entirely on your physical hardware (RAM and VRAM).
+- Smaller local models (3B to 8B parameters) have less reasoning depth than multi-hundred-billion parameter cloud frontier models.
 
 ---
 
 ## Install guide (primary)
 
-### Download hubs
-- https://ollama.com/download
-- Docs: https://github.com/ollama/ollama
+### Linux (One-Line Script)
+```bash
+curl -fsSL https://ollama.com/install.sh | sh
+```
 
-### Windows
-1. Download Windows installer from https://ollama.com/download
-2. Install and open Ollama.
-3. Pull a model, e.g. `ollama pull llama3.2` (choose models appropriate to your RAM/GPU).
-4. Chat via `ollama run <model>` or a UI.
+### Windows & macOS
+- **Windows:** Download `.exe` installer from https://ollama.com/download.
+- **macOS:** Download `.zip` application from https://ollama.com/download.
 
-### macOS
-1. Download macOS app from https://ollama.com/download
-2. Install to Applications; complete first-run.
-3. Pull and run a model from Terminal or the app UI.
+### Running Your First Model
+Open your terminal:
+```bash
+# Run lightweight fast model (great for 8GB RAM)
+ollama run llama3.2
 
-### Linux
-1. Follow install script/package instructions on https://ollama.com/download
-2. Typical: install package → `ollama serve` if needed → `ollama pull <model>`.
-3. Verify with `ollama list`.
+# Run high-quality general assistant (great for 16GB RAM)
+ollama run llama3.1:8b
 
-### Android
-1. Official Ollama is desktop-first.
-2. For mobile local LLMs, use a dedicated Android local LLM app (evaluate carefully) or remote into your home Ollama server on LAN/VPN only.
-3. Do not send private prompts to random third-party mobile AI apps.
-
-### iOS
-1. On-device large models are limited.
-2. Prefer desktop Ollama for private inference.
-3. If using any iOS AI app, assume cloud unless proven on-device.
-
-### First-run checklist
-1. Prefer smaller models first to validate setup.
-2. Do not expose Ollama port to the public internet without auth/reverse proxy.
-3. Keep models and chats off shared cloud folders if prompts are sensitive.
+# Run coding specialist model
+ollama run deepseek-coder-v2
+```
 
 ---
 
@@ -77,20 +65,24 @@
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Want a ChatGPT-like web UI locally | CLI-first UX | **Open WebUI** | Yes | Docker · desktop | Don’t expose UI publicly without auth |
-| Weak hardware can’t run local models well | RAM/GPU limits | **llama.cpp** with tiny models | Yes | Desktop | Don’t expect GPT-4 class quality on weak CPUs |
-| Need cloud AI but privacy-filtered proxy | Local not enough | **PasteGuard-style proxy / self-hosted gateway** (advanced) or simply **don’t use cloud** | Varies | Server | Prefer local when possible |
+| Want a ChatGPT-like web interface with document uploads (RAG) | Ollama is primarily a CLI / background daemon | **Open WebUI** | Yes (MIT) | Docker · Web | Don’t switch if you just want quick terminal generation |
+| Prefer a standalone desktop GUI without Docker or terminal commands | Setting up Open WebUI requires Docker | **LM Studio** or **Jan** | Partial / Yes | Desktop (Win/Mac/Linux) | Don’t switch if you need a standard headless API server for other apps |
+| Running on very low-spec hardware without GPU acceleration | Heavy frameworks have memory overhead | **llama.cpp (Direct CLI)** | Yes | Any hardware | Don’t drop Ollama’s simple model management unless resource-constrained |
 
 ### Alternative installs
 
-#### Open WebUI
-- https://docs.openwebui.com — Docker install; point at local Ollama
+#### Open WebUI (Local ChatGPT Clone)
+- Docker run command:
+```bash
+docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+```
+Open `http://localhost:3000` in your browser.
 
-#### llama.cpp
-- https://github.com/ggml-org/llama.cpp — build/run local GGUF models
+#### Jan (FOSS Desktop GUI)
+- Website: https://jan.ai
 
-#### Cloud avoidance note
-- If local is impossible, minimize secrets in prompts; prefer enterprise/privacy providers you vetted—not random free bots
+#### LM Studio
+- Website: https://lmstudio.ai
 
 ---
 
@@ -99,22 +91,19 @@
 | Field | Value |
 |---|---|
 | **Name** | Ollama + Open WebUI |
-| **Repo** | https://github.com/ollama/ollama · Open WebUI docs |
-| **What local means** | Models and chats on your machine/LAN |
-| **Who it’s for** | Privacy-sensitive AI users with a PC |
-| **Ops burden** | Low–Medium |
-| **When primary still wins** | Primary is already local FOSS |
-
-### Local install
-- Install Ollama from ollama.com/download
-- Optional UI: Open WebUI via Docker docs
+| **Repo** | https://github.com/ollama/ollama |
+| **What local means** | Machine learning weights and context windows evaluate strictly in your computer's RAM/VRAM |
+| **Who it’s for** | Privacy-conscious developers, researchers, and writers |
+| **Ops burden** | Low |
+| **When primary still wins** | Primary is already the open-source local benchmark |
 
 ---
 
 ## Quick decision box
 
 ```text
-Default local LLM runner             →  Ollama
-ChatGPT-like local UI                →  Open WebUI
-Minimal C++ inference                →  llama.cpp
+Default local model runtime          →  Ollama
+ChatGPT-like web UI with document RAG→  Open WebUI
+Turnkey desktop graphical app        →  Jan / LM Studio
+Low-spec CPU terminal runner         →  llama.cpp
 ```

@@ -1,74 +1,51 @@
 # Photo Storage
 
-> Open Privacy · v0.1 · July 2026 · Poorvith M P  
+> Open Privacy · v0.2 · August 2026 · Poorvith M P  
 > Category ID: `16-photo-storage`  
-> Replaces: Google Photos defaults
+> Replaces: Google Photos (facial recognition scanning, metadata profiling, ad training)
 
 ---
 
 ## Primary recommendation
 
+<img src="../../assets/logos/ente.svg" width="36" height="36" alt="Ente Photos Logo">
+
 | Field | Value |
 |---|---|
-| **Name** | ente Photos |
-| **Website** | https://ente.io |
+| **Name** | Ente Photos |
+| **Website** | https://ente.io/photos |
 | **Source / repo** | https://github.com/ente-io/ente |
-| **Open source?** | **Yes** |
-| **Local / self-host?** | **Yes** — self-host possible; hosted available |
-| **Target audience** | Users wanting end-to-end encrypted photo backup |
-| **Platforms** | Windows · macOS · Linux · Android · iOS · Web |
-| **Pricing** | Free trial/paid plans on hosted; self-host costs are your infra |
-| **Payment notes** | Card on hosted ente |
+| **Open source?** | **Yes** (AGPL 3.0) |
+| **Local / self-host?** | **Yes** — clients operate locally; server can be self-hosted |
+| **Target audience** | Everyday users who want automatic, end-to-end encrypted photo and video backup |
+| **Platforms** | Android · iOS · Linux · Windows · macOS · Web |
+| **Pricing** | Free trial (1 GB / 5 GB); paid plans from $3/month for 50 GB+ |
+| **Payment notes** | Card, PayPal, Crypto |
 
 ### Why this is the one pick
-1. E2EE photo backup with open-source clients.
-2. Multi-platform apps including mobile auto-backup flows.
-3. Stronger privacy model than Google Photos scanning defaults.
-4. Self-host path exists for advanced users.
-5. Practical everyday replacement for photo libraries.
+1. Audited zero-knowledge end-to-end encryption; your photos and EXIF metadata cannot be scanned by anyone but you.
+2. 100% open-source desktop, web, and mobile client applications.
+3. Mobile apps feature automatic camera background backup, album sharing, and on-device machine learning (facial clustering and search done client-side).
+4. Includes family sharing plans where storage is shared without compromising individual encryption.
+5. Automated 3-location cloud replication architecture.
 
 ### What it does not do
-- Free unlimited cloud like some big-tech promos.
-- Self-hosting is operational work.
-- Sharing UX differs from Google Photos social features.
+- Free storage is limited (paid plan needed for large galleries).
+- Full self-hosting of the Ente server stack requires configuring S3-compatible storage and microservices.
 
 ---
 
 ## Install guide (primary)
 
-### Download hubs
-- https://ente.io
-- Apps: links from ente.io for desktop/mobile
-
-### Windows
-1. Create an ente account at https://ente.io (or prepare self-host endpoint).
-2. Download Windows app from ente.io.
-3. Install, sign in, select folders to back up.
-
-### macOS
-1. Download macOS app from ente.io.
-2. Install to Applications; grant Photos/Files permissions as needed.
-3. Enable backup for chosen libraries.
-
-### Linux
-1. Download Linux build from ente.io / GitHub releases as published.
-2. Install/run the client.
-3. Configure backup targets.
-
-### Android
-1. Install ente Photos from store links on ente.io.
-2. Sign in → enable auto-backup for Camera/DCIM.
-3. Restrict battery optimizations if backups pause.
-
-### iOS
-1. Install from App Store link on ente.io.
-2. Allow Photos access.
-3. Enable backup; test a few uploads on Wi‑Fi.
+### Mobile & Desktop
+- **Android:** https://play.google.com/store/apps/details?id=io.ente.photos (or F-Droid / GitHub APK)
+- **iOS:** https://apps.apple.com/app/ente-photos-encrypted-backup/id1542041765
+- **Desktop (Windows, macOS, Linux):** https://ente.io/download/
 
 ### First-run checklist
-1. Save recovery key offline.
-2. Enable 2FA on the account.
-3. Confirm a known photo appears on a second device before trusting migration.
+1. Write down your **Recovery Key** and store it offline.
+2. Grant camera roll permissions and enable background backup over Wi-Fi.
+3. Turn on on-device face recognition in app settings if desired.
 
 ---
 
@@ -76,20 +53,33 @@
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Want fully self-hosted Google-Photos-like server | Prefer your NAS/VPS only | **Immich** | Yes | Self-host + apps | Don’t self-host without storage/backup plan |
-| Want encrypt-any-folder rather than photo app | Different workflow | **Cryptomator + any sync** | Yes | Desktop · mobile | Don’t add complexity if ente already fits |
-| Already on Proton stack | Fewer vendors | **Proton Drive** (photos as files) | Partial | All major | Don’t expect full photo timeline features |
+| Want a 100% self-hosted Google Photos replacement on your home server | Ente Photos is primarily a paid hosted service | **Immich** | Yes (AGPL 3.0) | Linux / Docker · Mobile | Don’t self-host without a multi-disk backup and RAID/NAS strategy |
+| Want to encrypt photo folders on existing standard cloud storage | Prefer encrypting raw files rather than a photo-specific app | **Cryptomator** | Yes | All major | Don’t switch if you want a dedicated photo gallery UI with timeline and search |
+| Already using Proton Unlimited for storage | Do not want a separate subscription | **Proton Drive** (Photos tab) | Yes | All major | Don’t expect advanced face clustering or smart photo search |
 
 ### Alternative installs
 
-#### Immich
-- https://immich.app/docs/install/requirements — Docker on Linux server; mobile apps from Immich docs
+#### Immich (Self-Hosted Photo Server)
+- Official Docker Compose setup: https://immich.app/docs/install/docker-compose
+```yaml
+version: "3.8"
+services:
+  immich-server:
+    image: ghcr.io/immich-app/immich-server:release
+    volumes:
+      - /path/to/photos:/usr/src/app/upload
+    env_file:
+      - .env
+    ports:
+      - 2283:2283
+    restart: always
+```
 
-#### Cryptomator + any sync
-- https://cryptomator.org/downloads/
+#### Cryptomator
+- Download: https://cryptomator.org/downloads/
 
-#### Proton Drive
-- https://proton.me/drive/download
+#### Proton Drive Photos
+- Mobile app: https://proton.me/drive/download
 
 ---
 
@@ -99,22 +89,18 @@
 |---|---|
 | **Name** | Immich |
 | **Repo** | https://github.com/immich-app/immich |
-| **What local means** | Photo library server on your hardware |
-| **Who it’s for** | Homelab users with disk capacity |
-| **Ops burden** | Medium–High |
-| **When primary still wins** | You want zero server maintenance |
-
-### Local install
-- Follow https://immich.app docs for Docker Compose on Linux
-- Install official mobile/desktop clients pointed at your server
+| **What local means** | Self-hosted photo management server running on your homelab or NAS |
+| **Who it’s for** | Homelab operators with large local storage arrays |
+| **Ops burden** | High (machine learning models, PostgreSQL, disk redundancy) |
+| **When primary still wins** | You want turnkey multi-location cloud backup with zero maintenance |
 
 ---
 
 ## Quick decision box
 
 ```text
-Default E2EE photos                  →  ente Photos
-Self-host photo server               →  Immich
-Encrypt folders on any cloud         →  Cryptomator
-Proton-only files                    →  Proton Drive
+Default E2EE photo backup            →  Ente Photos
+Self-hosted Google Photos clone      →  Immich
+Encrypt photo folders anywhere       →  Cryptomator
+Proton-integrated photo storage      →  Proton Drive
 ```

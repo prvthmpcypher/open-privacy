@@ -1,73 +1,51 @@
 # Privacy-Friendly Payments
 
-> Open Privacy · v0.1 · July 2026 · Poorvith M P  
+> Open Privacy · v0.2 · August 2026 · Poorvith M P  
 > Category ID: `25-payments-privacy`  
-> Replaces: Putting one card/identity on every site and subscription
+> Replaces: Storing primary debit/credit card numbers on every commercial website, KYC ad-tracking payment aggregators
 
 ---
 
 ## Primary recommendation
 
+<img src="../../assets/logos/monero.svg" width="36" height="36" alt="Privacy Payments Logo">
+
 | Field | Value |
 |---|---|
-| **Name** | Cash + minimize stored cards (with privacy cards where available) |
-| **Website** | N/A (practice) + regional privacy card providers where legal |
-| **Source / repo** | N/A — operational practice; tools vary by country |
-| **Open source?** | **Practice** — supporting tools may be proprietary |
-| **Local / self-host?** | **Yes** for cash/local transfers; cards are external |
-| **Target audience** | Everyday users reducing payment-data exhaust |
-| **Platforms** | Real world · banking apps · optional virtual card services |
-| **Pricing** | Free practice; card services may charge |
-| **Payment notes** | Prefer cash/UPI QR for local commerce when sensible; avoid saving cards on random sites |
+| **Name** | Cash + Minimizing Stored Cards (with Virtual Cards & Crypto) |
+| **Website** | N/A (Operational Hygiene Practice) |
+| **Source / repo** | N/A — behavioral framework |
+| **Open source?** | **Practice** — supporting tools vary |
+| **Local / self-host?** | **Yes** — cash is 100% peer-to-peer; Monero runs self-hosted nodes |
+| **Target audience** | Everyday individuals looking to minimize commercial payment surveillance and prevent card database leaks |
+| **Platforms** | Real World · Web Checkout · Mobile Banking |
+| **Pricing** | Free practice; virtual card services may have merchant fees |
+| **Payment notes** | Use cash/direct transfer for in-person transactions; virtual cards or crypto for online payments |
 
 ### Why this is the one pick
-1. Most “payment privacy” is behavior, not an app install.
-2. Cash and direct bank transfers leave less marketing graph than every-site card vaults.
-3. Works in India-friendly daily life (cash/UPI) without forcing a US-only product.
-4. Scales from low-tech to advanced (virtual cards/crypto) as needed.
-5. Avoids recommending a single global fintech as if it fits everyone.
+1. Payment privacy is fundamentally about operational behavior rather than a single software download.
+2. In-person: Physical cash leaves zero digital breadcrumbs, marketing attribution graphs, or bank tracking cookies.
+3. In-country rails (such as UPI QR in India): Direct bank-to-bank settlement prevents third-party merchants from storing permanent card PANs.
+4. Online: Virtual/masked card numbers isolate data breaches so a single merchant leak cannot compromise your bank account.
+5. Works globally without forcing a US-exclusive fintech product as the only solution.
 
 ### What it does not do
-- Does not make you anonymous to your bank.
-- UPI/bank rails still identify you to financial institutions.
-- Not legal/tax advice.
+- Does not grant anonymity from your own bank (banking transactions are subject to KYC/AML regulations).
+- Cash is not usable for cross-border online checkouts.
+- Does not constitute financial or legal advice.
 
 ---
 
-## Install guide (primary)
+## Operational Guide (Primary)
 
-### Download hubs
-- No single download — configure habits + optional tools below
+### Physical In-Person Hygiene
+1. Prefer physical cash for day-to-day retail, dining, and transit transactions where practical.
+2. If using digital payments (UPI / local debit), avoid saving bank cards inside aggregator merchant accounts (e.g. food delivery, e-commerce apps).
 
-### Windows
-1. Remove saved cards from browsers (browser settings → payment methods).
-2. Use bank official apps/sites only; enable 2FA.
-3. For online subscriptions, prefer one dedicated card/virtual card—not your primary savings card.
-
-### macOS
-1. Clear Safari/Chrome/Brave saved cards you do not need.
-2. Disable autofill of payment methods where possible.
-3. Same dedicated-card strategy for subscriptions.
-
-### Linux
-1. Clear browser payment autofill.
-2. Prefer direct bank transfers/UPI from official apps over random card gateways when available.
-3. Keep financial CSV exports offline/encrypted if stored.
-
-### Android
-1. Use official banking/UPI apps from trusted stores.
-2. Disable screenshot/notifications content for banking apps if supported.
-3. Avoid giving payment apps contacts/SMS permissions unless required.
-
-### iOS
-1. Review Wallet/saved cards; remove unused cards.
-2. Use official bank apps.
-3. Prefer Face ID/strong device passcode for finance apps.
-
-### First-run checklist
-1. Stop saving cards on e-commerce sites by default.
-2. Use unique emails/aliases per merchant (see `04-email-aliasing`).
-3. Monitor statements monthly for mystery subscriptions.
+### Online Digital Checkout Hygiene
+1. **Never save card details**: Uncheck "Save card for future payments" on checkout pages.
+2. **Use browser autofill carefully**: Fill card details on demand and review merchant domain names before submitting.
+3. **Use single-use / merchant-locked virtual cards**: Generate virtual cards with spend limits to isolate risk.
 
 ---
 
@@ -75,21 +53,18 @@
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Need virtual cards that mask PAN from merchants (where available) | Cash/UPI doesn’t cover all online foreign SaaS | **Privacy.com** (US-focused) or local bank virtual cards | No | Web · apps | Don’t use if unavailable in your country—use bank virtual cards instead |
-| Need stronger payment unlinkability and accept crypto complexity | Banks always know fiat identity | **Monero (Cake Wallet)** | Wallet OSS varies | Mobile · desktop | Not for everyday regulated bills; legal compliance required |
-| Need private-ish online checkout inside Proton/browser stack | Ecosystem preference | **Mask card via bank + Proton Pass card form fill carefully** | Partial | Apps | Still avoid storing CVV in random sites |
+| Need merchant-locked virtual cards for online shopping (US) | Physical cash cannot pay for online SaaS or e-commerce | **Privacy.com** | No (Proprietary) | Web · Browser Extension (US only) | Don’t use if outside the US (use your local bank’s virtual card feature instead) |
+| Need true cryptographic financial privacy and unlinkability online | Credit cards and bank rails identify sender and recipient | **Monero (XMR)** via **Cake Wallet** | Yes (GPL 3.0 / BSD) | All major | Don’t switch if you cannot manage seed phrases or merchant doesn't accept XMR |
+| Outside the US and need card protection without third-party fintech | Privacy.com is unavailable in your region | **Bank-Generated Virtual Cards / Disposable CVV** | Varies | Banking Apps | Don’t leave your card details saved in merchant databases |
 
 ### Alternative installs
 
-#### Privacy.com / bank virtual cards
-- Only from official provider sites/apps in supported regions
-- India: check whether your bank offers virtual/temporary card numbers
+#### Privacy.com (US Virtual Cards)
+- Website: https://privacy.com
 
-#### Cake Wallet (Monero)
-- https://cakewallet.com — install official apps only; learn wallet backup seed offline
-
-#### Bank virtual cards
-- Use your bank’s official app documentation for virtual card creation
+#### Monero (Cake Wallet / Monero GUI)
+- Cake Wallet: https://cakewallet.com (iOS & Android FOSS wallet for Monero)
+- Monero GUI (Desktop): https://www.getmonero.org/downloads/
 
 ---
 
@@ -97,24 +72,20 @@
 
 | Field | Value |
 |---|---|
-| **Name** | Cash accounting offline + optional FOSS finance tracker (e.g. GnuCash / AppManager exports) |
-| **Repo** | https://www.gnucash.org (optional ledger) |
-| **What local means** | Spending records not in a consumer data-broker budget app |
-| **Who it’s for** | Users tracking money without fintech upsell apps |
-| **Ops burden** | Low–Medium |
-| **When primary still wins** | Primary is already a local-first practice |
-
-### Local install
-- Optional: install GnuCash from https://www.gnucash.org/download.phtml on Windows/macOS/Linux
-- Keep backups encrypted
+| **Name** | Physical Cash / Monero GUI (Self-Hosted Node) |
+| **Repo** | https://github.com/monero-project/monero |
+| **What local means** | Physical cash exchange in the real world, or validating your own private blockchain transactions locally |
+| **Who it’s for** | Privacy-conscious buyers and decentralization advocates |
+| **Ops burden** | Low (Cash) / Medium (Monero local node) |
+| **When primary still wins** | Primary behavioral hygiene protects 95% of daily transactions with zero extra effort |
 
 ---
 
 ## Quick decision box
 
 ```text
-Default payment privacy              →  Cash/UPI + no saved cards everywhere
-Virtual cards (if available)         →  Bank virtual card / Privacy.com
-Crypto unlinkability (advanced)      →  Monero (Cake Wallet)
-Local bookkeeping                    →  GnuCash
+Everyday in-person payment           →  Cash / Direct UPI
+Online checkout card masking (US)    →  Privacy.com
+Unlinkable peer-to-peer crypto       →  Monero (Cake Wallet)
+International bank-level masking     →  Bank Virtual Disposable Cards
 ```

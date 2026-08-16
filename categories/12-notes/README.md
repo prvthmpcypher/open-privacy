@@ -1,71 +1,58 @@
 # Notes & Tasks
 
-> Open Privacy · v0.1 · July 2026 · Poorvith M P  
+> Open Privacy · v0.2 · August 2026 · Poorvith M P  
 > Category ID: `12-notes`  
-> Replaces: Google Keep / Evernote defaults
+> Replaces: Apple Notes, Google Keep, Notion / Evernote (unencrypted cloud databases)
 
 ---
 
 ## Primary recommendation
+
+<img src="../../assets/logos/joplin.svg" width="36" height="36" alt="Joplin Logo">
 
 | Field | Value |
 |---|---|
 | **Name** | Joplin |
 | **Website** | https://joplinapp.org |
 | **Source / repo** | https://github.com/laurent22/joplin |
-| **Open source?** | **Yes** |
-| **Local / self-host?** | **Yes** — local notes; sync via your own target |
-| **Target audience** | Users who want FOSS notes with optional E2EE sync |
-| **Platforms** | Windows · macOS · Linux · Android · iOS |
-| **Pricing** | Free (optional Joplin Cloud) |
-| **Payment notes** | N/A for local use |
+| **Open source?** | **Yes** (AGPL 3.0) |
+| **Local / self-host?** | **Yes** — local SQLite database + your choice of encrypted sync target |
+| **Target audience** | Everyday users who want full control over their notes, checklists, and attachments |
+| **Platforms** | Linux · Windows · macOS · Android · iOS · CLI |
+| **Pricing** | 100% Free (optional paid Joplin Cloud) |
+| **Payment notes** | N/A for self-hosted/local use |
 
 ### Why this is the one pick
-1. Fully open-source multi-platform notes app.
-2. Markdown-friendly and exportable.
-3. End-to-end encryption available for sync.
-4. Can sync without vendor lock-in (WebDAV, filesystem, etc.).
-5. Strong local FOSS default.
+1. 100% open-source applications and local-first architecture; notes work completely offline.
+2. Supports end-to-end encryption across any sync target (Dropbox, OneDrive, WebDAV, Nextcloud, S3, or Joplin Cloud).
+3. Markdown-based formatting with rich media attachments, checklists, and web clipping.
+4. Active plugin ecosystem and comprehensive export options (raw Markdown + frontmatter, PDF, JEX).
+5. Fast search across encrypted local SQLite databases.
 
 ### What it does not do
-- UX is less “consumer flashy” than some proprietary apps.
-- You must choose and secure a sync backend.
-- Real-time collab is not Google Docs.
+- Multi-user real-time collaborative editing is limited compared to Google Docs or Notion.
+- Mobile UI is functional but lacks some visual flash of proprietary note apps.
 
 ---
 
 ## Install guide (primary)
 
-### Download hubs
-- https://joplinapp.org/download/
+### Desktop (Windows, macOS, Linux)
+- **Windows:** `winget install Joplin.Joplin` or download installer from https://joplinapp.org/download/.
+- **macOS:** `brew install --cask joplin` or download `.dmg` from https://joplinapp.org/download/.
+- **Linux:** Run official update script:
+```bash
+wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
+```
 
-### Windows
-1. Download Windows installer from https://joplinapp.org/download/
-2. Install and open Joplin.
-3. Create a notebook; configure sync under Options → Synchronisation.
-
-### macOS
-1. Download macOS build from the download page.
-2. Move to Applications and open.
-3. Configure sync/encryption as needed.
-
-### Linux
-1. Download AppImage/deb/rpm from https://joplinapp.org/download/ or use distro packages if current.
-2. Launch Joplin.
-3. Set sync target (e.g. Nextcloud WebDAV).
-
-### Android
-1. Install Joplin from the store link on joplinapp.org/download.
-2. Sign into the same sync target with E2EE password if used.
-
-### iOS
-1. Install Joplin from App Store link on the download page.
-2. Configure synchronisation to match desktop.
+### Mobile
+- **Android:** https://play.google.com/store/apps/details?id=net.cozic.joplin (or F-Droid / GitHub APK)
+- **iOS:** https://apps.apple.com/app/joplin/id1315579684
 
 ### First-run checklist
-1. Enable encryption if using remote sync.
-2. Save the encryption password offline.
-3. Test create → sync → appear on second device before relying on it.
+1. Open **Tools** → **Options** → **Synchronization**.
+2. Select your sync target (Nextcloud WebDAV, Dropbox, or local directory).
+3. Enable **Encryption** and set a strong master password.
 
 ---
 
@@ -73,20 +60,21 @@
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Want hosted E2EE notes with less sync setup | Joplin sync DIY friction | **Standard Notes** | Partial/Yes clients | All major | Don’t switch if you need deep Markdown plugin ecosystem |
-| Want pure local plain files only | App database model | **Obsidian** (local vault; proprietary app) or **Logseq** | Varies | Desktop · mobile | Prefer Joplin if you need open sync E2EE defaults |
-| Want full self-host web notes suite | Different architecture | **AppFlowy / Affine / Trilium** (pick **AppFlowy** here) | Yes | Desktop · self-host options | Don’t expand scope if simple notes suffice |
+| Want zero sync setup with hosted 100% FOSS E2EE notes and modern UI | Joplin requires picking a sync target | **Notesnook** | Yes | All major | Don’t switch if you prefer keeping notes strictly in a local SQLite file |
+| Want local plaintext `.md` files in folders without a database | Joplin stores notes in a local database | **Obsidian** (proprietary client) or **Logseq** (FOSS) | Partial / Yes | All major | Don’t switch if you want turnkey end-to-end encrypted mobile sync for free |
+| Already deep in the Proton ecosystem | Prefer keeping email, drive, and notes under one vendor (Note: Standard Notes acquired by Proton in 2024) | **Standard Notes** | Yes | All major | Don’t switch if you want Joplin’s open plugin ecosystem |
 
 ### Alternative installs
 
+#### Notesnook (100% FOSS E2EE Notes)
+- Website: https://notesnook.com — register free account → download apps.
+
+#### Obsidian & Logseq (Local Plaintext Vaults)
+- Obsidian: https://obsidian.md/download
+- Logseq: https://logseq.com
+
 #### Standard Notes
-- https://standardnotes.com — apps for all major platforms
-
-#### Logseq (local FOSS-leaning knowledge base)
-- https://logseq.com/downloads
-
-#### AppFlowy
-- https://appflowy.com/download
+- Website: https://standardnotes.com
 
 ---
 
@@ -94,23 +82,20 @@
 
 | Field | Value |
 |---|---|
-| **Name** | Joplin (local) + optional Nextcloud WebDAV |
+| **Name** | Joplin (Local DB + WebDAV) / Logseq |
 | **Repo** | https://github.com/laurent22/joplin |
-| **What local means** | Notes on device; sync backend you control |
-| **Who it’s for** | FOSS-first users |
-| **Ops burden** | Low–Medium |
-| **When primary still wins** | Primary already is local FOSS |
-
-### Local install
-- Install Joplin clients from joplinapp.org/download
-- Sync via filesystem/WebDAV/Nextcloud you operate
+| **What local means** | Notes remain in local files/databases on your physical storage |
+| **Who it’s for** | Privacy power users and offline writers |
+| **Ops burden** | Low |
+| **When primary still wins** | Primary is already the open-source local standard |
 
 ---
 
 ## Quick decision box
 
 ```text
-Default FOSS notes                   →  Joplin
-Hosted E2EE simpler UX               →  Standard Notes
-Local graph/outliner                 →  Logseq
+Default E2EE markdown notes          →  Joplin
+Modern FOSS hosted E2EE suite        →  Notesnook
+Local plaintext folder vault         →  Obsidian / Logseq
+Proton-aligned notes                 →  Standard Notes
 ```

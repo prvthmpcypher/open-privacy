@@ -1,74 +1,51 @@
 # Browser Extensions (Tracker Block)
 
-> Open Privacy · v0.1 · July 2026 · Poorvith M P  
+> Open Privacy · v0.2 · August 2026 · Poorvith M P  
 > Category ID: `21-browser-extensions`  
-> Replaces: Browsing with no tracker blocking; “cleaner” adware extensions
+> Replaces: Browsing without content blocking, ad-tech malware, fingerprinting scripts
 
 ---
 
 ## Primary recommendation
+
+<img src="../../assets/logos/ublockorigin.svg" width="36" height="36" alt="uBlock Origin Logo">
 
 | Field | Value |
 |---|---|
 | **Name** | uBlock Origin |
 | **Website** | https://ublockorigin.com |
 | **Source / repo** | https://github.com/gorhill/uBlock |
-| **Open source?** | **Yes** |
-| **Local / self-host?** | **Yes** — runs entirely in the browser |
-| **Target audience** | Everyone who browses the web on a desktop browser |
-| **Platforms** | Firefox (best support) · Chromium browsers where still available |
-| **Pricing** | Free |
+| **Open source?** | **Yes** (GPL 3.0) |
+| **Local / self-host?** | **Yes** — runs 100% locally in your browser engine |
+| **Target audience** | Everyone browsing the web on desktop and mobile browsers |
+| **Platforms** | Firefox (Full Manifest V2 support) · Brave · Chromium (uBO Lite for MV3) |
+| **Pricing** | 100% Free (Accepts zero donations) |
 | **Payment notes** | N/A |
 
 ### Why this is the one pick
-1. Effective, open-source content blocker.
-2. Low resource use relative to heavy “suite” extensions.
-3. Transparent filter lists you control.
-4. Standard recommendation across privacy communities.
-5. Works well alongside a privacy browser.
+1. Wide-spectrum, open-source content blocker developed by Raymond Hill (gorhill).
+2. Extremely efficient CPU and memory footprint compared to commercial adblockers.
+3. Provides comprehensive protection against tracking scripts, third-party CNAME uncloaking, and cosmetic ad clutter.
+4. Allows dynamic filtering rules and custom element zapping.
+5. Operates with strict ethical principles: no "acceptable ads" whitelist programs or monetization.
 
 ### What it does not do
-- Not a VPN.
-- Manifest V3 / Chromium store policy can limit some browsers—prefer Firefox when possible.
-- Will not fix malicious sites you intentionally visit.
+- Does not encrypt your network traffic (not a VPN).
+- In Google Chrome, Google has phased out Manifest V2 extensions, limiting full uBlock Origin capabilities (use **uBlock Origin Lite** or switch to **Firefox** / **Brave** for full capability).
 
 ---
 
 ## Install guide (primary)
 
-### Download hubs
-- https://ublockorigin.com
-- Firefox: https://addons.mozilla.org/firefox/addon/ublock-origin/
+### Firefox (Recommended for Maximum Capability)
+1. Install from Firefox Add-ons: https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/
+2. Open extension dashboard → Filter lists → Enable **EasyList Cookie**, **Fanboy's Annoyance**, and regional lists as desired.
 
-### Windows
-1. Open Firefox (recommended) or a Chromium browser that still offers uBlock Origin.
-2. Install from the official add-ons listing linked via ublockorigin.com.
-3. Pin the extension; leave default lists enabled initially.
+### Brave Browser
+- Brave includes built-in Shields (see `01-browser`). You can add uBlock Origin on desktop from the Chrome Web Store for secondary advanced dynamic filtering if desired.
 
-### macOS
-1. Same as Windows: install from official browser add-on stores only.
-2. Avoid third-party “uBlock” clones.
-3. Confirm the publisher is Raymond Hill / uBlock Origin.
-
-### Linux
-1. Install Firefox from your distro or Mozilla.
-2. Install uBlock Origin from addons.mozilla.org.
-3. Keep the extension updated with the browser.
-
-### Android
-1. Use Firefox for Android.
-2. Install uBlock Origin from the Firefox Add-ons site/add-ons manager.
-3. Chromium Android browsers generally lack full extension support.
-
-### iOS
-1. Full uBlock Origin is not available like desktop Firefox.
-2. Use content blockers built into Brave/Firefox iOS or Safari content blockers carefully.
-3. Prefer a privacy browser’s built-in shields on iOS.
-
-### First-run checklist
-1. Do not install five overlapping blockers.
-2. Disable cosmetic filtering only if a site breaks and you must.
-3. Review filter list updates occasionally.
+### Chrome / Chromium (Manifest V3 Environments)
+- If your browser disables Manifest V2 extensions, install **uBlock Origin Lite**: https://chromewebstore.google.com/detail/ublock-origin-lite/ddkjiahejlhfcafbddmgiahcphecmpfh
 
 ---
 
@@ -76,20 +53,17 @@
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| On Brave already with Shields | Extra extension may be redundant | **Brave Shields only** | Partial | Brave | Add uBO on Firefox profiles still |
-| Need strict cookie/tracker UI different from uBO | UX preference | **Firefox Strict Tracking Protection** | Yes | Firefox | Don’t disable uBO if you rely on custom filters |
-| iOS-only user | Extension model differs | **Brave iOS Shields / Safari content blocker** | Varies | iOS | Don’t install fake “uBlock” iOS apps |
+| Browser forces Manifest V3 (Google Chrome / Edge) | Full uBlock Origin requires the declarative webRequest API | **uBlock Origin Lite** | Yes | Chromium (MV3) | Don’t switch away from full uBlock Origin if you are on Firefox or Brave |
+| Already using Brave Browser with native Rust ad blocker | Brave Shields provides built-in blocking without extensions | **Brave Shields (Built-in)** | Yes | All major | Don’t add extra extension bloat if built-in Shields satisfy your blocking needs |
+| iOS Safari user seeking native WebKit content blocking | iOS Safari requires native Content Blocker APIs | **AdGuard for Safari** or **Brave iOS** | Open Source | iOS · macOS | Don’t switch on desktop where full uBlock Origin provides superior filtering |
 
 ### Alternative installs
 
-#### Brave Shields only
-- Built into Brave — no separate install
+#### uBlock Origin Lite (Manifest V3)
+- Chrome Web Store: https://chromewebstore.google.com/detail/ublock-origin-lite/ddkjiahejlhfcafbddmgiahcphecmpfh
 
-#### Firefox Strict Tracking Protection
-- Firefox Settings → Privacy & Security → Strict
-
-#### Brave iOS / Safari content blockers
-- Configure in iOS Settings → Brave/Safari → content blockers
+#### AdGuard for Safari
+- Mac App Store / iOS App Store.
 
 ---
 
@@ -99,20 +73,18 @@
 |---|---|
 | **Name** | uBlock Origin |
 | **Repo** | https://github.com/gorhill/uBlock |
-| **What local means** | Filtering runs on-device in the browser |
-| **Who it’s for** | All desktop browser users |
+| **What local means** | Filter rules and blocking decisions evaluate entirely inside the local browser process |
+| **Who it’s for** | All internet users |
 | **Ops burden** | Low |
-| **When primary still wins** | Primary is already local FOSS |
-
-### Local install
-- Install only from official browser add-on stores linked via ublockorigin.com
+| **When primary still wins** | Primary is already the open-source industry benchmark |
 
 ---
 
 ## Quick decision box
 
 ```text
-Default tracker block                →  uBlock Origin (Firefox)
-Already on Brave                     →  Shields (+ optional uBO where supported)
-iOS                                  →  Browser built-in blockers
+Default content blocker (Firefox)    →  uBlock Origin
+Chromium browser with Manifest V3   →  uBlock Origin Lite
+Brave browser native blocking        →  Brave Shields
+iOS Safari native blocking           →  AdGuard for Safari / Brave iOS
 ```

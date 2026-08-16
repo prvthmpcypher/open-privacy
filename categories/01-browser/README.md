@@ -1,6 +1,6 @@
 # Web Browser
 
-> Open Privacy · v0.1 · July 2026 · Poorvith M P  
+> Open Privacy · v0.2 · August 2026 · Poorvith M P  
 > Category ID: `01-browser`  
 > Replaces: Google Chrome (default), unhardened stock browsers
 
@@ -8,12 +8,14 @@
 
 ## Primary recommendation
 
+<img src="../../assets/logos/brave.svg" width="36" height="36" alt="Brave Browser Logo">
+
 | Field | Value |
 |---|---|
 | **Name** | Brave Browser |
 | **Website** | https://brave.com |
 | **Source / repo** | https://github.com/brave/brave-browser |
-| **Open source?** | **Partial** — browser is open source; some product services are not fully open |
+| **Open source?** | **Partial** — browser client is open source (MPL 2.0); some backend services are proprietary |
 | **Local / self-host?** | **No** — on-device client only |
 | **Target audience** | Everyday users who want a Chrome-like browser with built-in tracker/ad blocking |
 | **Platforms** | Linux · Windows · macOS · Android · iOS |
@@ -21,51 +23,41 @@
 | **Payment notes** | N/A for core browser |
 
 ### Why this is the one pick
-1. Same product on desktop and mobile with low setup cost.
-2. Built-in Shields reduce the need for a large extension stack on day one.
-3. Chromium extension ecosystem on desktop eases switching from Chrome.
-4. Actively maintained with install paths on all major OSes.
-5. Usable without manual hardening guides.
+1. Same clean experience on desktop and mobile with zero required setup.
+2. Built-in Shields block ads, trackers, and fingerprinting out of the box.
+3. Chromium extension compatibility makes switching painless.
+4. Actively maintained with official packages for every major OS.
+5. Works out of the box without manual user.js hardening scripts.
 
 ### What it does not do
-- Does not make you anonymous on the network (not a Tor replacement).
-- Does not remove Chromium heritage entirely.
-- Does not replace a password manager, VPN, or good account hygiene.
+- Does not make you anonymous on the network (it is not a Tor replacement).
+- Does not remove Chromium base heritage entirely.
+- Does not replace a password manager, VPN, or basic operational hygiene.
 
 ---
 
 ## Install guide (primary)
 
 ### Download hubs
-- Desktop + mobile: https://brave.com/download/
+- Desktop & Mobile: https://brave.com/download/
 - Windows direct: https://laptop-updates.brave.com/latest/winx64
 - macOS direct: https://laptop-updates.brave.com/latest/osx
-- Linux: https://brave.com/linux/
-- System requirements: https://support.brave.app/hc/en-us/articles/360021357112-What-are-the-system-requirements-to-install-Brave
+- Linux repository guide: https://brave.com/linux/
 
 ### Windows
-1. Download the installation file from https://www.brave.com/download
-2. If prompted, click **Run** or **Save**.
-3. If you chose **Save**, double-click the download to start installing.
-4. A Brave window opens after installation finishes.
-
-Alternate channel: Microsoft Store (listed on Brave’s download page).
+1. Download the installer from https://brave.com/download (or run `winget install Brave.Brave`).
+2. Run the installer and follow the prompts.
+3. Brave opens automatically once installed.
 
 ### macOS
-1. Download the installation file from https://www.brave.com/download
-2. Open the file.
-3. In the window that opens, find **Brave**.
-4. Drag **Brave** to the **Applications** folder.
-   - You might be asked to enter the admin password.
-   - If you don't know the admin password, drag Brave to a place you can edit (for example the desktop).
-5. Open Brave.
-6. Open **Finder**.
-7. In the sidebar, to the right of Brave, click **Eject**.
+1. Download the DMG from https://brave.com/download (or run `brew install --cask brave-browser`).
+2. Open the downloaded DMG and drag **Brave** to your **Applications** folder.
+3. Launch Brave from Spotlight or Applications.
 
 ### Linux
-Supported: 64-bit AMD/Intel (`amd64` / `x86_64`) and ARM (`arm64` / `aarch64`).
+Supported architectures: 64-bit AMD/Intel (`amd64` / `x86_64`) and ARM (`arm64` / `aarch64`).
 
-#### Debian, Ubuntu, Mint
+#### Debian, Ubuntu, Linux Mint
 ```bash
 sudo apt install curl
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
@@ -74,49 +66,38 @@ sudo apt update
 sudo apt install brave-browser
 ```
 
-#### Fedora 41+ (dnf5)
+#### Fedora 41+ (DNF5)
 ```bash
 sudo dnf install dnf-plugins-core
 sudo dnf config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
 sudo dnf install brave-browser
 ```
 
-#### Fedora <41, Rocky/RHEL
+#### Fedora <41, RHEL, Rocky Linux
 ```bash
 sudo dnf install dnf-plugins-core
 sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
 sudo dnf install brave-browser
 ```
 
-#### openSUSE
+#### Arch Linux (AUR)
 ```bash
-sudo zypper addrepo https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
-sudo zypper install brave-browser
+yay -S brave-bin
 ```
-
-#### Arch (AUR helper example: yay)
-```bash
-yay -Sy brave-bin
-```
-
-Prefer official package repositories over Flatpak/Snap when available. One-command script: https://brave.com/linux/
 
 ### Android
 1. Install from Google Play: https://play.google.com/store/apps/details?id=com.brave.browser
-2. Optional: APK builds via Brave’s Android release channels as documented by Brave.
-3. Optional: Brave F-Droid repository (https://brave.com/blog/f-droid/).
+2. Or download APK directly from GitHub releases: https://github.com/brave/brave-browser/releases
 
 ### iOS
-1. Install **Brave** from the App Store: https://apps.apple.com/app/brave-private-web-browser-vpn/id1052879175
-2. Open the app once and complete first-run prompts.
-3. Set as default browser in iOS Settings → Brave → Default Browser App (when available).
+1. Install from the App Store: https://apps.apple.com/app/brave-private-web-browser-vpn/id1052879175
+2. Open the app and set as default browser in iOS Settings → Brave → Default Browser App.
 
 ### First-run checklist
-1. Confirm Shields are enabled on a normal website.
-2. Turn off optional surfaces you do not want (Rewards, VPN upsell, wallet) if you only want a browser.
-3. Set a privacy-oriented search engine (see category `02-search`).
-4. Enable Brave as default browser in OS settings when ready.
-5. Import bookmarks/passwords only if you intend to leave the old browser.
+1. Verify Shields are enabled (orange lion icon in URL bar).
+2. Turn off optional crypto and rewards surfaces in settings if you want a clean browser.
+3. Set your search engine to a privacy-respecting provider (see `02-search`).
+4. Set Brave as your OS default browser.
 
 ---
 
@@ -124,29 +105,25 @@ Prefer official package repositories over Flatpak/Snap when available. One-comma
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Need stronger anonymity, not a daily convenience browser | Brave is a normal browser with privacy features, not an anonymity network | **Tor Browser** | Yes | Desktop primary | Don’t use Tor as the only browser for everyday banking/logins |
-| Refuse Chromium; want Mozilla stack | Brave is Chromium-based | **Firefox** | Yes | Linux · Windows · macOS · Android · iOS | Don’t switch if you depend on Chrome-only extensions with no Firefox port |
-| Want zero Rewards/crypto product surface by default | Optional Brave extras annoy some users | **Mullvad Browser** | Yes | Desktop | Don’t switch if you need heavy extensions + multi-profile daily use |
-| iOS user wants maximum system integration | iOS browsers share WebKit limits; some prefer Safari | **Safari** | No | iOS · macOS | Don’t drop cross-platform Brave if you need one setup everywhere |
+| Need network anonymity, not just everyday privacy | Brave is a normal clearnet browser | **Tor Browser** | Yes | Desktop · Android | Don’t use Tor as your daily browser for personal logins/banking |
+| Refuse Chromium; want pure Gecko/Mozilla stack | Brave is Chromium-based | **Firefox** | Yes | Linux · Windows · macOS · Android · iOS | Don’t switch if you rely on Chrome-only extensions |
+| Want zero crypto/rewards UI surface by default | Optional Brave features annoy some users | **Mullvad Browser** | Yes | Linux · Windows · macOS | Don’t switch if you need persistent account logins across sessions |
+| iOS user wants native WebKit integration | iOS third-party browsers use WebKit anyway | **Safari** | No | iOS · macOS | Don’t switch if you need cross-platform sync with Windows or Linux |
 
 ### Alternative installs
 
 #### Tor Browser
-- **Linux / Windows / macOS:** https://www.torproject.org/download/
-- **Android:** only via Tor Project’s official Android guidance
-- **iOS:** limited; avoid unofficial “Tor” apps
+- Download official binary: https://www.torproject.org/download/
 
 #### Firefox
-- **Linux / Windows / macOS:** https://www.mozilla.org/firefox/
-- **Android / iOS:** official Firefox apps from store listings linked by Mozilla
+- Desktop: https://www.mozilla.org/firefox/ (or `sudo apt install firefox` / `sudo dnf install firefox`)
+- Mobile: Official Firefox app on Google Play or iOS App Store.
 
 #### Mullvad Browser
-- **Linux / Windows / macOS:** https://mullvad.net/en/browser
-- **Android / iOS:** not offered
+- Download official package: https://mullvad.net/en/browser
 
 #### Safari
-- **macOS / iOS:** built into Apple platforms
-- **Linux / Windows / Android:** not available
+- Built into macOS and iOS.
 
 ---
 
@@ -155,26 +132,24 @@ Prefer official package repositories over Flatpak/Snap when available. One-comma
 | Field | Value |
 |---|---|
 | **Name** | Firefox (distro package or official binary) |
-| **Repo** | https://www.mozilla.org/firefox/ · https://github.com/mozilla/gecko-dev |
+| **Repo** | https://github.com/mozilla/gecko-dev |
 | **What local means** | On-device FOSS client; no account required |
 | **Who it’s for** | Users who want a fully open-source browser stack |
 | **Ops burden** | Low |
-| **When primary still wins** | User wants built-in blocking and simpler multi-OS product defaults |
+| **When primary still wins** | You want stronger built-in blocking and out-of-the-box defaults without manual tweaking |
 
 ### Local install
-- **Linux:** e.g. `sudo apt install firefox` (or distro equivalent) / Mozilla official build
+- **Linux:** `sudo apt install firefox` or `sudo dnf install firefox`
 - **Windows / macOS:** https://www.mozilla.org/firefox/
-- **Android / iOS:** official Firefox apps
-- **Docker / self-host:** not applicable
 
 ---
 
 ## Quick decision box
 
 ```text
-Default daily browser              →  Brave
+Default daily browser              →  Brave Browser
 Need anonymity network             →  Tor Browser
-Want pure FOSS Mozilla stack       →  Firefox (also local FOSS path)
-Hate Rewards/crypto surface        →  Mullvad Browser
+Want pure FOSS Mozilla stack       →  Firefox
+Hate crypto/rewards surface        →  Mullvad Browser
 iOS system-native preference       →  Safari
 ```

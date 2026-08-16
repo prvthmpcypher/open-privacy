@@ -1,75 +1,53 @@
 # Search Engine
 
-> Open Privacy · v0.1 · July 2026 · Poorvith M P  
+> Open Privacy · v0.2 · August 2026 · Poorvith M P  
 > Category ID: `02-search`  
-> Replaces: Google Search
+> Replaces: Google Search (default tracking), Bing
 
 ---
 
 ## Primary recommendation
 
+<img src="../../assets/logos/brave-search.svg" width="36" height="36" alt="Brave Search Logo">
+
 | Field | Value |
 |---|---|
 | **Name** | Brave Search |
 | **Website** | https://search.brave.com |
-| **Source / repo** | https://brave.com/search/ |
-| **Open source?** | **Partial** — hosted service; not a full self-hosted search stack |
-| **Local / self-host?** | **No** (use SearXNG for self-host) |
-| **Target audience** | Everyday users leaving Google Search |
-| **Platforms** | Web · browser default · mobile browsers |
-| **Pricing** | Free |
-| **Payment notes** | N/A |
+| **Source / repo** | https://github.com/brave |
+| **Open source?** | **No** — web service index is proprietary; client apps are open source |
+| **Local / self-host?** | **No** as a web index; SearXNG is the local self-host path |
+| **Target audience** | Everyday users who want an independent search index without profiling or user tracking |
+| **Platforms** | Web (any browser) · Android · iOS |
+| **Pricing** | Free (ad-supported or optional ad-free subscription) |
+| **Payment notes** | N/A for free tier |
 
 ### Why this is the one pick
-1. Independent index ambition with privacy-oriented defaults.
-2. Works in any browser; pairs cleanly with Brave or Firefox.
-3. Simple default-search setup without an account.
-4. Practical result quality for daily queries.
-5. Documented set-as-default flows.
+1. Builds its own independent web index rather than relying on Google or Bing APIs.
+2. Does not build user profiles, track queries, or sell search history to advertisers.
+3. Clean, fast UI with privacy-respecting AI answer summaries (Answer with AI).
+4. Works out of the box in any browser by visiting `search.brave.com`.
+5. No account required to search.
 
 ### What it does not do
-- Review the current privacy policy yourself; hosted search is not self-host.
-- AI answer features are optional product surface.
-- Not a replacement for specialized academic search.
+- The backend search index is proprietary and hosted on Brave servers.
+- Long-tail regional queries in smaller languages can sometimes lag Google.
+- Does not replace network-level encryption or browser isolation.
 
 ---
 
 ## Install guide (primary)
 
-### Download hubs
-- Search: https://search.brave.com
-- Set as default: https://search.brave.com/default
+### Web & Browser Default Setup
+1. Open your browser and navigate to https://search.brave.com.
+2. To set Brave Search as your default search engine:
+   - **In Brave Browser**: Enabled by default.
+   - **In Firefox**: Settings → Search → Default Search Engine → Select **Brave**.
+   - **In Chrome / Safari**: Visit https://search.brave.com/default and follow the one-click prompt.
 
-### Windows
-1. Open browser settings (Brave / Firefox / Edge / Chrome).
-2. Find **Search engine** / **Default search engine**.
-3. Add or select **Brave Search** (https://search.brave.com).
-4. Confirm a test query runs on search.brave.com.
-
-### macOS
-1. Open browser settings.
-2. Set **Brave Search** as default search engine.
-3. Optionally use https://search.brave.com/default for browser-specific buttons.
-
-### Linux
-1. Open browser settings.
-2. Set default search engine to **Brave Search**.
-3. Firefox: Settings → Search → Default Search Engine → add/select Brave Search.
-
-### Android
-1. Open Brave or Firefox for Android.
-2. Settings → Search engine → choose **Brave Search** if listed, or set custom search URL per browser docs.
-3. Run a test search from the address bar.
-
-### iOS
-1. Open Brave or Firefox for iOS.
-2. Settings → default search engine → select **Brave Search** when available.
-3. Safari has limited third-party search options; prefer Brave/Firefox app for Brave Search defaults.
-
-### First-run checklist
-1. Disable Google as default in every browser profile you use.
-2. Clear old search shortcuts if the address bar still suggests Google.
-3. Turn off AI answer features if you do not want them.
+### Android / iOS
+1. Use directly within your default mobile browser at https://search.brave.com.
+2. Or set as default search engine in your mobile browser settings.
 
 ---
 
@@ -77,24 +55,24 @@
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Want fully open-source metasearch you control | Brave Search is a hosted service | **SearXNG** | Yes | Self-host / public instances | Don’t self-host if you only need one-click hosted search |
-| Prefer Google-like results with a privacy proxy | Some want Google results without Google account tracking | **Startpage** | No | Web | Don’t switch if you specifically want non-Google ranking |
-| Want a long-standing no-profile brand with simple UX | Some users prefer DuckDuckGo defaults | **DuckDuckGo** | Partial | Web · apps | Don’t switch solely for branding if Brave Search already meets needs |
+| Want 100% self-hosted metasearch without telemetry | Brave Search is a hosted web service | **SearXNG** | Yes | Docker · Linux | Don’t self-host if you cannot maintain a server and proxy setup |
+| Prefer Google result quality without Google tracking | Brave index differs on niche technical queries | **Startpage** | No | Web | Don’t switch if you prefer an independent web index over Google syndication |
+| Want established brand with built-in email/app protection | Preference for DuckDuckGo ecosystem | **DuckDuckGo** | Partial | Web · Mobile | Don’t switch if independent web indexing is your top priority |
 
 ### Alternative installs
 
 #### SearXNG
-- **Linux self-host:** https://docs.searxng.org/admin/installation.html
-- **Windows / macOS:** Docker Desktop + SearXNG Docker docs
-- **Android / iOS:** open your instance URL in a mobile browser
-- Public instances: https://searx.space/
+- Official repo: https://github.com/searxng/searxng
+- Docker one-liner:
+```bash
+docker run -d -p 8080:8080 --name searxng -v "${PWD}/searxng:/etc/searxng" docker.io/searxng/searxng:latest
+```
 
 #### Startpage
-- **All platforms:** https://www.startpage.com — set as browser default search
+- Navigate to https://www.startpage.com and set as default search engine.
 
 #### DuckDuckGo
-- **Web:** https://duckduckgo.com
-- **Desktop / mobile:** browser default or DuckDuckGo apps where offered
+- Navigate to https://duckduckgo.com.
 
 ---
 
@@ -104,23 +82,21 @@
 |---|---|
 | **Name** | SearXNG |
 | **Repo** | https://github.com/searxng/searxng |
-| **What local means** | Self-hosted metasearch |
-| **Who it’s for** | Technical users with a small always-on host |
+| **What local means** | Self-hosted metasearch engine aggregating queries anonymously |
+| **Who it’s for** | Homelab and self-hosters |
 | **Ops burden** | Medium |
-| **When primary still wins** | You want zero server maintenance |
+| **When primary still wins** | You want instant, zero-maintenance independent search results |
 
 ### Local install
-- **Docker:** https://docs.searxng.org/admin/installation-docker.html
-- **Linux bare metal:** https://docs.searxng.org/admin/installation.html
-- **Mobile:** use the instance URL in any browser
+- Follow SearXNG Docker installation guide: https://docs.searxng.org/admin/installation-docker.html
 
 ---
 
 ## Quick decision box
 
 ```text
-Default private search              →  Brave Search
-Self-host metasearch                →  SearXNG
-Google results via privacy proxy    →  Startpage
-Simple hosted alternative brand     →  DuckDuckGo
+Default independent search          →  Brave Search
+Self-hosted metasearch               →  SearXNG
+Google results without Google        →  Startpage
+Simple privacy brand                 →  DuckDuckGo
 ```

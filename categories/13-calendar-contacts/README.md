@@ -1,73 +1,48 @@
 # Calendar & Contacts
 
-> Open Privacy · v0.1 · July 2026 · Poorvith M P  
+> Open Privacy · v0.2 · August 2026 · Poorvith M P  
 > Category ID: `13-calendar-contacts`  
-> Replaces: Google Calendar / Google Contacts defaults
+> Replaces: Google Calendar & Google Contacts (cloud profile tracking)
 
 ---
 
 ## Primary recommendation
 
+<img src="../../assets/logos/protoncalendar.svg" width="36" height="36" alt="Proton Calendar Logo">
+
 | Field | Value |
 |---|---|
-| **Name** | Proton Calendar (+ Proton contacts via Proton account) |
+| **Name** | Proton Calendar |
 | **Website** | https://proton.me/calendar |
-| **Source / repo** | https://proton.me |
-| **Open source?** | **Partial** — Proton clients often open; service hosted |
-| **Local / self-host?** | **No** as primary SaaS |
-| **Target audience** | Users leaving Google Calendar who want encrypted-friendly hosted calendar |
-| **Platforms** | Web · mobile apps · desktop via Proton ecosystem |
-| **Pricing** | Free tier + paid |
-| **Payment notes** | Card via Proton |
+| **Source / repo** | https://github.com/ProtonMail |
+| **Open source?** | **Yes** (Client apps and cryptographic libraries) |
+| **Local / self-host?** | **No** as a hosted service; Nextcloud CalDAV for self-host |
+| **Target audience** | Everyday users who want zero-access encrypted schedules and contacts |
+| **Platforms** | Web · Android · iOS |
+| **Pricing** | Free tier included with Proton account |
+| **Payment notes** | N/A for free tier |
 
 ### Why this is the one pick
-1. Practical hosted calendar alternative to Google.
-2. Fits Proton Mail users.
-3. Multi-platform access.
-4. Lower ops than self-hosting CalDAV.
-5. Clear privacy-oriented vendor positioning.
+1. Zero-access encryption protects event titles, descriptions, locations, and attendees; Proton cannot read your schedule.
+2. Encrypted contacts store phone numbers, addresses, and personal notes securely with digital signatures.
+3. Automatically integrates with Proton Mail to parse invitations without exposing data to third parties.
+4. Clean web and mobile apps with widget support.
+5. Compliant with Swiss data protection laws.
 
 ### What it does not do
-- Not every Google Calendar power feature.
-- Sharing with non-Proton users can be awkward.
-- Not fully self-hosted.
+- Direct CalDAV/CardDAV sync to third-party desktop calendar clients requires Proton Bridge (paid plan).
+- Public calendar sharing links reveal unencrypted event times to designated participants.
 
 ---
 
 ## Install guide (primary)
 
-### Download hubs
-- https://proton.me/calendar
-- Proton mobile apps from https://proton.me/mail/download (calendar included in Proton mobile suite flows)
+### Web
+- Access your calendar directly via web browser: https://calendar.proton.me.
 
-### Windows
-1. Create/login Proton account.
-2. Use https://calendar.proton.me in browser, or Proton desktop apps where calendar is integrated.
-3. Create calendars and optional import from Google ICS export.
-
-### macOS
-1. Use web calendar or Proton apps.
-2. For Apple Calendar subscription/import, use export/ICS options Proton provides when available.
-3. Prefer official Proton apps for encrypted features.
-
-### Linux
-1. Use https://calendar.proton.me in browser.
-2. Optional: desktop integration via supported CalDAV/Bridge features on paid plans if offered—verify current Proton docs.
-
-### Android
-1. Install Proton Calendar / Proton Mail app suite components listed by Proton for calendar.
-2. Sign in and enable notifications.
-3. Disable Google Calendar sync for migrated accounts if leaving Google.
-
-### iOS
-1. Install Proton Calendar from App Store links on proton.me.
-2. Sign in; allow calendar notifications.
-3. Import existing calendars carefully.
-
-### First-run checklist
-1. Enable account 2FA.
-2. Export Google Calendar ICS before cutting over.
-3. Update shared calendars with collaborators.
+### Mobile Apps
+- **Android:** https://play.google.com/store/apps/details?id=me.proton.android.calendar
+- **iOS:** https://apps.apple.com/app/proton-calendar-secure-events/id1524373408
 
 ---
 
@@ -75,20 +50,20 @@
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Need full self-hosted CalDAV/CardDAV | Proton is SaaS | **Nextcloud Calendar/Contacts** | Yes | Self-host + clients | Don’t self-host without backups |
-| Prefer Tuta stack | Vendor preference | **Tuta Calendar** | Partial | Apps · web | Don’t split mail/calendar vendors casually |
-| Need offline-first FOSS desktop PIM | Different workflow | **Thunderbird + local address book/calendar** | Yes | Desktop | Don’t use if you need seamless mobile-first hosted UX |
+| Need standard CalDAV/CardDAV server on your private hardware | Proton uses custom zero-access crypto rather than standard CalDAV | **Nextcloud Calendar/Contacts** | Yes | Linux / Docker | Don’t self-host unless you manage your own server backups |
+| Prefer the German Tuta encrypted ecosystem | Standardizing on Tuta Mail rather than Proton | **Tuta Calendar** | Yes | All major | Don’t switch if you already use Proton Mail |
+| Need a 100% offline desktop calendar and address book | Do not want your calendar synced to any cloud | **Thunderbird (Local Calendar)** | Yes | Linux · Windows · macOS | Don’t switch if you need real-time sync with a mobile phone |
 
 ### Alternative installs
 
-#### Nextcloud Calendar/Contacts
-- Server + apps: https://nextcloud.com/install/
+#### Nextcloud Calendar & Contacts
+- Deploy Nextcloud → Enable Calendar & Contacts apps → Sync with Android using **DAVx5** (F-Droid).
 
 #### Tuta Calendar
-- https://tuta.com — calendar features in Tuta apps
+- Website: https://tuta.com/calendar
 
-#### Thunderbird
-- https://www.thunderbird.net
+#### Thunderbird (Local)
+- Website: https://www.thunderbird.net
 
 ---
 
@@ -96,24 +71,20 @@
 
 | Field | Value |
 |---|---|
-| **Name** | Nextcloud Calendar + Contacts |
+| **Name** | Nextcloud Calendar + Contacts (CalDAV / CardDAV) |
 | **Repo** | https://github.com/nextcloud/server |
-| **What local means** | CalDAV/CardDAV on your server |
-| **Who it’s for** | Homelab users |
-| **Ops burden** | Medium–High |
-| **When primary still wins** | You want zero server maintenance |
-
-### Local install
-- Install Nextcloud server; enable Calendar/Contacts apps
-- Connect DAVx⁵ (Android) / iOS accounts / desktop clients via CalDAV/CardDAV
+| **What local means** | Industry-standard CalDAV/CardDAV server running on your own VPS or homelab |
+| **Who it’s for** | Homelab operators and multi-device syncing with native OS accounts |
+| **Ops burden** | Medium |
+| **When primary still wins** | You want zero maintenance and turnkey web/mobile apps |
 
 ---
 
 ## Quick decision box
 
 ```text
-Default hosted private calendar      →  Proton Calendar
-Self-host CalDAV                     →  Nextcloud
-Tuta ecosystem                       →  Tuta Calendar
-Desktop FOSS PIM                     →  Thunderbird
+Default E2EE calendar & contacts    →  Proton Calendar
+Self-hosted standard CalDAV/CardDAV  →  Nextcloud
+German post-quantum calendar         →  Tuta Calendar
+Offline desktop local calendar       →  Thunderbird
 ```

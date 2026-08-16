@@ -1,73 +1,58 @@
 # Instant Messaging
 
-> Open Privacy · v0.1 · July 2026 · Poorvith M P  
+> Open Privacy · v0.2 · August 2026 · Poorvith M P  
 > Category ID: `05-messenger`  
-> Replaces: WhatsApp / SMS as default private chat
+> Replaces: WhatsApp (Meta surveillance metadata), Telegram (unencrypted cloud chats by default)
 
 ---
 
 ## Primary recommendation
+
+<img src="../../assets/logos/signal.svg" width="36" height="36" alt="Signal Logo">
 
 | Field | Value |
 |---|---|
 | **Name** | Signal |
 | **Website** | https://signal.org |
 | **Source / repo** | https://github.com/signalapp |
-| **Open source?** | **Yes** — clients open source |
-| **Local / self-host?** | **No** — uses Signal service |
-| **Target audience** | People who need E2EE chat with strong defaults |
-| **Platforms** | Windows · macOS · Linux · Android · iOS |
-| **Pricing** | Free |
+| **Open source?** | **Yes** (GPL 3.0 / AGPL 3.0) |
+| **Local / self-host?** | **No** — centralized cryptographic server |
+| **Target audience** | Everyday users who want gold-standard end-to-end encrypted messaging with friends and family |
+| **Platforms** | Android · iOS · Linux · Windows · macOS |
+| **Pricing** | 100% Free (non-profit funded) |
 | **Payment notes** | N/A |
 
 ### Why this is the one pick
-1. Strong E2EE defaults for everyday messaging.
-2. Official apps on all major platforms.
-3. Open-source clients.
-4. Usable UX for non-technical contacts relative to many alternatives.
-5. Safety number verification for high-risk contacts.
+1. Gold-standard Signal Protocol providing end-to-end encryption and forward secrecy by default for all 1:1 chats, group chats, voice calls, and video calls.
+2. Sealed Sender technology strips metadata so Signal servers do not know who is messaging whom.
+3. Usernames allow sharing your contact without exposing your phone number to contacts.
+4. Non-profit foundation with no ad-tech business model.
+5. Large enough user base that non-technical contacts will actually install it.
 
 ### What it does not do
-- Requires a phone number for registration.
-- Not ideal as a large public community platform.
-- Network effect still favors WhatsApp in some regions.
+- Still requires a phone number during initial SMS verification (though usernames hide it afterward).
+- Centralized server architecture (not federated or p2p).
+- Does not replace large public discussion forums.
 
 ---
 
 ## Install guide (primary)
 
-### Download hubs
-- https://signal.org/download/
+### Android & iOS
+- **Android:** https://play.google.com/store/apps/details?id=org.thoughtcrime.securesms (or direct APK from https://signal.org/android/apk/)
+- **iOS:** https://apps.apple.com/app/signal-private-messenger/id874135377
 
-### Windows
-1. Download Signal Desktop from https://signal.org/download/
-2. Install and open Signal.
-3. Link to your primary Signal mobile app via QR code.
+### Linux (Debian, Ubuntu, Linux Mint)
+```bash
+wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg
+cat signal-desktop-keyring.gpg | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null
+echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' | sudo tee /etc/apt/sources.list.d/signal-xenial.list
+sudo apt update && sudo apt install signal-desktop
+```
 
-### macOS
-1. Download macOS build from https://signal.org/download/
-2. Open the `.dmg` and drag Signal to Applications.
-3. Link device via QR from the mobile app.
-
-### Linux
-1. Follow the official Linux install instructions on https://signal.org/download/
-2. Launch Signal and link to mobile.
-
-### Android
-1. Install Signal from the Play Store link on https://signal.org/download/ (or official APK channel Signal documents).
-2. Register with your phone number.
-3. Set a Signal PIN / registration lock if offered.
-
-### iOS
-1. Install Signal from the App Store (link via signal.org/download).
-2. Register with phone number.
-3. Configure notifications; review backup settings for privacy preference.
-
-### First-run checklist
-1. Set a strong Signal PIN.
-2. Remove unknown linked devices.
-3. Enable disappearing messages for sensitive threads.
-4. Verify safety numbers for high-risk contacts.
+### Windows & macOS
+- **Windows:** Download `.exe` from https://signal.org/download/ (or `winget install OpenWhisperSystems.Signal`).
+- **macOS:** Download `.dmg` from https://signal.org/download/ (or `brew install --cask signal`).
 
 ---
 
@@ -75,18 +60,23 @@
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Refuse phone-number registration | Signal requires a phone number | **Session** | Yes | Desktop · mobile | Don’t switch if your contacts only use Signal |
-| Need federated/self-hostable chat | Signal is centralized | **Element (Matrix)** | Yes | All major + self-host | Don’t use Matrix if you need the simplest UX for non-tech family |
-| Need large public groups/channels | Different product model | **Element spaces** | Yes | All major | Don’t sacrifice E2EE defaults for public broadcast features |
+| Refuse user identifiers (no phone number, no username, no central servers) | Signal requires phone number for initial registration | **SimpleX Chat** | Yes | Linux · Windows · macOS · Android · iOS · CLI | Don’t switch if your social circle is already established on Signal |
+| Want decentralized onion-routed chat with session IDs | Signal uses centralized routing servers | **Session** | Yes | All major | Don’t switch if you need real-time high-quality voice/video calls |
+| Need federated team chat and public spaces | Signal is optimized for personal/small group messaging | **Element (Matrix)** | Yes | All major | Don’t switch if you want simple, reliable contact-to-contact messaging |
 
 ### Alternative installs
 
+#### SimpleX Chat
+- Website: https://simplex.chat
+- Android: Google Play or F-Droid
+- iOS: App Store
+- Desktop / Terminal: https://github.com/simplex-chat/simplex-chat/releases
+
 #### Session
-- https://getsession.org/download — install official desktop/mobile packages only
+- Website: https://getsession.org/download
 
 #### Element (Matrix)
-- Apps: https://element.io/download
-- Homeserver self-host: Matrix server docs (e.g. Synapse install guides)
+- Website: https://element.io/download
 
 ---
 
@@ -94,23 +84,20 @@
 
 | Field | Value |
 |---|---|
-| **Name** | Matrix (Synapse/Conduit) + Element |
-| **Repo** | https://github.com/element-hq/element-web |
-| **What local means** | Self-hosted chat homeserver + open clients |
-| **Who it’s for** | Communities and technical households |
-| **Ops burden** | Medium–High |
-| **When primary still wins** | You need the simplest E2EE messenger for phone contacts |
-
-### Local install
-- **Server:** install a Matrix homeserver on Linux per upstream docs
-- **Clients:** Element from https://element.io/download on all OSes
+| **Name** | Matrix (Synapse / Conduit) + Element |
+| **Repo** | https://github.com/matrix-org/synapse |
+| **What local means** | Self-hosted federated home server on your hardware |
+| **Who it’s for** | Communities, teams, and self-hosters |
+| **Ops burden** | High |
+| **When primary still wins** | You want simple messaging that your non-tech friends will actually use |
 
 ---
 
 ## Quick decision box
 
 ```text
-Default private messenger           →  Signal
-No phone number                      →  Session
-Federated / self-host                →  Element (Matrix)
+Default private messaging           →  Signal
+Zero user identifiers (no ID/phone)  →  SimpleX Chat
+Onion-routed anonymity               →  Session
+Federated team/community chat        →  Element (Matrix)
 ```

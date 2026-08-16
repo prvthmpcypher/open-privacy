@@ -1,73 +1,59 @@
 # 2FA Authenticator
 
-> Open Privacy · v0.1 · July 2026 · Poorvith M P  
+> Open Privacy · v0.2 · August 2026 · Poorvith M P  
 > Category ID: `09-2fa-authenticator`  
-> Replaces: SMS 2FA; closed authenticator apps that trap exports
+> Replaces: SMS 2FA (SIM swap vulnerability), Google Authenticator / Microsoft Authenticator (closed cloud lock-in)
 
 ---
 
 ## Primary recommendation
+
+<img src="../../assets/logos/ente.svg" width="36" height="36" alt="Ente Auth Logo">
 
 | Field | Value |
 |---|---|
 | **Name** | Ente Auth |
 | **Website** | https://ente.io/auth |
 | **Source / repo** | https://github.com/ente-io/ente |
-| **Open source?** | **Yes** |
-| **Local / self-host?** | **Partial** — open apps; cloud optional for sync |
-| **Target audience** | Users who need cross-platform TOTP with export freedom |
-| **Platforms** | Android · iOS · desktop/web options per Ente docs |
-| **Pricing** | Free authenticator product (see ente.io for any sync tiers) |
-| **Payment notes** | N/A for local use; cloud features per Ente |
+| **Open source?** | **Yes** (AGPL 3.0) |
+| **Local / self-host?** | **Yes** — clients operate locally; server can be self-hosted |
+| **Target audience** | Users who want end-to-end encrypted, multi-device 2FA code synchronization |
+| **Platforms** | Android · iOS · Linux · Windows · macOS · Web |
+| **Pricing** | 100% Free |
+| **Payment notes** | N/A |
 
 ### Why this is the one pick
-1. Open-source authenticator with modern UX.
-2. Cross-platform story stronger than Android-only apps.
-3. Export-friendly design vs lock-in authenticators.
-4. Actively maintained.
-5. Better default than SMS 2FA.
+1. 100% open-source applications and audited zero-knowledge end-to-end encryption.
+2. Cross-platform sync across desktop and mobile devices with zero lock-in.
+3. Supports manual offline encrypted backups (export to unencrypted or encrypted JSON).
+4. Standalone dedicated 2FA application (not bundled inside a single password manager).
+5. Clean, modern UI with biometric unlock, tags, and search.
 
 ### What it does not do
-- 2FA apps are not a password manager.
-- You must back up recovery codes for each account.
-- Cloud sync is optional—understand the tradeoff.
+- Does not replace hardware FIDO2 security keys (YubiKey) for maximum phishing protection.
+- Requires remembering your Ente account recovery key for cloud-synced restore.
 
 ---
 
 ## Install guide (primary)
 
 ### Download hubs
-- https://ente.io/auth
-- Mobile stores linked from that page; desktop/web per Ente Auth docs
+- Website: https://ente.io/auth/
+- GitHub Releases: https://github.com/ente-io/ente/releases
 
-### Windows
-1. Open https://ente.io/auth and download the desktop/web client options listed.
-2. Install/open Ente Auth.
-3. Add TOTP secrets by scanning QR codes from account security pages.
+### Desktop (Windows, macOS, Linux)
+- **Windows:** Download `.exe` from ente.io.
+- **macOS:** Download `.dmg` from ente.io.
+- **Linux:** Download AppImage or `.deb` from GitHub releases.
 
-### macOS
-1. Download macOS/iOS companion options from https://ente.io/auth
-2. Install and add accounts via QR/manual entry.
-
-### Linux
-1. Use the Linux build or web/desktop option published on https://ente.io/auth
-2. Install via the provided package/AppImage as listed.
-3. Import/export only through official export features.
-
-### Android
-1. Install Ente Auth from the Play Store / F-Droid link provided on ente.io/auth.
-2. Grant camera permission only when scanning QR codes.
-3. Enable app lock (device biometrics/PIN).
-
-### iOS
-1. Install Ente Auth from the App Store link on ente.io/auth.
-2. Add TOTP accounts.
-3. Enable iOS app lock features available in the app.
+### Mobile
+- **Android:** https://play.google.com/store/apps/details?id=io.ente.auth (or F-Droid / GitHub APK)
+- **iOS:** https://apps.apple.com/app/ente-auth/id6444121398
 
 ### First-run checklist
-1. Export/backup codes using official export.
-2. Store recovery codes offline for critical accounts.
-3. Prefer TOTP/hardware keys over SMS 2FA wherever possible.
+1. Write down your **Recovery Key** and store it offline.
+2. Enable biometric unlock (Fingerprint / Face ID).
+3. Test exporting an encrypted backup file to an external drive.
 
 ---
 
@@ -75,22 +61,21 @@
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Android-only user who wants fully offline FOSS vault | Prefer local-only Android UX | **Aegis** | Yes | Android | Don’t pick Aegis if you need first-class iOS |
-| Want hardware-backed 2FA instead of software TOTP | Software TOTP can be phished in some flows | **YubiKey (WebAuthn/FIDO2)** | Hardware + open standards | USB/NFC + major OS | Don’t buy keys if sites you use lack WebAuthn |
-| Already standardized on Proton stack | Fewer apps preference | **Proton Authenticator** | Yes/Partial per Proton | Mobile | Don’t migrate codes casually without export |
+| Want cross-platform FOSS TOTP without registering an Ente account | Prefer cloud backup via personal Google Drive / iCloud without a 3rd party account | **2FAS** | Yes | Android · iOS · Extension | Don’t switch if you need a native desktop client |
+| Android-only user wanting 100% offline local encrypted vault | Do not want any cloud sync code in the app | **Aegis Authenticator** | Yes | Android | Don’t switch if you need cross-device sync with an iPhone or PC |
+| Need maximum phishing resistance for high-value accounts | Software TOTP codes can still be phished on fake login pages | **YubiKey (FIDO2/WebAuthn)** | Hardware | All major | Don’t rely exclusively on hardware keys without registering a backup key |
 
 ### Alternative installs
 
-#### Aegis
-- https://getaegis.app/ — Android (Play Store / F-Droid)
-- **iOS / desktop:** not the primary Aegis platform
+#### 2FAS Authenticator
+- Website: https://2fas.com — install app on iOS or Android.
 
-#### YubiKey (WebAuthn/FIDO2)
-- Buy from Yubico; set up via https://www.yubico.com/support/download/
-- Register keys in each account’s security settings
+#### Aegis Authenticator (Android Offline)
+- F-Droid: https://f-droid.org/packages/com.beemdevelopment.aegis/
+- Google Play: https://play.google.com/store/apps/details?id=com.beemdevelopment.aegis
 
-#### Proton Authenticator
-- https://proton.me/authenticator — install official mobile apps
+#### YubiKey (Hardware Security Key)
+- Hardware store: https://www.yubico.com/products/
 
 ---
 
@@ -98,24 +83,20 @@
 
 | Field | Value |
 |---|---|
-| **Name** | Aegis (Android offline) or KeePassXC TOTP |
+| **Name** | Aegis Authenticator (Android) / KeePassXC TOTP (Desktop) |
 | **Repo** | https://github.com/beemdevelopment/Aegis |
-| **What local means** | TOTP secrets stored only on device/local DB |
-| **Who it’s for** | Users who refuse cloud sync for 2FA |
-| **Ops burden** | Low |
-| **When primary still wins** | You need easy multi-device encrypted sync UX |
-
-### Local install
-- **Android:** Aegis from getaegis.app
-- **Desktop TOTP:** KeePassXC TOTP feature with local `.kdbx`
+| **What local means** | 2FA tokens remain strictly on your local hardware in an encrypted vault |
+| **Who it’s for** | Offline purists and air-gapped security workflows |
+| **Ops burden** | Low (must remember to take manual export backups) |
+| **When primary still wins** | You want automatic cross-platform sync when switching phones |
 
 ---
 
 ## Quick decision box
 
 ```text
-Default authenticator                →  Ente Auth
-Android offline FOSS                 →  Aegis
-Hardware keys                        →  YubiKey
-Proton ecosystem                     →  Proton Authenticator
+Default E2EE synced 2FA              →  Ente Auth
+Cross-platform accountless backup    →  2FAS
+Android-only offline vault           →  Aegis Authenticator
+Hardware-level anti-phishing         →  YubiKey (WebAuthn)
 ```

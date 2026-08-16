@@ -1,74 +1,57 @@
 # File Sharing
 
-> Open Privacy · v0.1 · July 2026 · Poorvith M P  
+> Open Privacy · v0.2 · August 2026 · Poorvith M P  
 > Category ID: `11-file-sharing`  
-> Replaces: WeTransfer / random file hosts
+> Replaces: WeTransfer, Google Drive public links, unencrypted messaging attachments
 
 ---
 
 ## Primary recommendation
+
+<img src="../../assets/logos/onionshare.svg" width="36" height="36" alt="OnionShare Logo">
 
 | Field | Value |
 |---|---|
 | **Name** | OnionShare |
 | **Website** | https://onionshare.org |
 | **Source / repo** | https://github.com/onionshare/onionshare |
-| **Open source?** | **Yes** |
-| **Local / self-host?** | **Yes** — runs on your machine over Tor |
-| **Target audience** | Users sending sensitive files without a third-party upload host |
-| **Platforms** | Windows · macOS · Linux (mobile companions limited; primarily desktop) |
-| **Pricing** | Free |
+| **Open source?** | **Yes** (GPL 3.0) |
+| **Local / self-host?** | **Yes** — runs directly on your computer over the Tor network |
+| **Target audience** | Anyone needing anonymous, unblockable, peer-to-peer file sending and receiving |
+| **Platforms** | Windows · macOS · Linux · CLI |
+| **Pricing** | 100% Free |
 | **Payment notes** | N/A |
 
 ### Why this is the one pick
-1. Share files without uploading to a commercial file host.
-2. Open source and privacy-oriented by design.
-3. Works for one-off sensitive sends.
-4. No account required.
-5. Strong fit when confidentiality matters more than convenience.
+1. Transfers files directly from your computer to the recipient over ephemeral Tor onion services.
+2. Zero third-party cloud servers ever store or see your data.
+3. Recipient only needs a Tor Browser (or onion-capable browser) to download or upload files.
+4. Includes anonymous file receiving (dropboxes), temporary static website hosting, and anonymous chat rooms.
+5. End-to-end encrypted by the Tor onion service architecture itself.
 
 ### What it does not do
-- Recipient experience can be harder than a simple HTTPS link.
-- Depends on Tor network availability.
-- Not ideal for huge public downloads or non-tech recipients.
+- Both computers must be online at the same time for the transfer to complete.
+- Transfer speed is limited by Tor network relay speeds.
+- Recipient must be able to open `.onion` links.
 
 ---
 
 ## Install guide (primary)
 
-### Download hubs
-- https://onionshare.org
-- Releases: https://github.com/onionshare/onionshare/releases
-
-### Windows
-1. Download the Windows installer from https://onionshare.org or GitHub releases.
-2. Run the installer.
-3. Open OnionShare → start a share → send the onion address only over a trusted channel.
-
-### macOS
-1. Download the macOS build from onionshare.org / releases.
-2. Open the app (approve Gatekeeper if prompted).
-3. Start a share and copy the onion URL.
+### Windows & macOS
+- **Windows:** Download `.msi` from https://onionshare.org/download/ (or `winget install MicahLee.OnionShare`).
+- **macOS:** Download `.dmg` from https://onionshare.org/download/ (or `brew install --cask onionshare`).
 
 ### Linux
-1. Install via distro package if available, or download from onionshare.org / Flatpak/GitHub as published.
-2. Launch OnionShare.
-3. Share files; keep the app running until transfer completes.
-
-### Android
-1. Check current official mobile options on onionshare.org (desktop is primary).
-2. If no suitable mobile client, use desktop for sending/receiving.
-3. Avoid unofficial APKs claiming OnionShare support.
-
-### iOS
-1. Official iOS support is limited/not the primary workflow.
-2. Prefer desktop OnionShare or an alternative catch path for iOS recipients.
-3. Do not install random App Store clones.
+```bash
+flatpak install flathub org.onionshare.OnionShare
+```
+Or via distro packages: `sudo apt install onionshare` / `sudo dnf install onionshare`.
 
 ### First-run checklist
-1. Verify you downloaded from onionshare.org or the official GitHub org.
-2. Send the onion link out-of-band (Signal), not in the same untrusted email if avoidable.
-3. Stop the share when finished.
+1. Open OnionShare and let it connect to the Tor network.
+2. Select **Share Files** → drag files in → click **Start Sharing**.
+3. Send the generated `.onion` address and private key to the recipient via an encrypted messenger (see `05-messenger`).
 
 ---
 
@@ -76,21 +59,20 @@
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Need simple HTTPS link for non-tech recipients | Tor onion UX is harder | **Send (timvisee/send)** | Yes | Self-host / public instances | Don’t use random unknown Send instances for highly sensitive files |
-| Need ongoing sync not one-off send | Different problem | **Syncthing** | Yes | Desktop · Android | Don’t use Syncthing for one anonymous public drop |
-| Recipient is iOS-only and struggles with Tor | Client/UX limits | **Magic Wormhole** (desktop) or encrypted container + Proton Drive link | Varies | Varies | Prefer teaching OnionShare when sensitivity is high |
+| Recipient cannot install Tor Browser; need simple clearnet HTTPS link | OnionShare `.onion` URLs require Tor | **Send (timvisee fork)** | Yes | Web · Docker | Don’t switch if sender/recipient anonymity is mandatory |
+| Transferring files terminal-to-terminal between technical users | Tor routing has overhead for large local transfers | **Magic Wormhole** | Yes | CLI (Linux/Win/Mac) | Don’t switch if recipient needs a simple graphical web interface |
+| Need continuous folder sync rather than one-off transfers | OnionShare is an ephemeral transfer tool | **Syncthing** (see cloud category) | Yes | All major | Don’t use Syncthing for one-off sends to external contacts |
 
 ### Alternative installs
 
-#### Send (timvisee/send)
-- Project: https://github.com/timvisee/send
-- Self-host with Docker; or use a trusted public instance you verify
+#### Send (timvisee / Firefox Send Fork)
+- Official repo: https://github.com/timvisee/send
+- Web instances or self-hosted Docker container.
 
-#### Syncthing
-- https://syncthing.net/downloads/
-
-#### Magic Wormhole
-- https://github.com/magic-wormhole/magic-wormhole — `pip install magic-wormhole` / distro packages on Linux/macOS/Windows environments with Python
+#### Magic Wormhole (Terminal P2P Transfer)
+- Install: `pip install magic-wormhole` or `sudo apt install magic-wormhole`
+- Send: `wormhole send filename.zip`
+- Receive: `wormhole receive <code>`
 
 ---
 
@@ -98,23 +80,20 @@
 
 | Field | Value |
 |---|---|
-| **Name** | OnionShare itself, or self-hosted Send |
-| **Repo** | https://github.com/onionshare/onionshare · https://github.com/timvisee/send |
-| **What local means** | Transfer without a commercial SaaS file host |
-| **Who it’s for** | Privacy-sensitive senders |
-| **Ops burden** | Low (OnionShare) / Medium (Send server) |
-| **When primary still wins** | OnionShare already is local/Tor-based |
-
-### Local install
-- **OnionShare:** onionshare.org downloads
-- **Send:** Docker compose per timvisee/send docs
+| **Name** | OnionShare / Magic Wormhole |
+| **Repo** | https://github.com/onionshare/onionshare |
+| **What local means** | Direct point-to-point transfer with zero third-party cloud intermediaries |
+| **Who it’s for** | Privacy-conscious users and developers |
+| **Ops burden** | Low |
+| **When primary still wins** | You need maximum sender and receiver anonymity over Tor |
 
 ---
 
 ## Quick decision box
 
 ```text
-Sensitive one-off send               →  OnionShare
-Simple HTTPS expiring link           →  Send (self-host/trusted instance)
-Continuous folder sync               →  Syncthing
+Anonymous P2P Tor transfer          →  OnionShare
+Simple clearnet E2EE web link        →  Send (timvisee)
+Fast CLI-to-CLI code-word transfer   →  Magic Wormhole
+Ongoing folder synchronization       →  Syncthing
 ```

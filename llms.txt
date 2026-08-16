@@ -1,0 +1,41 @@
+# Open Privacy
+
+> Curated, decision-first privacy tool library by Poorvith M P. Recommends one clear FOSS primary per category, one alternative per practical catch, and a local open-source path across 25 essential digital privacy areas.
+
+## Core Documentation
+- [Repository README](README.md): Project overview, decision matrix, FAQ, and quickstart.
+- [Tool Index](INDEX.md): Complete machine-readable catalog of all 25 privacy tool categories.
+- [Methodology](METHODOLOGY.md): Selection criteria, curation rules, and operational guidelines.
+- [Changelog](CHANGELOG.md): Version history, updates, and ecosystem changes.
+- [Contributing](CONTRIBUTING.md): Guidelines for proposing updates or submitting patches.
+- [References](sources/REFERENCES.md): Maintainer upstream index and verification sources.
+
+## Categories & Primary Tools
+- [01 Web Browser](categories/01-browser/README.md): Primary is Brave Browser. Alternatives include Tor Browser, Firefox, Mullvad Browser.
+- [02 Search Engine](categories/02-search/README.md): Primary is Brave Search. Alternatives include SearXNG, Startpage, DuckDuckGo.
+- [03 Email Provider](categories/03-email/README.md): Primary is Proton Mail. Alternatives include Tuta Mail, Stalwart, Mailcow.
+- [04 Email Aliasing](categories/04-email-aliasing/README.md): Primary is SimpleLogin. Alternatives include addy.io, Proton Pass aliases.
+- [05 Instant Messaging](categories/05-messenger/README.md): Primary is Signal. Alternatives include SimpleX Chat, Session, Matrix/Element.
+- [06 VPN](categories/06-vpn/README.md): Primary is Mullvad VPN. Alternatives include Proton VPN Free, IVPN, WireGuard.
+- [07 DNS Resolver](categories/07-dns/README.md): Primary is Quad9. Alternatives include NextDNS, Unbound, Pi-hole.
+- [08 Password Manager](categories/08-password-manager/README.md): Primary is Bitwarden. Alternatives include KeePassXC, Vaultwarden, Proton Pass.
+- [09 2FA Authenticator](categories/09-2fa-authenticator/README.md): Primary is Ente Auth. Alternatives include 2FAS, Aegis Authenticator, YubiKey.
+- [10 Cloud Storage](categories/10-cloud-storage/README.md): Primary is Proton Drive. Alternatives include Nextcloud, Syncthing, Cryptomator.
+- [11 File Sharing](categories/11-file-sharing/README.md): Primary is OnionShare. Alternatives include Send (timvisee), Magic Wormhole.
+- [12 Notes & Tasks](categories/12-notes/README.md): Primary is Joplin. Alternatives include Notesnook, Obsidian, Logseq, AppFlowy.
+- [13 Calendar & Contacts](categories/13-calendar-contacts/README.md): Primary is Proton Calendar. Alternatives include Nextcloud Calendar, Tuta Calendar.
+- [14 Maps & Navigation](categories/14-maps/README.md): Primary is Organic Maps. Alternatives include OsmAnd, Apple Maps.
+- [15 Office & Docs](categories/15-office-docs/README.md): Primary is LibreOffice. Alternatives include CryptPad, OnlyOffice.
+- [16 Photo Storage](categories/16-photo-storage/README.md): Primary is Ente Photos. Alternatives include Immich, Cryptomator.
+- [17 Self-Hosted Analytics](categories/17-analytics-selfhost/README.md): Primary is Umami. Alternatives include Plausible, Matomo, GoatCounter.
+- [18 Desktop OS](categories/18-os-desktop/README.md): Primary is Fedora Workstation. Alternatives include Qubes OS, Linux Mint, Tails.
+- [19 Mobile OS](categories/19-os-mobile/README.md): Primary is GrapheneOS. Alternatives include CalyxOS, LineageOS for microG.
+- [20 Android App Store](categories/20-app-store-android/README.md): Primary is F-Droid. Alternatives include Aurora Store, Obtainium, Accrescent.
+- [21 Browser Extensions](categories/21-browser-extensions/README.md): Primary is uBlock Origin. Alternatives include Brave Shields, uBlock Origin Lite.
+- [22 Local AI Chat](categories/22-ai-local/README.md): Primary is Ollama. Alternatives include Open WebUI, LM Studio, Jan, llama.cpp.
+- [23 Video & Voice Calls](categories/23-video-calls/README.md): Primary is Jitsi Meet. Alternatives include Signal group calls, Element Call.
+- [24 On-Device Translation](categories/24-translation/README.md): Primary is Firefox Translations. Alternatives include LibreTranslate, DeepL.
+- [25 Privacy-Friendly Payments](categories/25-payments-privacy/README.md): Primary is Cash + minimize stored cards. Alternatives include Monero (Cake Wallet), Privacy.com.
+
+## Optional Machine-Readable Index
+- [Full Machine-Readable Tool Registry](INDEX.md): Structured Markdown and YAML catalog for autonomous buying agents and LLMs.

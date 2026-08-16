@@ -1,73 +1,55 @@
 # Maps & Navigation
 
-> Open Privacy · v0.1 · July 2026 · Poorvith M P  
+> Open Privacy · v0.2 · August 2026 · Poorvith M P  
 > Category ID: `14-maps`  
-> Replaces: Google Maps as default
+> Replaces: Google Maps (continuous location history, ad profiles, route tracking)
 
 ---
 
 ## Primary recommendation
+
+<img src="../../assets/logos/organicmaps.svg" width="36" height="36" alt="Organic Maps Logo">
 
 | Field | Value |
 |---|---|
 | **Name** | Organic Maps |
 | **Website** | https://organicmaps.app |
 | **Source / repo** | https://github.com/organicmaps/organicmaps |
-| **Open source?** | **Yes** |
-| **Local / self-host?** | **Yes** — offline maps on device |
-| **Target audience** | Everyday navigation without Google account tracking |
-| **Platforms** | Android · iOS · desktop builds per project |
-| **Pricing** | Free |
+| **Open source?** | **Yes** (Apache 2.0) |
+| **Local / self-host?** | **Yes** — runs 100% offline from local map packages on your device |
+| **Target audience** | Drivers, hikers, cyclists, and pedestrians who want turn-by-turn navigation with zero telemetry |
+| **Platforms** | Android · iOS · Linux (experimental) |
+| **Pricing** | 100% Free (crowdfunded) |
 | **Payment notes** | N/A |
 
 ### Why this is the one pick
-1. Open-source offline maps based on OpenStreetMap.
-2. No Google account required.
-3. Strong privacy posture for navigation.
-4. Works offline after downloading regions.
-5. Practical daily driver for many cities.
+1. 100% offline navigation powered by crowd-sourced OpenStreetMap (OSM) data.
+2. Zero user tracking, zero data collection, zero telemetry, and zero ads.
+3. Turn-by-turn voice navigation for driving, cycling, and walking.
+4. Extremely battery-efficient and fast rendering engine.
+5. Search, routing, and bookmarks work without an internet connection once map regions are downloaded.
 
 ### What it does not do
-- Business data/reviews can lag Google Maps.
-- Transit features vary by region.
-- Live traffic density may be weaker than Google.
+- Does not offer live crowdsourced traffic congestion layers like Google Maps / Waze.
+- Satellite imagery is not included (vector map data only).
+- Business opening hours and reviews are limited to OpenStreetMap community contributions.
 
 ---
 
 ## Install guide (primary)
 
-### Download hubs
-- https://organicmaps.app
-- Stores linked from the site (Play Store, App Store, F-Droid, etc.)
-
-### Windows
-1. Check organicmaps.app for current desktop options.
-2. If desktop build is listed, install from official links only.
-3. Otherwise use Android/iOS as primary navigation clients.
-
-### macOS
-1. Check organicmaps.app for macOS availability.
-2. Install only from official project links.
-3. Download offline map regions after install.
-
-### Linux
-1. Install via Flatpak/package if published on organicmaps.app, or build from GitHub releases.
-2. Launch and download offline maps for your region.
-
 ### Android
-1. Install Organic Maps from F-Droid / Play Store link on organicmaps.app.
-2. Open app → download offline maps for your areas.
-3. Grant location permission only while using the app if preferred.
+- **F-Droid:** https://f-droid.org/packages/app.organicmaps/
+- **Google Play:** https://play.google.com/store/apps/details?id=app.organicmaps
+- **Direct APK:** https://github.com/organicmaps/organicmaps/releases
 
 ### iOS
-1. Install from App Store link on organicmaps.app.
-2. Download offline regions over Wi‑Fi.
-3. Set as preferred navigation app where iOS allows.
+- **App Store:** https://apps.apple.com/app/organic-maps-offline-hiking/id1567437057
 
 ### First-run checklist
-1. Download offline maps before travel.
-2. Disable unnecessary background location.
-3. Keep OSM edits separate from navigation accountless use.
+1. Open the app while connected to Wi-Fi and download your home region/state map.
+2. Download any route maps before traveling to areas with poor mobile reception.
+3. Enable GPS location permissions (set to "Only while using app").
 
 ---
 
@@ -75,20 +57,21 @@
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Need richer OSM app with more modes | Feature preference | **OsmAnd** | Yes | Android · iOS | Don’t switch if Organic Maps already meets offline needs |
-| Need turn-by-turn in a full private phone stack already using Apple | Ecosystem convenience | **Apple Maps** | No | iOS · macOS | Don’t use if you are leaving Apple ecosystem |
-| Need web maps without app install | No install allowed | **OpenStreetMap.org web** | Yes (data) | Web | Don’t rely on web-only for offline hiking |
+| Need rich topographic contours, nautical charts, GPX recording, and advanced GIS layers | Organic Maps is designed for simplicity | **OsmAnd** | Yes (GPL 3.0) | Android · iOS | Don’t switch if you just want simple, fast driving or walking directions |
+| Need turn-by-turn navigation in an existing Apple ecosystem with live traffic | Prefer Apple’s built-in platform privacy over OpenStreetMap | **Apple Maps** | No | iOS · macOS | Don’t switch if you need cross-platform Android or Linux support |
+| Need a quick web browser map without installing an app | Organic Maps is a mobile app | **OpenStreetMap.org** | Yes | Web | Don’t use web maps for turn-by-turn driving navigation |
 
 ### Alternative installs
 
-#### OsmAnd
-- https://osmand.net/docs/versions/ — Android/iOS downloads
+#### OsmAnd (Advanced Offline OSM)
+- F-Droid: https://f-droid.org/packages/net.osmand.plus/
+- Website: https://osmand.net
 
 #### Apple Maps
-- Built into iOS/macOS
+- Built into iOS and macOS.
 
-#### OpenStreetMap web
-- https://www.openstreetmap.org
+#### OpenStreetMap Web
+- Navigate to: https://www.openstreetmap.org
 
 ---
 
@@ -96,23 +79,20 @@
 
 | Field | Value |
 |---|---|
-| **Name** | Organic Maps / OsmAnd offline map packs |
+| **Name** | Organic Maps / OsmAnd (Offline Map Packs) |
 | **Repo** | https://github.com/organicmaps/organicmaps |
-| **What local means** | Map data stored on device |
-| **Who it’s for** | Travelers and privacy users |
-| **Ops burden** | Low |
-| **When primary still wins** | Primary already is local offline FOSS |
-
-### Local install
-- Install Organic Maps; download offline regions in-app
+| **What local means** | Map databases and routing calculations reside 100% on your local device storage |
+| **Who it’s for** | Everyone traveling without cellular data or seeking zero location leakage |
+| **Ops burden** | Low (download map files once per month) |
+| **When primary still wins** | Primary is already the offline local standard |
 
 ---
 
 ## Quick decision box
 
 ```text
-Default private offline maps         →  Organic Maps
-More power-user OSM features         →  OsmAnd
-iOS system maps                      →  Apple Maps
-Web only                             →  openstreetmap.org
+Default offline navigation           →  Organic Maps
+Advanced GIS / topography / hiking   →  OsmAnd
+Live traffic in Apple ecosystem      →  Apple Maps
+Quick browser web map lookup         →  OpenStreetMap.org
 ```

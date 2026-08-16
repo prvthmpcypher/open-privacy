@@ -1,76 +1,67 @@
 # VPN
 
-> Open Privacy · v0.1 · July 2026 · Poorvith M P  
+> Open Privacy · v0.2 · August 2026 · Poorvith M P  
 > Category ID: `06-vpn`  
-> Replaces: Exposing all traffic to the ISP on untrusted networks; sketchy free VPNs
+> Replaces: Commercial logging VPNs, ISP surveillance on public/home networks
 
 ---
 
 ## Primary recommendation
+
+<img src="../../assets/logos/mullvad.svg" width="36" height="36" alt="Mullvad VPN Logo">
 
 | Field | Value |
 |---|---|
 | **Name** | Mullvad VPN |
 | **Website** | https://mullvad.net |
 | **Source / repo** | https://github.com/mullvad/mullvadvpn-app |
-| **Open source?** | **Yes** — apps open source; service is commercial |
-| **Local / self-host?** | **No** as a global VPN service |
-| **Target audience** | Users who want a no-logs VPN with anonymous account numbers |
-| **Platforms** | Windows · macOS · Linux · Android · iOS |
-| **Pricing** | Paid flat fee |
-| **Payment notes** | Cash, cards, crypto — see mullvad.net |
+| **Open source?** | **Yes** (GPL 3.0 Apps) |
+| **Local / self-host?** | **No** as a multi-country VPN service; WireGuard on a VPS for self-host |
+| **Target audience** | Users who want a strict no-logs VPN with zero personal identifying information required |
+| **Platforms** | Windows · macOS · Linux · Android · iOS · Routers |
+| **Pricing** | Flat €5 / month |
+| **Payment notes** | Cash (by mail), Monero, Bitcoin, Credit Card, PayPal |
 
 ### Why this is the one pick
-1. Account model without email identity by default.
-2. Open-source apps.
-3. Transparent pricing.
-4. Broad platform coverage.
-5. Frequently recommended among privacy-focused VPN sets.
+1. Generates a random 16-digit account number; no email, username, or phone number required to sign up.
+2. Accepts cash by mail and Monero for unlinkable payments.
+3. 100% open-source desktop and mobile client applications.
+4. Uses modern WireGuard protocol with post-quantum cryptography support and multi-hop routing.
+5. Strict audited no-logs infrastructure under Swedish jurisdiction.
 
 ### What it does not do
-- A VPN is not anonymity (Tor is different).
-- Does not fix malicious sites or weak account security.
-- Paid only.
+- A VPN protects network transit; it does not make you anonymous against browser fingerprinting (Tor Browser is needed for anonymity).
+- Paid only (flat €5/mo); does not have a perpetual free tier.
+- Port forwarding is disabled.
 
 ---
 
 ## Install guide (primary)
 
-### Download hubs
-- Apps: https://mullvad.net/download
-- Account: https://mullvad.net/account
+### Account Setup
+1. Visit https://mullvad.net/account and click **Generate account number**.
+2. Save your 16-digit account number in your password manager.
+3. Add time via cash, crypto, or card.
 
-### Windows
-1. Create a Mullvad account number at https://mullvad.net/account
-2. Add time/payment per site instructions.
-3. Download Windows app from https://mullvad.net/download and install.
-4. Log in with account number → connect → enable lockdown/kill switch as desired.
+### Linux (Debian, Ubuntu)
+```bash
+sudo curl -fsSLo /usr/share/keyrings/mullvad-keyring.asc https://repository.mullvad.net/deb/mullvad-keyring.asc
+echo "deb [signed-by=/usr/share/keyrings/mullvad-keyring.asc arch=$(dpkg --print-architecture)] https://repository.mullvad.net/deb/stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/mullvad.list
+sudo apt update && sudo apt install mullvad-vpn
+```
 
-### macOS
-1. Create/fund account.
-2. Download macOS app from https://mullvad.net/download
-3. Install; approve VPN/system extension prompts.
-4. Connect and verify IP.
+### Windows & macOS
+- **Windows:** Download `.exe` from https://mullvad.net/download (or `winget install MullvadVPN.MullvadVPN`).
+- **macOS:** Download `.pkg` from https://mullvad.net/download (or `brew install --cask mullvadvpn`).
 
-### Linux
-1. Follow Linux instructions on https://mullvad.net/download/app/linux/
-2. Install package → login with account number → connect.
-3. Enable auto-connect if desired.
-
-### Android
-1. Install Mullvad VPN from Play Store or official APK link on Mullvad download page.
-2. Enter account number → connect.
-3. Enable Always-on VPN + block connections without VPN.
-
-### iOS
-1. Install Mullvad VPN from the App Store (official link via mullvad.net/download).
-2. Allow VPN configuration.
-3. Login with account number → connect.
+### Android & iOS
+- **Android:** https://play.google.com/store/apps/details?id=net.mullvad.mullvadvpn (or F-Droid / GitHub APK)
+- **iOS:** https://apps.apple.com/app/mullvad-vpn/id1488466513
 
 ### First-run checklist
-1. Enable kill switch / lockdown mode.
-2. Test for DNS leaks.
-3. Avoid free random “VPN” store apps.
+1. Enter your 16-digit account number and connect.
+2. In app settings, enable **Always-on VPN** and **Kill Switch / Lockdown Mode**.
+3. Verify DNS leak protection at https://mullvad.net/check.
 
 ---
 
@@ -78,21 +69,20 @@
 
 | Catch | Why it bites | Alternative (one) | Open source? | Platforms | When not to switch |
 |---|---|---|---|---|---|
-| Need a free tier to try VPN basics | Mullvad is paid-only | **Proton VPN Free** | Yes (apps) | All major | Don’t stay on free tier if you need full server choice |
-| Prefer a different audited commercial VPN | Jurisdiction/feature preference | **IVPN** | Yes (apps) | All major | Don’t hop providers weekly without reason |
-| Need self-hosted VPN on your VPS | Commercial VPN is still a third party | **WireGuard (self-host)** | Yes | Server + clients | Don’t self-host if you need multi-country egress |
+| Need a free tier to protect basic Wi-Fi browsing | Mullvad is paid-only (€5/mo) | **Proton VPN Free** | Yes | All major | Don’t stay on free tier if you need custom server locations or P2P/streaming |
+| Prefer a commercial provider with dynamic multi-hop and port options | Feature or jurisdiction preference | **IVPN** | Yes | All major | Don’t switch without a concrete need |
+| Need a dedicated static IP on your own VPS | Commercial VPN shares egress IPs with other users | **WireGuard (Self-Hosted)** | Yes | Linux VPS | Don’t self-host if you need multi-country geo-unblocking |
 
 ### Alternative installs
 
 #### Proton VPN Free
-- https://protonvpn.com/download — create Proton account → install apps → Free servers
+- Website: https://protonvpn.com/download — create free Proton account → install app.
 
 #### IVPN
-- https://www.ivpn.net/apps/ — create account → install → connect
+- Website: https://www.ivpn.net/apps/
 
-#### WireGuard (self-host)
-- https://www.wireguard.com/install/
-- Deploy on Linux VPS; import configs into official WireGuard clients
+#### WireGuard (Self-Host)
+- Official guide: https://www.wireguard.com/install/
 
 ---
 
@@ -100,24 +90,20 @@
 
 | Field | Value |
 |---|---|
-| **Name** | WireGuard (self-hosted) |
-| **Repo** | https://www.wireguard.com |
-| **What local means** | You run the VPN endpoint |
-| **Who it’s for** | Users with a VPS and basic networking skill |
+| **Name** | WireGuard (Self-Hosted) |
+| **Repo** | https://github.com/WireGuard/wireguard-tools |
+| **What local means** | VPN endpoint running entirely on a server you control |
+| **Who it’s for** | Homelab and VPS operators |
 | **Ops burden** | Medium |
-| **When primary still wins** | You want multi-country egress and less ops |
-
-### Local install
-- **Linux server:** install wireguard; configure keys/interface
-- **Windows / macOS / Android / iOS:** official WireGuard apps from wireguard.com/install
+| **When primary still wins** | You want zero maintenance and multi-country exit nodes |
 
 ---
 
 ## Quick decision box
 
 ```text
-Default privacy VPN                 →  Mullvad
-Need free tier                       →  Proton VPN Free
-Alt commercial                       →  IVPN
-Self-host endpoint                   →  WireGuard
+Default privacy VPN                 →  Mullvad VPN
+Reliable zero-cost tier              →  Proton VPN Free
+Alternative audited VPN              →  IVPN
+Self-hosted single VPS tunnel        →  WireGuard
 ```
