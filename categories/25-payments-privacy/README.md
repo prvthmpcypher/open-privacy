@@ -1,6 +1,6 @@
 # Privacy-Friendly Payments
 
-> Open Privacy · v0.2 · August 2026 · Poorvith M P  
+> Open Privacy · v1.0 · August 2026 · Poorvith M P  
 > Category ID: `25-payments-privacy`  
 > Replaces: Storing primary debit/credit card numbers on every commercial website, KYC ad-tracking payment aggregators
 

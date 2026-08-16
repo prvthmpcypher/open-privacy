@@ -1,6 +1,6 @@
 # Contributing to Open Privacy
 
-> **Open Privacy** · v0.2 · August 2026 · Maintainer: **Poorvith M P**
+> **Open Privacy** · v1.0 · August 2026 · Maintainer: **Poorvith M P**
 
 Thanks for wanting to improve Open Privacy. I built this library to be opinionated and decision-first: exactly **one primary tool** per category, **one alternative per concrete catch**, and a **local open-source path** when one exists.
 

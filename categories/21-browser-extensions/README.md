@@ -1,6 +1,6 @@
 # Browser Extensions (Tracker Block)
 
-> Open Privacy · v0.2 · August 2026 · Poorvith M P  
+> Open Privacy · v1.0 · August 2026 · Poorvith M P  
 > Category ID: `21-browser-extensions`  
 > Replaces: Browsing without content blocking, ad-tech malware, fingerprinting scripts
 

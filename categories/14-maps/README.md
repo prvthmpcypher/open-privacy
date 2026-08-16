@@ -1,6 +1,6 @@
 # Maps & Navigation
 
-> Open Privacy · v0.2 · August 2026 · Poorvith M P  
+> Open Privacy · v1.0 · August 2026 · Poorvith M P  
 > Category ID: `14-maps`  
 > Replaces: Google Maps (continuous location history, ad profiles, route tracking)
 

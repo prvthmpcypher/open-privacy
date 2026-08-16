@@ -1,6 +1,6 @@
 # Search Engine
 
-> Open Privacy · v0.2 · August 2026 · Poorvith M P  
+> Open Privacy · v1.0 · August 2026 · Poorvith M P  
 > Category ID: `02-search`  
 > Replaces: Google Search (default tracking), Bing
 

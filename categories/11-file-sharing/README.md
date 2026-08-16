@@ -1,6 +1,6 @@
 # File Sharing
 
-> Open Privacy · v0.2 · August 2026 · Poorvith M P  
+> Open Privacy · v1.0 · August 2026 · Poorvith M P  
 > Category ID: `11-file-sharing`  
 > Replaces: WeTransfer, Google Drive public links, unencrypted messaging attachments
 

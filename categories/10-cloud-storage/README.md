@@ -1,6 +1,6 @@
 # Cloud Storage
 
-> Open Privacy · v0.2 · August 2026 · Poorvith M P  
+> Open Privacy · v1.0 · August 2026 · Poorvith M P  
 > Category ID: `10-cloud-storage`  
 > Replaces: Google Drive (content scanning, unencrypted at rest from Google), Dropbox / OneDrive
 

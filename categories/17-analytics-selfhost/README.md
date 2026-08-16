@@ -1,6 +1,6 @@
 # Web Analytics (Self-Host)
 
-> Open Privacy · v0.2 · August 2026 · Poorvith M P  
+> Open Privacy · v1.0 · August 2026 · Poorvith M P  
 > Category ID: `17-analytics-selfhost`  
 > Replaces: Google Analytics 4 (GA4 cross-site tracking, cookie banners)
 

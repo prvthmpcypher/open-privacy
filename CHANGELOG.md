@@ -1,17 +1,25 @@
 # Changelog
 
-## v0.2 — August 2026
+## v1.0.0 — August 2026
 
-- **Official Vector Logos**: Added verified SVG/PNG logos for all 25 categories and alternatives under `assets/logos/`.
-- **AI-SEO & Agent Indexing**: Added root [`llms.txt`](llms.txt) (llmstxt.org specification) and [`INDEX.md`](INDEX.md) machine-readable tool registry for AI search engines and autonomous agents.
-- **Messenger Updates (`05-messenger`)**: Added **SimpleX Chat** as an explicit catch alternative for zero user identifiers and metadata-free onion routing.
-- **2FA Updates (`09-2fa-authenticator`)**: Added **2FAS** as a premier cross-platform open-source TOTP authenticator with offline and cloud sync options.
-- **Notes Updates (`12-notes`)**: Documented Standard Notes' acquisition by Proton and added **Notesnook** as an independent FOSS E2EE notes alternative alongside Joplin.
-- **Android Store Updates (`20-app-store-android`)**: Added **Accrescent** and **Obtainium** to the Android app installation paths.
-- **Browser Extensions & MV3 (`21-browser-extensions`)**: Clarified the impact of Chrome's Manifest V3 rollout and documented **uBlock Origin Lite** for Chromium vs full uBO on Firefox/Brave.
-- **Native Translation (`24-translation`)**: Updated Firefox Translations from "add-on" to native built-in browser translation feature in modern Firefox.
-- **Linux Package Management**: Updated Fedora install commands to DNF5 syntax (`addrepo --from-repofile`) and Debian/Ubuntu modern keyring files.
-- **Root README Overhaul**: Added visual category icons, 50-word extractable overview for AI search engines, quick decision matrix, and search-intent FAQ.
+- **Official v1.0 Release**: Complete production-ready curated privacy guide covering 25 categories.
+- **Real Brand-Colored Logos & OS Badges**: Added 60+ verified vector SVG logos for primary tools, alternatives, and all major operating systems (Linux, Windows, macOS, Android, iOS).
+- **AI-SEO & Agent Infrastructure**: Added standardized [`llms.txt`](llms.txt) (llmstxt.org specification) and [`INDEX.md`](INDEX.md) machine-readable tool registry for autonomous agents and LLM search engines.
+- **Real-World Edge Cases & Gotchas**: Added deep reality checks covering Chrome Manifest V3, GrapheneOS Play Integrity banking attestation, self-hosted mail deliverability traps, Proton Bridge desktop requirements, and Mullvad port forwarding deprecation.
+- **Upstream Documentation Upgrades**:
+  - `01-browser`: Updated Brave install commands for Fedora 41+ (`dnf5`) and modern Debian/Ubuntu keyrings.
+  - `03-email`: Added Proton official desktop app for Linux/Win/Mac; documented Stalwart Rust mail server.
+  - `05-messenger`: Added **SimpleX Chat** (zero user IDs, metadata-free onion routing) as an explicit catch alternative.
+  - `08-password-manager`: Added Passkeys guidance and modern Vaultwarden Docker configs.
+  - `09-2fa-authenticator`: Added **2FAS** (cross-platform offline/cloud backup) alongside Aegis Authenticator.
+  - `11-file-sharing`: Documented OnionShare, Send (`timvisee`), and Magic Wormhole CLI.
+  - `12-notes`: Documented Standard Notes' acquisition by Proton and added **Notesnook** (100% FOSS E2EE notes).
+  - `17-analytics-selfhost`: Updated Umami Docker Compose with PostgreSQL 16 Alpine.
+  - `19-os-mobile`: Verified GrapheneOS WebUSB installer and updated CalyxOS device list (cleaned DivestOS).
+  - `20-app-store-android`: Added **Accrescent** and **Obtainium** to the Android app installation paths.
+  - `21-browser-extensions`: Clarified Manifest V3 impact: uBlock Origin Lite for Chromium vs full uBO on Firefox/Brave.
+  - `24-translation`: Updated Firefox Translations to reflect native built-in browser translation in modern Firefox.
+- **Security & Governance**: Added root [`SECURITY.md`](SECURITY.md) vulnerability policy and updated [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md).
 
 ## v0.1 — July 2026
 

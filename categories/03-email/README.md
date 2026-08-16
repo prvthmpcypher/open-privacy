@@ -1,6 +1,6 @@
 # Email Provider
 
-> Open Privacy · v0.2 · August 2026 · Poorvith M P  
+> Open Privacy · v1.0 · August 2026 · Poorvith M P  
 > Category ID: `03-email`  
 > Replaces: Gmail (ad profiling), Outlook / Yahoo
 

@@ -1,6 +1,6 @@
 # Translation
 
-> Open Privacy · v0.2 · August 2026 · Poorvith M P  
+> Open Privacy · v1.0 · August 2026 · Poorvith M P  
 > Category ID: `24-translation`  
 > Replaces: Google Translate (cloud logging, tracking untrusted web text)
 

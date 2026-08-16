@@ -1,9 +1,9 @@
 # Open Privacy — Curated Decision-First Privacy Tools
 
 > Curated digital privacy library by **Poorvith M P**.  
-> Version: **v0.2** · Last updated: **August 2026** · License: **MIT**
+> Version: **v1.0** · Last updated: **August 2026** · License: **MIT**
 
-[![Version](https://img.shields.io/badge/version-v0.2-059669.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-v1.0-059669.svg)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-059669.svg)](LICENSE)
 [![Security Policy](https://img.shields.io/badge/security-policy-0f172a.svg)](SECURITY.md)
 [![Categories](https://img.shields.io/badge/categories-25%20covered-059669.svg)](#categories)

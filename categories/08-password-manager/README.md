@@ -1,6 +1,6 @@
 # Password Manager
 
-> Open Privacy · v0.2 · August 2026 · Poorvith M P  
+> Open Privacy · v1.0 · August 2026 · Poorvith M P  
 > Category ID: `08-password-manager`  
 > Replaces: Reusing passwords across sites, browser password stores, plaintext notes
 

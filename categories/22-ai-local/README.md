@@ -1,6 +1,6 @@
 # Local AI Chat
 
-> Open Privacy · v0.2 · August 2026 · Poorvith M P  
+> Open Privacy · v1.0 · August 2026 · Poorvith M P  
 > Category ID: `22-ai-local`  
 > Replaces: Cloud ChatGPT / Gemini / Claude logging all personal prompts and training on private data
 

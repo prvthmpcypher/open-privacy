@@ -1,6 +1,6 @@
 # Notes & Tasks
 
-> Open Privacy · v0.2 · August 2026 · Poorvith M P  
+> Open Privacy · v1.0 · August 2026 · Poorvith M P  
 > Category ID: `12-notes`  
 > Replaces: Apple Notes, Google Keep, Notion / Evernote (unencrypted cloud databases)
 

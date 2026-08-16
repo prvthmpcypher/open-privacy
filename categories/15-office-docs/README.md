@@ -1,6 +1,6 @@
 # Office / Docs
 
-> Open Privacy · v0.2 · August 2026 · Poorvith M P  
+> Open Privacy · v1.0 · August 2026 · Poorvith M P  
 > Category ID: `15-office-docs`  
 > Replaces: Google Docs & Microsoft 365 cloud telemetry
 

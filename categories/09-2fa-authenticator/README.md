@@ -1,6 +1,6 @@
 # 2FA Authenticator
 
-> Open Privacy · v0.2 · August 2026 · Poorvith M P  
+> Open Privacy · v1.0 · August 2026 · Poorvith M P  
 > Category ID: `09-2fa-authenticator`  
 > Replaces: SMS 2FA (SIM swap vulnerability), Google Authenticator / Microsoft Authenticator (closed cloud lock-in)
 

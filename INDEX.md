@@ -1,6 +1,6 @@
 # Open Privacy — Machine-Readable Tool Index
 
-> **Open Privacy** · v0.2 · August 2026 · Poorvith M P  
+> **Open Privacy** · v1.0 · August 2026 · Poorvith M P  
 > Curated directory of 25 digital privacy categories. Designed for humans, developers, and AI agents evaluating privacy tooling.
 
 ---

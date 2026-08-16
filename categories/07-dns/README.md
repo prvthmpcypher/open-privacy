@@ -1,6 +1,6 @@
 # DNS Resolver
 
-> Open Privacy · v0.2 · August 2026 · Poorvith M P  
+> Open Privacy · v1.0 · August 2026 · Poorvith M P  
 > Category ID: `07-dns`  
 > Replaces: ISP DNS (unencrypted, logging, censoring)
 

@@ -1,6 +1,6 @@
 # VPN
 
-> Open Privacy · v0.2 · August 2026 · Poorvith M P  
+> Open Privacy · v1.0 · August 2026 · Poorvith M P  
 > Category ID: `06-vpn`  
 > Replaces: Commercial logging VPNs, ISP surveillance on public/home networks
 

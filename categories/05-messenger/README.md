@@ -1,6 +1,6 @@
 # Instant Messaging
 
-> Open Privacy · v0.2 · August 2026 · Poorvith M P  
+> Open Privacy · v1.0 · August 2026 · Poorvith M P  
 > Category ID: `05-messenger`  
 > Replaces: WhatsApp (Meta surveillance metadata), Telegram (unencrypted cloud chats by default)
 

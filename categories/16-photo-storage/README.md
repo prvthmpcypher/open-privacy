@@ -1,6 +1,6 @@
 # Photo Storage
 
-> Open Privacy · v0.2 · August 2026 · Poorvith M P  
+> Open Privacy · v1.0 · August 2026 · Poorvith M P  
 > Category ID: `16-photo-storage`  
 > Replaces: Google Photos (facial recognition scanning, metadata profiling, ad training)
 
